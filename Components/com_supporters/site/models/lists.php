@@ -76,9 +76,13 @@ class SupportersModelLists extends JModelList {
         $query->from('`#__supporters_list` AS a');
 
         
+
     // Join over the users for the checked out user.
+
     $query->select('uc.name AS editor');
+
     $query->join('LEFT', '#__users AS uc ON uc.id=a.checked_out');
+
     
 		// Join over the created by field 'created_by'
 		$query->select('created_by.name AS created_by');
@@ -86,7 +90,7 @@ class SupportersModelLists extends JModelList {
 		// Join over the category 'category'
 		$query->select('category.title AS category_title');
 		$query->join('LEFT', '#__categories AS category ON category.id = a.category');
-        
+        $query->order('ordering ASC');  
 
         // Filter by search in title
         $search = $this->getState('filter.search');
