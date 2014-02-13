@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>PageSuite MiniFlop</name>
+    <author>Jose Cuenca</author>
+    <version>1.2.2</version>
+    <description>Display Miniflop version of your PageSuite edition.</description>
+    <files>
+        <filename>mod_PagesuiteMiniFlip.xml</filename>
+        <filename module="mod_PagesuiteMiniFlip" label="PageSuite Mini Flip">mod_PagesuiteMiniFlip.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>Mobile_Detect.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+		<fields name="params">
+ 		   <fieldset name="basic">
+ 	       		<field name="PageID" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
+        		<field name="Width" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
+        		<field name="Height" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+        	</fieldset>
+			<fieldset name="Mobile_Options" label="Mobile Options">
+				<field name="Image" type="media" label="Select an image" directory="/" preview="false" description="this image pop up on tablets and smartphones"/>
+			</fieldset>
+        </fields>
+    </config>
+</extension>
