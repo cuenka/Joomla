@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_CLIENTSDISPLAY_FORM_LBL_CLIENTS_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_CLIENTSDISPLAY_FORM_LBL_CLIENTS_CREATED_BY"
+            description="COM_CLIENTSDISPLAY_FORM_DESC_CLIENTS_CREATED_BY"  /> 
+
+       <field name="client" type="text"
+                
+            label="COM_CLIENTSDISPLAY_FORM_LBL_CLIENTS_CLIENT"
+            description="COM_CLIENTSDISPLAY_FORM_DESC_CLIENTS_CLIENT" 
+                
+                
+                
+            class="clientsdisplay_client"
+            filter="safehtml"
+            size="60"
+            maxlength="60" /> 
+
+       <field name="description" type="editor"
+                
+            label="COM_CLIENTSDISPLAY_FORM_LBL_CLIENTS_DESCRIPTION"
+            description="COM_CLIENTSDISPLAY_FORM_DESC_CLIENTS_DESCRIPTION" 
+                
+                
+                
+            cols="30"
+            rows="5" /> 
+
+       <field name="logo" type="media"
+                
+            label="COM_CLIENTSDISPLAY_FORM_LBL_CLIENTS_LOGO"
+            description="COM_CLIENTSDISPLAY_FORM_DESC_CLIENTS_LOGO" 
+                
+                
+                
+            directory="images/logos" /> 
+
+       <field name="clientwebsite" type="text"
+                
+            label="COM_CLIENTSDISPLAY_FORM_LBL_CLIENTS_CLIENTWEBSITE"
+            description="COM_CLIENTSDISPLAY_FORM_DESC_CLIENTS_CLIENTWEBSITE" 
+                 default="http://" 
+                
+                
+            menu_published="0"
+            class="clientsdisplay_client_ClientWebsite"
+            filter="safehtml"
+            size="60"
+            maxlength="60" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

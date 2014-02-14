@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_clientsdisplay</name>
+    <creationDate>2014-02-14</creationDate>
+    <copyright>Aviation Media (TM)Copyright (C) 2014. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Jose Cuenca</author>
+    <authorEmail>jose@aviationmedia.aero</authorEmail>
+    <authorUrl>http://www.aviationmedia.aero</authorUrl>
+    <version>1.1.1</version>
+    <description>Display all clients of your brand in a very smart way</description>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>clientsdisplay.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <languages folder="site">
+        
+			<language tag="en-GB">language/en-GB.com_clientsdisplay.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_clientsdisplay/assets/images/s_com_clientsdisplay.png" >COM_CLIENTSDISPLAY</menu>
+        <submenu>
+            
+			<menu link="option=com_clientsdisplay&amp;view=clientss" view="clientss" img="components/com_clientsdisplay/assets/images/s_clientss.png" alt="Clientsdisplay/Clientss">COM_CLIENTSDISPLAY_TITLE_CLIENTSS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>clientsdisplay.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="administrator">
+            
+			<language tag="en-GB">language/en-GB.com_clientsdisplay.ini</language>
+			<language tag="en-GB">language/en-GB.com_clientsdisplay.sys.ini</language>
+        </languages>
+    </administration>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.notwebdesign.com/joomla-component-creator/ -->
