@@ -27,13 +27,13 @@
 		<filename>preparation.php</filename>
 		<filename>offline.php</filename>
 		<filename>template_preview.png</filename>
-		<filename>template_thumbnail.png</filename>
+		<filename>template_thumbnail.png</filename>EASYTEMPLATE
 		<filename>favicon.ico</filename>
 		<filename>templateDetails.xml</filename>
 	</files>
 	
 	<languages folder="language"><!-- no need to change -->
-		<language tag="en-GB">en-GB.tpl_frontend.ini</language>
+		<language tag="en-GB">en-GB.TPL_EASYTEMPLATE.ini</language>
 	</languages>
 	
 	<positions><!-- define the positions for modules here -->
@@ -47,16 +47,16 @@
 
 				<!-- MODERNIZR-->
 				<field name="modernizr" type="radio" default="0" 
-					label="TPL_FRONTEND_PARAMETER_MODERNIZR_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_MODERNIZR_DESC">
+					label="TPL_EASYTEMPLATE_PARAMETER_MODERNIZR_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_MODERNIZR_DESC">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
 
 				<!-- CSS METHOD -->
 				<field name="css" type="radio" default="css" 
-					label="TPL_FRONTEND_PARAMETER_CSS_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_CSS_DESC">
+					label="TPL_EASYTEMPLATE_PARAMETER_CSS_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_CSS_DESC">
 					<option value="CDN">CDN Bootstrap CSS + custom.css</option>
 					<option value="SERVER">SERVER Bootstrap CSS + custom.css</option>
 					<option value="JOOMLA">Joomla default CSS</option>
@@ -65,8 +65,8 @@
 
 				<!-- BOOTSTRAP -->
 				<field name="bootstrap" type="radio" default="0" 
-					label="TPL_FRONTEND_PARAMETER_BOOTSTRAP_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_BOOTSTRAP_DESC">
+					label="TPL_EASYTEMPLATE_PARAMETER_BOOTSTRAP_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_BOOTSTRAP_DESC">
 					<option value="CDN">CDN Bootstrap option</option>
 					<option value="SERVER">Bootstrap form server</option>
 					<option value="JOOMLA">Joomla Bootstrap</option>
@@ -75,16 +75,16 @@
 
 				<!-- FONT-AWESOME -->
 				<field name="fontawesome" type="radio" default="0" 
-					label="TPL_FRONTEND_PARAMETER_FONTAWESOME_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_FONTAWESOME_DESC">
+					label="TPL_EASYTEMPLATE_PARAMETER_FONTAWESOME_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_FONTAWESOME_DESC">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
 
 				<!-- JQUERY -->
 				<field name="jquery" type="radio" default="0" 
-					label="TPL_FRONTEND_PARAMETER_JQUERY_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_JQUERY_DESC">
+					label="TPL_EASYTEMPLATE_PARAMETER_JQUERY_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_JQUERY_DESC">
 					<option value="CDN">CDN JQUERY option</option>
 					<option value="SERVER">JQUERY form server</option>
 					<option value="JOOMLA">Joomla JQUERY default option</option>
@@ -94,8 +94,8 @@
 
 				<!-- GOOGLE FONT-->
                 <field name="googlefont" type="text" default=""
-                	label="TPL_FRONTEND_PARAMETER_GOOGLEFONT_LABEL"
-                	description="TPL_FRONTEND_PARAMETER_GOOGLEFONT_DESC">
+                	label="TPL_EASYTEMPLATE_PARAMETER_GOOGLEFONT_LABEL"
+                	description="TPL_EASYTEMPLATE_PARAMETER_GOOGLEFONT_DESC">
 				</field>
 
 			</fieldset>
@@ -107,9 +107,9 @@
 
 				<field name="mootools" type="radio" default="0" 
 
-						label="TPL_FRONTEND_PARAMETER_MOOTOOLS_LABEL" 
+						label="TPL_EASYTEMPLATE_PARAMETER_MOOTOOLS_LABEL" 
 
-						description="TPL_FRONTEND_PARAMETER_MOOTOOLS_DESC">
+						description="TPL_EASYTEMPLATE_PARAMETER_MOOTOOLS_DESC">
 		
 						<option value="0">JNO</option>
 
@@ -120,44 +120,44 @@
 					name="mootoolsItemids"
 					type="text"
 					default="9999"
-					label="TPL_FRONTEND_FIELD_MOOTOOLS_ITEMIDS_LABEL"
-					description="TPL_FRONTEND_FIELD_MOOTOOLS_ITEMIDS_DESC"
+					label="TPL_EASYTEMPLATE_FIELD_MOOTOOLS_ITEMIDS_LABEL"
+					description="TPL_EASYTEMPLATE_FIELD_MOOTOOLS_ITEMIDS_DESC"
 				/>
 				<field
 					name="editingMootools"
 					type="radio"
 					default="1"
-					label="TPL_FRONTEND_FIELD_LOAD_EDITING_MOOTOOLS_LABEL"
-					description="TPL_FRONTEND_FIELD_LOAD_EDITING_MOOTOOLS_DESC">
+					label="TPL_EASYTEMPLATE_FIELD_LOAD_EDITING_MOOTOOLS_LABEL"
+					description="TPL_EASYTEMPLATE_FIELD_LOAD_EDITING_MOOTOOLS_DESC">
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 				</field>
 				<!-- Disable JavaScript -->	
 				<field name="disablejs" type="radio" default="0" 
-					label="TPL_FRONTEND_PARAMETER_DISABLEJS_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_DISABLEJS_DESC">
+					label="TPL_EASYTEMPLATE_PARAMETER_DISABLEJS_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_DISABLEJS_DESC">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field> 
 
 				<!-- JavaScript Files -->
 				<field name="nojs" type="textarea" 
-					label="TPL_FRONTEND_PARAMETER_FNJS_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_FNJS_LABEL" 
+					label="TPL_EASYTEMPLATE_PARAMETER_FNJS_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_FNJS_LABEL" 
 					cols="30" default="mootools-core.js,caption.js" rows="4" />
 
 				<!-- Disable CSS -->
 				<field name="disablecss" type="radio" default="0" 
-					label="TPL_FRONTEND_PARAMETER_DISABLECSS_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_DISABLECSS_DESC">
+					label="TPL_EASYTEMPLATE_PARAMETER_DISABLECSS_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_DISABLECSS_DESC">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>	
 				</field>
 
 				<!-- CSS Files -->
 				<field name="nocss" type="textarea" 
-					label="TPL_FRONTEND_PARAMETER_FNCSS_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_FNCSS_DESC" 
+					label="TPL_EASYTEMPLATE_PARAMETER_FNCSS_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_FNCSS_DESC" 
 					cols="30" rows="4" />
 
 			</fieldset>
