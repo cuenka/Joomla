@@ -3,7 +3,7 @@
 
 <extension version="2.5" type="template" client="site" method="upgrade">
 	
-	<name>Jose Cuenca</name><!-- name the template -->
+	<name>Easy Template</name><!-- name the template -->
 	<creationDate>2014-02-01</creationDate><!-- the date your are beginn to code -->
 	<author>Jose Cuenca</author><!-- your name (oops, I repeat myself) -->
 	<copyright>Copyright © xxxx example.com</copyright><!-- for who you are coding -->
@@ -12,7 +12,7 @@
 	<version>1.0.0</version><!-- give your template a number -->
 	<description><![CDATA[ 
 		<h1>frontend</h1>
-		<p>Created by <a href="http://www.example.com" target="_blank">your name | example.com</a>.</p>
+		<p>Created by <a href="http://www.example.com" target="_blank">Jose Cuenca | example.com</a>.</p>
 	]]></description><!-- change the description as you like -->
 	
 	<files><!-- no need to change -->
