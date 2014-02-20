@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+    <name>Slider with parallax effect</name>
+    <author>Jose Cuenca</author>
+    <version>1.0.0</version>
+    <description>Slider with parallax effect, using JQuery library http://jacksbox.de/stuff/jquery-fractionslider/ FractionSlider 0.9.9.9</description>
+    <files>
+        <filename>mod_fractionslider.xml</filename>
+        <filename module="mod_fractionslider" label="Slider with parallax effect">mod_fractionslider.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <media folder="media" destination="mod_fractionslider">
+        	<folder>css</folder>
+            <folder>js</folder>
+            <folder>img</folder>
+        </media>
+    <languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_fractionslider.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_fractionslider.sys.ini</language>		
+	</languages>
+    <config>
+		<fields name="params">
+ 		   <fieldset name="basic">
+ 		<field type="spacer" name="myspacer0" class="label label-info"
+ 		label="MOD_FRACTIONSLIDER_MYSPACER0"
+ 		/>   
+ 		<field name="title" type="text" default="SKY WORLD" label="MOD_FRACTIONSLIDER_TITLE" description="MOD_FRACTIONSLIDER_TITLE_DESC" size="60" />
+ 		<field type="spacer" name="myspacer1" class="label label-info"
+ 		label="MOD_FRACTIONSLIDER_MYSPACER1"
+ 		/> 
+ 		    <field name="Slide0" label="MOD_FRACTIONSLIDER_SLIDE0" type="media" directory="slideshow" />
+ 		    <field name="FirstLine0" type="text" default="Text from left..." label="MOD_FRACTIONSLIDER_FIRSTLINE0" description="" size="60" />
+ 		    <field name="SecondLine0" type="text" default="Text from right..." label="Text from right" description="" size="60" />
+ 		      <field name="MenuItem0" type="sql" label="MOD_FRACTIONSLIDER_LINK0_DESC" description="MOD_FRACTIONSLIDER_LINK0_DESC" menu_published="0" filter="raw" query="SELECT link, title AS MenuItem0 FROM  #__menu where menutype='mainmenu'"
+ 		                key_field="link"
+ 		                value_field="MenuItem0" /> 
+ 		<field type="spacer" name="myspacer2" class="label label-info"
+		label="MOD_FRACTIONSLIDER_MYSPACER2"
+		/> 
+		<field name="Slide1" label="MOD_FRACTIONSLIDER_SLIDE1" type="media" directory="slideshow" />
+		<field name="FirstLine1" type="text" default="" label="MOD_FRACTIONSLIDER_FIRSTLINE1" description="" size="60" />
+		<field name="SecondLine1" type="text" default="" label="MOD_FRACTIONSLIDER_SECONDLINE1" description="" size="60" />
+		<field name="MenuItem1" type="sql" label="MOD_FRACTIONSLIDER_LINK1_DESC" description="MOD_FRACTIONSLIDER_LINK1_DESC" menu_published="0" filter="raw" query="SELECT link, title AS MenuItem1 FROM  #__menu where menutype='mainmenu'"
+          key_field="link"
+          value_field="MenuItem1" /> 
+		<field type="spacer" name="myspacer3" class="label label-info"
+		label="MOD_FRACTIONSLIDER_MYSPACER3"
+		/> 
+		<field name="Slide2" label="MOD_FRACTIONSLIDER_SLIDE2" type="media" directory="slideshow" />
+		<field name="FirstLine2" type="text" default="" label="MOD_FRACTIONSLIDER_FIRSTLINE2" description="" size="60" />
+		<field name="SecondLine2" type="text" default="" label="MOD_FRACTIONSLIDER_SECONDLINE2" description="" size="60" />
+		<field name="MenuItem2" type="sql" label="MOD_FRACTIONSLIDER_LINK2_DESC" description="MOD_FRACTIONSLIDER_LINK2_DESC" menu_published="0" filter="raw" query="SELECT link, title AS MenuItem2 FROM  #__menu where menutype='mainmenu'" key_field="link" value_field="MenuItem2" /> 
+		<field type="spacer" name="myspacer4" class="label label-info"
+		label="MOD_FRACTIONSLIDER_MYSPACER4"
+		/> 
+		<field name="Slide3" label="MOD_FRACTIONSLIDER_SLIDE3" type="media" directory="slideshow" />
+		<field name="FirstLine3" type="text" default="" label="MOD_FRACTIONSLIDER_FIRSTLINE3" description="" size="60" />
+		<field name="SecondLine3" type="text" default="" label="MOD_FRACTIONSLIDER_SECONDLINE3" description="" size="60" />
+		<field name="MenuItem3" type="sql" label="MOD_FRACTIONSLIDER_LINK3_DESC" description="MOD_FRACTIONSLIDER_LINK3_DESC" menu_published="0" filter="raw" query="SELECT link, title AS MenuItem3 FROM  #__menu where menutype='mainmenu'" key_field="link" value_field="MenuItem3" /> 
+		<field type="spacer" name="myspacer5" class="label label-info"
+		label="MOD_FRACTIONSLIDER_MYSPACER5"
+		/> 
+		<field name="Slide4" label="MOD_FRACTIONSLIDER_SLIDE4" type="media" directory="slideshow" />
+		<field name="FirstLine4" type="text" default="" label="MOD_FRACTIONSLIDER_FIRSTLINE4" description="" size="60" />
+		<field name="SecondLine4" type="text" default="" label="MOD_FRACTIONSLIDER_SECONDLINE4" description="" size="60" />
+		<field name="MenuItem4" type="sql" label="MOD_FRACTIONSLIDER_LINK4_DESC" description="MOD_FRACTIONSLIDER_LINK4_DESC" menu_published="0" filter="raw" query="SELECT link, title AS MenuItem4 FROM  #__menu where menutype='mainmenu'" key_field="link" value_field="MenuItem4" /> 
+		<field type="spacer" name="myspacer6" class="label label-info"
+		label="MOD_FRACTIONSLIDER_MYSPACER6"
+		/> 
+		<field name="Slide5" label="MOD_FRACTIONSLIDER_SLIDE5" type="media" directory="slideshow" />
+		<field name="FirstLine5" type="text" default="" label="MOD_FRACTIONSLIDER_FIRSTLINE5" description="" size="60" />
+		<field name="SecondLine5" type="text" default="" label="MOD_FRACTIONSLIDER_SECONDLINE5" description="" size="60" />
+		<field name="MenuItem5" type="sql" label="MOD_FRACTIONSLIDER_LINK5_DESC" description="MOD_FRACTIONSLIDER_LINK5_DESC" menu_published="0" filter="raw" query="SELECT link, title AS MenuItem5 FROM  #__menu where menutype='mainmenu'" key_field="link" value_field="MenuItem5" />  
+			</fieldset>
+
+     
+      <fieldset name="MOD_FRACTIONSLIDER_TAB">
+     <field name="bgfl" type="color" default="#f00" label="MOD_FRACTIONSLIDER_BG_FL_COLOUR"
+             description="MOD_FRACTIONSLIDER_BG_FL_COLOUR_DESC" />
+     <field name="fontfl" type="color" default="#fff" label="MOD_FRACTIONSLIDER_FONT_FL_COLOUR"
+	        description="MOD_FRACTIONSLIDER_FONT_FL_COLOUR_DESC" />
+     <field name="bgsl" type="color" default="#f00" label="MOD_FRACTIONSLIDER_BG_SL_COLOUR"
+             description="MOD_FRACTIONSLIDER_BG_SL_COLOUR_DESC" />        
+	 <field name="fontsl" type="color" default="#fff" label="MOD_FRACTIONSLIDER_FONT_SL_COLOUR"
+        description="MOD_FRACTIONSLIDER_FONT_SL_COLOUR_DESC" />  
+      </fieldset>
+     
+     
+     
+     
+       <fieldset name="advanced">
+        <field name="moduleclass_sfx" type="text" default="" label="CLASS_SUFFIX" description="CLASS_SUFFIX_DESCRIPTION"/>
+        </fieldset>
+        </fields>
+    </config>
+</extension>
