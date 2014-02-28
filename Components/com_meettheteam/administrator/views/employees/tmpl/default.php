@@ -213,9 +213,8 @@ if (!empty($this->extra_sidebar)) {
 				</td>
 				<td>
 
-					<?php echo $item->photo; ?>
+					<img src="<?php echo JURI::root().$item->photo; ?>" width="150px" height="auto">				
 				</td>
-
 
                 <?php if (isset($this->items[0]->id)): ?>
 					<td class="center hidden-phone">

@@ -239,8 +239,8 @@ z-index: 1;
             echo JText::_('COM_MEETTHETEAM_NO_ITEMS');
         endif;
         ?>
-        <script src="<?php echo $path;?>media/jui/js/modernizr.custom.js"></script>
-		<script src="<?php echo $path;?>media/jui/js/grid.js"></script>
+        <script src="<?php echo $path;?>media/com_meettheteam/js/modernizr.custom.js"></script>
+		<script src="<?php echo $path;?>media/com_meettheteam/js/grid.js"></script>
 	<script>
 	jQuery.noConflict();
 	 jQuery( document ).ready(function(  ) {

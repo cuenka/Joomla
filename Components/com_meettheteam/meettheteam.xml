@@ -31,6 +31,9 @@
         <folder>controllers</folder>
         <folder>helpers</folder>
     </files>
+     <media folder="media" destination="com_meettheteam">
+     	<folder>js</folder>
+     </media>
     <languages folder="site">
         
 			<language tag="en-GB">language/en-GB.com_meettheteam.ini</language>

@@ -3,7 +3,9 @@
 	<fieldset>
 
               <field name="id" type="text" default="0" label="COM_MEETTHETEAM_FORM_LBL_EMPLOYEE_ID"
+
             readonly="true" class="readonly"
+
             description="JGLOBAL_FIELD_ID_DESC" /> 
 
        <field name="created_by" type="createdby" default="" 
@@ -11,11 +13,15 @@
             description="COM_MEETTHETEAM_FORM_DESC_EMPLOYEE_CREATED_BY"  /> 
 
        <field name="name" type="text"
+
                 
             label="COM_MEETTHETEAM_FORM_LBL_EMPLOYEE_NAME"
             description="COM_MEETTHETEAM_FORM_DESC_EMPLOYEE_NAME" 
+
                 
+
                 
+
                  required="true" 
             class="meettheteam_Name"
             filter="safehtml"
@@ -23,11 +29,15 @@
             maxlength="60" /> 
 
        <field name="position" type="text"
+
                 
             label="COM_MEETTHETEAM_FORM_LBL_EMPLOYEE_POSITION"
             description="COM_MEETTHETEAM_FORM_DESC_EMPLOYEE_POSITION" 
+
                 
+
                 
+
                 
             menu_published="0"
             class="meettheteam_position"
@@ -36,38 +46,57 @@
             maxlength="60" /> 
 
        <field name="jobdescription" type="textarea"
+
                 
             label="COM_MEETTHETEAM_FORM_LBL_EMPLOYEE_JOBDESCRIPTION"
             description="COM_MEETTHETEAM_FORM_DESC_EMPLOYEE_JOBDESCRIPTION" 
+
                 
+
                 
+
                 
             cols="25"
             rows="5"
-            filter="alnum" /> 
+             /> 
 
        <field name="photo" type="media"
+
                 
             label="COM_MEETTHETEAM_FORM_LBL_EMPLOYEE_PHOTO"
             description="COM_MEETTHETEAM_FORM_DESC_EMPLOYEE_PHOTO" 
+
                 
+
                 
+
                 
-            directory="/images/meettheteam/" /> 
+            directory="meettheteam" /> 
 
          <field
+
         name="state"
+
         type="list"
+
         label="JSTATUS"
+
         description="JFIELD_PUBLISHED_DESC"
+
         class="inputbox"
+
         size="1"
+
         default="1">
+
         <option value="1">JPUBLISHED</option>
+
         <option value="0">JUNPUBLISHED</option>
+
     </field> 
 
                         <field name="checked_out" type="hidden" filter="unset" />
+
         <field name="checked_out_time" type="hidden" filter="unset" />
 
 	</fieldset>
