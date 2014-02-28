@@ -71,6 +71,19 @@
                 
 
                 
+            directory="/images/meettheteam/" /> 
+
+       <field name="thumbphoto" type="media"
+
+                
+            label="COM_MEETTHETEAM_FORM_LBL_EMPLOYEE_THUMBPHOTO"
+            description="COM_MEETTHETEAM_FORM_DESC_EMPLOYEE_THUMBPHOTO" 
+
+                
+
+                
+
+                
             directory="meettheteam" /> 
 
          <field

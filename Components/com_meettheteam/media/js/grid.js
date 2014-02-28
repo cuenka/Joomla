@@ -346,9 +346,10 @@ var Grid = (function() {
 		create : function() {
 			// create Preview structure:
 			this.$title = jQuery( '<h3></h3>' );
+			this.$position = jQuery( '<h4></h4>' );
 			this.$description = jQuery( '<p></p>' );
-			this.$href = jQuery( '<a href="#">Visit website</a>' );
-			this.$details = jQuery( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
+			this.$href = jQuery( '<a href="#">CONTACT ME</a>' );
+			this.$details = jQuery( '<div class="og-details"></div>' ).append( this.$title,this.$position,this.$description, this.$href );
 			this.$loading = jQuery( '<div class="og-loading"></div>' );
 			this.$fullimage = jQuery( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = jQuery( '<span class="og-close"></span>' );
@@ -385,10 +386,12 @@ var Grid = (function() {
 					href : $itemEl.attr( 'href' ),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
+					position : $itemEl.data( 'position' ),
 					description : $itemEl.data( 'description' )
 				};
 
 			this.$title.html( eldata.title );
+			this.$position.html( eldata.position );
 			this.$description.html( eldata.description );
 			this.$href.attr( 'href', eldata.href );
 

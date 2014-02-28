@@ -130,10 +130,11 @@ z-index: 1;
 }
 
 .og-details h3 {
-	font-weight: 300;
-	font-size: 52px;
-	padding: 40px 0 10px;
-	margin-bottom: 10px;
+font-weight: 300;
+padding: 0;
+margin-bottom: 0;
+color: #F7F7F7;
+font-size: 26px;
 }
 
 .og-details p {
@@ -166,7 +167,9 @@ z-index: 1;
 	border-color: #999;
 	color: #999;
 }
-
+.og-details > h4{
+color: #8A8A8A;
+}
 .og-loading {
 	width: 20px;
 	height: 20px;
@@ -226,7 +229,7 @@ z-index: 1;
 						$show = true;
 						?>
 								<li>
-									<a href="#" data-largesrc="<?php echo $path.$item->photo;?>" data-title="<?php echo $item->name;?>" data-description="<?php echo $item->jobdescription;?>">
+									<a href="index.php/en/contact-us" data-largesrc="<?php echo $path.$item->photo;?>" data-title="<?php echo $item->name;?>" data-position="<?php echo $item->position;?>" data-description="<?php echo $item->jobdescription;?>">
 										<img src="<?php echo $path.$item->photo;?>" alt="<?php echo $item->name;?>"/>
 									</a>
 								</li>

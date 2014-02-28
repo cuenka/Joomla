@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `#__meettheteam_employee` (
 `position` VARCHAR(60)  NOT NULL ,
 `jobdescription` TEXT NOT NULL ,
 `photo` VARCHAR(255)  NOT NULL ,
+`thumbphoto` VARCHAR(255)  NOT NULL ,
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8_general_ci;
 

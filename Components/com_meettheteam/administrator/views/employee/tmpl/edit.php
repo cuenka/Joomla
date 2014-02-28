@@ -1,6 +1,6 @@
 <?php
 /**
- * @version     1.0.1
+ * @version     1.0.2
  * @package     com_meettheteam
  * @copyright   Aviation Media Copyright (C) 2014. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -75,6 +75,10 @@ $document->addStyleSheet('components/com_meettheteam/assets/css/meettheteam.css'
 			<div class="control-group">
 				<div class="control-label"><?php echo $this->form->getLabel('photo'); ?></div>
 				<div class="controls"><?php echo $this->form->getInput('photo'); ?></div>
+			</div>
+			<div class="control-group">
+				<div class="control-label"><?php echo $this->form->getLabel('thumbphoto'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('thumbphoto'); ?></div>
 			</div>
 
 

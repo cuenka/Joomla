@@ -1,6 +1,6 @@
 <?php
 /**
- * @version     1.0.1
+ * @version     1.0.2
  * @package     com_meettheteam
  * @copyright   Aviation Media Copyright (C) 2014. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -125,6 +125,9 @@ if (!empty($this->extra_sidebar)) {
 				<th class='left'>
 				<?php echo JHtml::_('grid.sort',  'COM_MEETTHETEAM_EMPLOYEES_PHOTO', 'a.photo', $listDirn, $listOrder); ?>
 				</th>
+				<th class='left'>
+				<?php echo JHtml::_('grid.sort',  'COM_MEETTHETEAM_EMPLOYEES_THUMBPHOTO', 'a.thumbphoto', $listDirn, $listOrder); ?>
+				</th>
                     
                     
                 <?php if (isset($this->items[0]->id)): ?>
@@ -213,8 +216,13 @@ if (!empty($this->extra_sidebar)) {
 				</td>
 				<td>
 
-					<img src="<?php echo JURI::root().$item->photo; ?>" width="150px" height="auto">				
+					<?php echo $item->photo; ?>
 				</td>
+				<td>
+
+					<?php echo $item->thumbphoto; ?>
+				</td>
+
 
                 <?php if (isset($this->items[0]->id)): ?>
 					<td class="center hidden-phone">

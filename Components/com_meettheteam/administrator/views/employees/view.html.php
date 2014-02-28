@@ -1,6 +1,6 @@
 <?php
 /**
- * @version     1.0.1
+ * @version     1.0.2
  * @package     com_meettheteam
  * @copyright   Aviation Media Copyright (C) 2014. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -137,6 +137,7 @@ class MeettheteamViewEmployees extends JViewLegacy
 		'a.position' => JText::_('COM_MEETTHETEAM_EMPLOYEES_POSITION'),
 		'a.jobdescription' => JText::_('COM_MEETTHETEAM_EMPLOYEES_JOBDESCRIPTION'),
 		'a.photo' => JText::_('COM_MEETTHETEAM_EMPLOYEES_PHOTO'),
+		'a.thumbphoto' => JText::_('COM_MEETTHETEAM_EMPLOYEES_THUMBPHOTO'),
 		);
 	}
 
