@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_SPEAKERS_TITLE_LIST_VIEW_SPEAKERS" option="View">
+        <message>
+                        <![CDATA[COM_SPEAKERS_TITLE_LIST_VIEW_SPEAKERS_DESC]]>
+        </message>
+	</layout>
+</metadata>

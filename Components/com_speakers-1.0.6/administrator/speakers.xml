@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_speakers</name>
+    <creationDate>2014-04-02</creationDate>
+    <copyright>Jose Cuenca - 2014. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Jose Cuenca</author>
+    <authorEmail>jose@aviationmedia.aero</authorEmail>
+    <authorUrl>http://www.aviationmedia.aero</authorUrl>
+    <version>1.0.6</version>
+    <description>Display list of speakers </description>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>speakers.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <languages folder="site">
+        
+			<language tag="en-GB">language/en-GB.com_speakers.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_speakers/assets/images/s_com_speakers.png" >COM_SPEAKERS</menu>
+        <submenu>
+            
+			<menu link="option=com_speakers&amp;view=speakers" view="speakers" img="components/com_speakers/assets/images/s_speakers.png" alt="Speakers/Speakers">COM_SPEAKERS_TITLE_SPEAKERS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>speakers.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="administrator">
+            
+			<language tag="en-GB">language/en-GB.com_speakers.ini</language>
+			<language tag="en-GB">language/en-GB.com_speakers.sys.ini</language>
+        </languages>
+    </administration>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->
