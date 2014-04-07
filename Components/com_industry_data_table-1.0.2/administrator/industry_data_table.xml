@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_industry_data_table</name>
+    <creationDate>2014-04-01</creationDate>
+    <copyright>Copyright Aviation Media (TM) 2014. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Jose Cuenca</author>
+    <authorEmail>jose@aviationmedia.aero</authorEmail>
+    <authorUrl>http://www.aviationmedia.aero</authorUrl>
+    <version>1.0.2</version>
+    <description>Show information of aircraft deals, firm orders, engine data, list prices and lease rates</description>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>industry_data_table.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <languages folder="site">
+        
+			<language tag="en-GB">language/en-GB.com_industry_data_table.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_industry_data_table/assets/images/s_com_industry_data_table.png" >COM_INDUSTRY_DATA_TABLE</menu>
+        <submenu>
+            
+			<menu link="option=com_industry_data_table&amp;view=aircraftdeals" view="aircraftdeals" img="components/com_industry_data_table/assets/images/s_aircraftdeals.png" alt="Industry_data_table/Aircraftdeals">COM_INDUSTRY_DATA_TABLE_TITLE_AIRCRAFTDEALS</menu>
+
+			<menu link="option=com_industry_data_table&amp;view=exportimportdatas" view="exportimportdatas" img="components/com_industry_data_table/assets/images/s_exportimportdatas.png" alt="Industry_data_table/Exportimportdatas">COM_INDUSTRY_DATA_TABLE_TITLE_EXPORTIMPORTDATAS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>industry_data_table.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="administrator">
+            
+			<language tag="en-GB">language/en-GB.com_industry_data_table.ini</language>
+			<language tag="en-GB">language/en-GB.com_industry_data_table.sys.ini</language>
+        </languages>
+    </administration>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

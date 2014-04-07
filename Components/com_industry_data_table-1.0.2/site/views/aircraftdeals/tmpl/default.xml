@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_INDUSTRY_DATA_TABLE_TITLE_LIST_VIEW_AIRCRAFTDEALS" option="View">
+        <message>
+                        <![CDATA[COM_INDUSTRY_DATA_TABLE_TITLE_LIST_VIEW_AIRCRAFTDEALS_DESC]]>
+        </message>
+	</layout>
+</metadata>
