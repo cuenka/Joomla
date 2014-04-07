@@ -24,69 +24,37 @@ class Industry_data_tableModelAircraftdeals extends JModelList {
      * @since    1.6
      */
     public function __construct($config = array()) {
-        if (empty($config['filter_fields'])) {
-            $config['filter_fields'] = array(
-                                'id', 'a.id',
-                'ordering', 'a.ordering',
-                'state', 'a.state',
-                'created_by', 'a.created_by',
-                'msn', 'a.msn',
-                'manufacturer', 'a.manufacturer',
-                'model', 'a.model',
-                'event', 'a.event',
-                'owner', 'a.owner',
-                'operator', 'a.operator',
-                'date', 'a.date',
-
-            );
-        }
-
+        $config['filter_fields'] = array('msn','manufacturer','model','event','owner');
         parent::__construct($config);
+        
     }
 
     /**
      * Method to auto-populate the model state.
      *
      * Note. Calling getState in this method will result in recursion.
-     */
-    protected function populateState($ordering = null, $direction = null) {
-        // Initialise variables.
-        $app = JFactory::getApplication('administrator');
-
-        // Load the filter state.
-        $search = $app->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
-        $this->setState('filter.search', $search);
-
-        $published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
-        $this->setState('filter.state', $published);
-
-        
-
-        // Load the parameters.
-        $params = JComponentHelper::getParams('com_industry_data_table');
-        $this->setState('params', $params);
-
-        // List state information.
-        parent::populateState('a.msn', 'asc');
-    }
-
-    /**
-     * Method to get a store id based on model configuration state.
      *
-     * This is necessary because the model is used by the component and
-     * different modules that might need different sets of data or different
-     * ordering requirements.
-     *
-     * @param	string		$id	A prefix for the store id.
-     * @return	string		A store id.
      * @since	1.6
      */
-    protected function getStoreId($id = '') {
-        // Compile the store id.
-        $id.= ':' . $this->getState('filter.search');
-        $id.= ':' . $this->getState('filter.state');
+    protected function populateState($ordering = null, $direction = null) {
 
-        return parent::getStoreId($id);
+        // Initialise variables.
+        $app = JFactory::getApplication();
+		parent::populateState('default_column_name', 'ASC');
+        // List state information
+        $limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->getCfg('list_limit'));
+        $this->setState('list.limit', $limit);
+
+        $limitstart = JFactory::getApplication()->input->getInt('limitstart', 0);
+        $this->setState('list.start', $limitstart);
+
+        
+		if(empty($ordering)) {
+			$ordering = 'a.ordering';
+		}
+
+        // List state information.
+        parent::populateState($ordering, $direction);
     }
 
     /**
@@ -96,6 +64,9 @@ class Industry_data_tableModelAircraftdeals extends JModelList {
      * @since	1.6
      */
     protected function getListQuery() {
+    	//searchBOX
+    	$search = JRequest::getString( 'search', '','GET' );
+    	
         // Create a new query object.
         $db = $this->getDbo();
         $query = $db->getQuery(true);
@@ -106,54 +77,43 @@ class Industry_data_tableModelAircraftdeals extends JModelList {
                         'list.select', 'a.*'
                 )
         );
+
         $query->from('`#__industry_data_table_aircraft_deals` AS a');
 
         
-		// Join over the users for the checked out user
-		$query->select("uc.name AS editor");
-		$query->join("LEFT", "#__users AS uc ON uc.id=a.checked_out");
-		// Join over the user field 'created_by'
+
+    // Join over the users for the checked out user.
+
+    $query->select('uc.name AS editor');
+
+    $query->join('LEFT', '#__users AS uc ON uc.id=a.checked_out');
+
+    
+		// Join over the created by field 'created_by'
 		$query->select('created_by.name AS created_by');
 		$query->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
-
+        $query->order($db->escape($this->getState('list.ordering', 'default_sort_column')).' '.
+                       $db->escape($this->getState('list.direction', 'ASC')));
         
 
-		// Filter by published state
-		$published = $this->getState('filter.state');
-		if (is_numeric($published)) {
-			$query->where('a.state = ' . (int) $published);
-		} else if ($published === '') {
-			$query->where('(a.state IN (0, 1))');
-		}
-
         // Filter by search in title
-        $search = $this->getState('filter.search');
+       // $search = $this->getState('filter.search');
         if (!empty($search)) {
             if (stripos($search, 'id:') === 0) {
                 $query->where('a.id = ' . (int) substr($search, 3));
             } else {
                 $search = $db->Quote('%' . $db->escape($search, true) . '%');
-                $query->where('( a.msn LIKE '.$search.'  OR  a.manufacturer LIKE '.$search.'  OR  a.model LIKE '.$search.'  OR  a.event LIKE '.$search.'  OR  a.owner LIKE '.$search.'  OR  a.operator LIKE '.$search.'  OR  a.date LIKE '.$search.' )');
+                $query->where('( a.msn LIKE '.$search.'  OR  a.manufacturer LIKE '.$search.'  OR  a.model LIKE '.$search.'  OR  a.event LIKE '.$search.'  OR  a.owner LIKE '.$search.'  OR  a.operator LIKE '.$search.' OR  a.date LIKE '.$search.' )');
             }
         }
-
-        
-
-
-        // Add the list ordering clause.
-        $orderCol = $this->state->get('list.ordering');
-        $orderDirn = $this->state->get('list.direction');
-        if ($orderCol && $orderDirn) {
-            $query->order($db->escape($orderCol . ' ' . $orderDirn));
-        }
-
-        return $query;
+        $query->searchterm =  $search;
+		return $query;
     }
 
     public function getItems() {
-        $items = parent::getItems();
-        
-        return $items;
+        return parent::getItems();
     }
-
+	public function getSearch() {
+		return JRequest::getString( 'search', '','GET' );
+	}
 }
