@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" version="3.0" method="upgrade">
+    <name>Speakers Module</name>
+    <author>Jose Cuenca</author>
+    <creationDate>4 April 2014</creationDate>
+    <copyright>Copyright (c) GPL</copyright>
+    <authorEmail>jose@aviationmedia.aero</authorEmail>
+    <authorUrl>www.aviationmedia.aero</authorUrl>
+    <version>1.0.0</version>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <description>Based on speakers component</description>
+    <files>
+    	<filename>mod_speakers.xml</filename>
+        <filename module="mod_speakers">mod_speakers.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>    
+    </files>
+        <languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_speakers.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_speakers.sys.ini</language>		
+	</languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="moduleclass_sfx" type="text" default="" label="MOD_SPEAKERS_CLASS_SUFFIX" description="MOD_SPEAKERS_CLASS_SUFFIX_DESCRIPTION"/>
+               <field name="itemCount" type="text" size="4" default="all" label="MOD_SPEAKERS_ITEM_COUNT" description="MOD_SPEAKERS_ITEM_COUNT_DESC"/>
+               <field name="layout" type="list" default="name" label="MOD_SPEAKERS_LAYOUT_LABEL" description="MOD_SPEAKERS_LAYOUT_DESC">
+                 <option value="default">Fade Effect</option>
+                 <option value="thumbs">Photo thumbs</option>
+                 </field>
+               <field name="orderby" type="list" default="name" label="MOD_SPEAKERS_ORDERBY_LABEL" description="MOD_SPEAKERS_ORDERBY_DESC">
+                 <option value="name ASC">Name</option>
+                 <option value="surname ASC">Surname</option>
+                 <option value="id ASC">Last added, last shown</option>
+                 <option value="id DESC">Last added, First shown</option>
+                 <option value="ordering ASC">Custom order of backend</option>
+                 <option value="id ASC">default</option> 
+               </field>
+               <field name="linktitle" type="color" default="#eee"
+                       label="MOD_SPEAKERS_LINKTITLE_LABEL"
+                       description="MOD_SPEAKERS_LINKTITLE__DESC" />
+        	</fieldset>
+        </fields>
+    </config>
+</extension>
