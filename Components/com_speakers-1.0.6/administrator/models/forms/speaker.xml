@@ -3,7 +3,9 @@
 	<fieldset>
 
               <field name="id" type="text" default="0" label="COM_SPEAKERS_FORM_LBL_SPEAKER_ID"
+
             readonly="true" class="readonly"
+
             description="JGLOBAL_FIELD_ID_DESC" /> 
 
        <field name="created_by" type="createdby" default="" 
@@ -11,11 +13,15 @@
             description="COM_SPEAKERS_FORM_DESC_SPEAKER_CREATED_BY"  /> 
 
        <field name="name" type="text"
+
                 
             label="COM_SPEAKERS_FORM_LBL_SPEAKER_NAME"
             description="COM_SPEAKERS_FORM_DESC_SPEAKER_NAME" 
+
                 
+
                 
+
                  required="true" 
             menu_published="0"
             class="speaker_name"
@@ -24,86 +30,129 @@
             maxlength="200" /> 
 
        <field name="surname" type="text"
+
                 
             label="COM_SPEAKERS_FORM_LBL_SPEAKER_SURNAME"
             description="COM_SPEAKERS_FORM_DESC_SPEAKER_SURNAME" 
+
                 
+
                 
+
                  required="true" 
             class="speaker_surname"
             filter="string" /> 
 
        <field name="intro_biography" type="editor"
+
                 
             label="COM_SPEAKERS_FORM_LBL_SPEAKER_INTRO_BIOGRAPHY"
             description="COM_SPEAKERS_FORM_DESC_SPEAKER_INTRO_BIOGRAPHY" 
+
                 
+
                 
+
                 
             menu_published="0"
             height="200"
-            filter="string" /> 
+            filter="safehtml" /> 
 
        <field name="full_biography" type="editor"
+
                 
             label="COM_SPEAKERS_FORM_LBL_SPEAKER_FULL_BIOGRAPHY"
             description="COM_SPEAKERS_FORM_DESC_SPEAKER_FULL_BIOGRAPHY" 
+
                 
+
                 
+
                 
             menu_published="0"
             height="200"
-            filter="string" /> 
+            filter="safehtml" /> 
 
        <field name="job_title" type="text"
+
                 
             label="COM_SPEAKERS_FORM_LBL_SPEAKER_JOB_TITLE"
             description="COM_SPEAKERS_FORM_DESC_SPEAKER_JOB_TITLE" 
+
                 
+
                 
+
                 
             filter="string"
             size="200"
             maxlength="200" /> 
 
        <field name="photo" type="media"
+
                 
             label="COM_SPEAKERS_FORM_LBL_SPEAKER_PHOTO"
             description="COM_SPEAKERS_FORM_DESC_SPEAKER_PHOTO" 
+
                 
+
                 
+
                 
             directory="speakers" /> 
 
          <field
+
         name="state"
+
         type="list"
+
         label="JSTATUS"
+
         description="JFIELD_PUBLISHED_DESC"
+
         class="inputbox"
+
         size="1"
+
         default="1">
+
         <option value="1">JPUBLISHED</option>
+
         <option value="0">JUNPUBLISHED</option>
+
     </field> 
 
                         <field name="checked_out" type="hidden" filter="unset" />
+
         <field name="checked_out_time" type="hidden" filter="unset" /> 
 
  </fieldset> 
 
  <fieldset 
+
                         name="accesscontrol">
+
                        <field name="asset_id" type="hidden" filter="unset" />
+
                        <field name="rules"
+
                             type="rules"
+
                             label="JFIELD_RULES_LABEL"
+
                             translate_label="false"
+
                             filter="rules"
+
                             validate="rules"
+
                             class="inputbox"
+
                             component="com_speakers"
+
                             section="speaker"
+
                         />
 
 	</fieldset>
