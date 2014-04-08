@@ -67,3 +67,4 @@ else:
     echo JText::_('COM_SPEAKERS_ITEM_NOT_LOADED');
 endif;
 ?>
+<?php echo $this->navigation; ?>

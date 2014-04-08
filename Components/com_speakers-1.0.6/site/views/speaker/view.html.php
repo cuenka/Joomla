@@ -29,7 +29,7 @@ class SpeakersViewSpeaker extends JViewLegacy {
         
 		$app	= JFactory::getApplication();
         $user		= JFactory::getUser();
-        
+        $this->navigation = $this->get('Navigation');        
         $this->state = $this->get('State');
         $this->item = $this->get('Data');
         $this->params = $app->getParams('com_speakers');
@@ -53,11 +53,39 @@ class SpeakersViewSpeaker extends JViewLegacy {
         }
         
         $this->_prepareDocument();
-
+		$this->navigation = $this->_prepareNavigation($this->navigation,$this->item->id);
         parent::display($tpl);
     }
 
+protected function _prepareNavigation($total, $id){
+	$template ="";
+	echo $total." == ".$id; 
+	if ($total == 0 ){
+	
+	 $template ="";
+	
+	}elseif ($total == $id ){
+	
+	$template .= "<button><a href='". JRoute::_('index.php?option=com_speakers&view=speaker&id='.($id-1))."' >Previous Speaker</a></button>";
+	$template .= "<button><a href='". JRoute::_('index.php?option=com_speakers')."'>See All Speaker</a></button>";
+	
+	}elseif ($id >= 2 ){
+	
+	 $template = "<button><a href='". JRoute::_('index.php?option=com_speakers&view=speaker&id='.($id-1))."' >Previous Speaker</a></button>";
+	 $template .= "<button><a href='". JRoute::_('index.php?option=com_speakers')."'>See All Speaker</a></button>";
+	 $template .= "<button><a href='". JRoute::_('index.php?option=com_speakers&view=speaker&id='.($id+1))."' >Next Speaker</a></button>";
+	
+	}elseif($total != $id || ($id<2 && $id>$total )){
+	
+	$template = "<button><a href='". JRoute::_('index.php?option=com_speakers')."'>See All Speaker</a></button>";
+	$template .= "<button><a href='". JRoute::_('index.php?option=com_speakers&view=speaker&id='.($id+1))."' >Next Speaker</a></button>";
 
+	}
+	
+	
+	return $template;
+
+}
 	/**
 	 * Prepares the document
 	 */
