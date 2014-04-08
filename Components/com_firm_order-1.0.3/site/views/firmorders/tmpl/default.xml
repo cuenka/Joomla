@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_FIRM_ORDER_TITLE_LIST_VIEW_FIRMORDERS" option="View">
+        <message>
+                        <![CDATA[COM_FIRM_ORDER_TITLE_LIST_VIEW_FIRMORDERS_DESC]]>
+        </message>
+	</layout>
+</metadata>
