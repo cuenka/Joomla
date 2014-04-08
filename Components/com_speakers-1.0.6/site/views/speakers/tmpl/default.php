@@ -20,7 +20,8 @@ defined('_JEXEC') or die;
 <?php $show = false; ?>
 
 <? $counter=0; ?>     
-
+<?php $active = JFactory::getApplication()->getMenu()->getActive(); ?>
+<h1 class="itemTitle" style="margin: 0;"><?php echo $active->title; ?></h1>
 
 <?php foreach ($this->items as $item) : ?>
 
