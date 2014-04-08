@@ -88,7 +88,20 @@ class SpeakersModelSpeaker extends JModelItem {
 
         return $this->_item;
     }
-
+	public function getNavigation() {
+	        $db = $this->getDbo();
+	        $query = $db->getQuery(true);
+	        // Select the required fields from the table.
+	        $query->select('count(*) as total')
+	        	  ->from('`#__speaker` AS a')
+	      	 	  ->where($db->quoteName('a.state') . ' = \'1\'');
+	    	$db->setQuery($query);
+	    	 
+	    	// Load the results as a list of stdClass objects (see later for more options on retrieving data).
+	    	$results = $db->loadResult();
+	    	return $results;
+	       
+	       }	
     public function getTable($type = 'Speaker', $prefix = 'SpeakersTable', $config = array()) {
         $this->addTablePath(JPATH_COMPONENT_ADMINISTRATOR . '/tables');
         return JTable::getInstance($type, $prefix, $config);
