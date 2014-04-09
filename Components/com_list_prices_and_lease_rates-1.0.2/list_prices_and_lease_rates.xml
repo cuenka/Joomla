@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_list_prices_and_lease_rates</name>
+    <creationDate>2014-04-09</creationDate>
+    <copyright>Copyright Aviation Media (TM) 2014. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Jose Cuenca</author>
+    <authorEmail>jose@aviationmedia.aero</authorEmail>
+    <authorUrl>http://www.aviationmedia.aero</authorUrl>
+    <version>1.0.2</version>
+    <description>Show information of list prices and lease rates</description>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>list_prices_and_lease_rates.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <languages folder="site">
+        
+			<language tag="en-GB">language/en-GB.com_list_prices_and_lease_rates.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_list_prices_and_lease_rates/assets/images/s_com_list_prices_and_lease_rates.png" >COM_LIST_PRICES_AND_LEASE_RATES</menu>
+        <submenu>
+            
+			<menu link="option=com_list_prices_and_lease_rates&amp;view=listprices" view="listprices" img="components/com_list_prices_and_lease_rates/assets/images/s_listprices.png" alt="List_prices_and_lease_rates/Listprices">COM_LIST_PRICES_AND_LEASE_RATES_TITLE_LISTPRICES</menu>
+
+			<menu link="option=com_list_prices_and_lease_rates&amp;view=importlistpricesandleaserates" view="importlistpricesandleaserates" img="components/com_list_prices_and_lease_rates/assets/images/s_importlistpricesandleaserates.png" alt="List_prices_and_lease_rates/Importlistpricesandleaserates">COM_LIST_PRICES_AND_LEASE_RATES_TITLE_IMPORTLISTPRICESANDLEASERATES</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>list_prices_and_lease_rates.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="administrator">
+            
+			<language tag="en-GB">language/en-GB.com_list_prices_and_lease_rates.ini</language>
+			<language tag="en-GB">language/en-GB.com_list_prices_and_lease_rates.sys.ini</language>
+        </languages>
+    </administration>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->
