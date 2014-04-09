@@ -16,12 +16,21 @@ defined('_JEXEC') or die;
         }
     }
 </script>
-<form name="searchForm" id="searchForm"  method="get" class="form-inline" action="<?php echo JURI::current(); ?>"  >
-<input type="text" name="search" value="<?php echo $this->searchterm; ?>" />
-<input type="submit" value="submit" />
-<input type="reset" value="clean search" />
+
+
+<div style="clear: both;"></div>
+<?php if ($this->params->get('Supliedby')): ?>
+<div style="float: right;">
+<img src="<?php echo $this->params->get('imageSupliedby');  ?>" alt="suplied by Logo" />
+</div>
+<?php endif; ?>
+<div style="float: left;"></div>
+<form name="searchForm" id="searchForm"  method="get" class="form-inline" action="<?php echo JURI::current(); ?>" style="margin: 50px 0px 0px;" >
+<input type="text" name="search" value="" class="form-control"/>
+<input type="submit" value="Search" class="btn btn-default"/>
+<input type="reset" value="Reset" class="btn btn-default"/>
 </form>
-    <div
+ <div style="clear: both;"></div> 
 <div class="items">
 
 <?php $show = false; ?>
@@ -110,12 +119,21 @@ defined('_JEXEC') or die;
    
 </div>
 <?php if ($show): ?>
-    <div class="pagination">
+    <div class="pagination" style="float: left;margin: 5px 0px 5px;">
         <p class="counter">
             <?php echo $this->pagination->getPagesCounter(); ?>
         </p>
         <?php echo $this->pagination->getPagesLinks(); ?>
     </div>
+    <?php if ($this->params->get('whatbanner')!=null): ?>
+    <?php
+    $Banner = explode("|", $this->params->get('whatbanner'));
+    $ban =json_decode($Banner[0]);
+    ?>
+    <div style="float: right;margin: 5px 0px 5px;">
+    <a href="<?php echo $Banner[0]; ?>" alt="banner Data"><img src="<?php echo $ban->imageurl; ?>" alt="banner" /></a>
+    </div>
+    <?php endif; ?>
 <?php endif; ?>
 
 

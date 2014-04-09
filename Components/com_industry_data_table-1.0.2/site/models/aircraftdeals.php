@@ -24,7 +24,7 @@ class Industry_data_tableModelAircraftdeals extends JModelList {
      * @since    1.6
      */
     public function __construct($config = array()) {
-        $config['filter_fields'] = array('msn','manufacturer','model','event','owner');
+        $config['filter_fields'] = array('msn','manufacturer','model','event','owner','operator','date');
         parent::__construct($config);
         
     }
@@ -81,15 +81,19 @@ class Industry_data_tableModelAircraftdeals extends JModelList {
         $query->from('`#__industry_data_table_aircraft_deals` AS a');
 
         
+
     // Join over the users for the checked out user.
+
     $query->select('uc.name AS editor');
+
     $query->join('LEFT', '#__users AS uc ON uc.id=a.checked_out');
+
     
 		// Join over the created by field 'created_by'
 		$query->select('created_by.name AS created_by');
 		$query->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
-        $query->order($db->escape($this->getState('list.ordering', 'default_sort_column')).' '.
-                       $db->escape($this->getState('list.direction', 'ASC')));
+        $query->order($db->escape($this->getState('list.ordering', 'date')).' '.
+                       $db->escape($this->getState('list.direction', 'DESC')));
         
 
         // Filter by search in title
@@ -99,7 +103,7 @@ class Industry_data_tableModelAircraftdeals extends JModelList {
                 $query->where('a.id = ' . (int) substr($search, 3));
             } else {
                 $search = $db->Quote('%' . $db->escape($search, true) . '%');
-                $query->where('( a.msn LIKE '.$search.'  OR  a.manufacturer LIKE '.$search.'  OR  a.model LIKE '.$search.'  OR  a.event LIKE '.$search.'  OR  a.owner LIKE '.$search.'  OR  a.operator LIKE '.$search.' )');
+                $query->where('( a.msn LIKE '.$search.'  OR  a.manufacturer LIKE '.$search.'  OR  a.model LIKE '.$search.'  OR  a.event LIKE '.$search.'  OR  a.owner LIKE '.$search.'  OR  a.operator LIKE '.$search.' OR  a.date LIKE '.$search.' )');
             }
         }
         $query->searchterm =  $search;
