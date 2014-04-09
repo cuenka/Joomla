@@ -53,10 +53,11 @@ class Firm_orderViewFirmorders extends JViewLegacy
 		$app	= JFactory::getApplication();
 		$menus	= $app->getMenu();
 		$title	= null;
-
+		
 		// Because the application sets a default page title,
 		// we need to get it from the menu item itself
 		$menu = $menus->getActive();
+		$this->Pagetitle = $menu->title;
 		if($menu)
 		{
 			$this->params->def('page_heading', $this->params->get('page_title', $menu->title));

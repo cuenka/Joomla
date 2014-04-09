@@ -89,8 +89,8 @@ class Firm_orderModelFirmorders extends JModelList {
 		// Join over the created by field 'created_by'
 		$query->select('created_by.name AS created_by');
 		$query->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
-        $query->order($db->escape($this->getState('list.ordering', 'default_sort_column')).' '.
-                       $db->escape($this->getState('list.direction', 'ASC')));
+        $query->order($db->escape($this->getState('list.ordering', 'orderdate')).' '.
+                       $db->escape($this->getState('list.direction', 'DESC')));
         
 
         // Filter by search in title
