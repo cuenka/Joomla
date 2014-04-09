@@ -17,7 +17,7 @@ defined('_JEXEC') or die;
     }
 </script>
 
-
+<h1><?php echo $this->Pagetitle;?></h1>
 <div style="clear: both;"></div>
 <?php if ($this->params->get('Supliedby')): ?>
 <div style="float: right;">
