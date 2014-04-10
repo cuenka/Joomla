@@ -2,7 +2,7 @@
 
 /**
  * @version     1.0.2
- * @package     com_list_prices_and_lease_rates
+ * @package     com_engine_data
  * @copyright   Copyright Aviation Media (TM) 2014. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @author      Jose Cuenca <jose@aviationmedia.aero> - http://www.aviationmedia.aero
@@ -12,9 +12,9 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.modellist');
 
 /**
- * Methods supporting a list of List_prices_and_lease_rates records.
+ * Methods supporting a list of Engine_data records.
  */
-class List_prices_and_lease_ratesModelListprices extends JModelList {
+class Engine_dataModelEnginedata extends JModelList {
 
     /**
      * Constructor.
@@ -30,15 +30,11 @@ class List_prices_and_lease_ratesModelListprices extends JModelList {
                 'ordering', 'a.ordering',
                 'state', 'a.state',
                 'created_by', 'a.created_by',
-                'manufacturer', 'a.manufacturer',
-                'avglistprice', 'a.avglistprice',
                 'type', 'a.type',
-                'cmv_oldest', 'a.cmv_oldest',
-                'cmv_newest', 'a.cmv_newest',
-                'cmv_change', 'a.cmv_change',
-                'dlr_oldest', 'a.dlr_oldest',
-                'dlr_newest', 'a.dlr_newest',
-                'dlr_change', 'a.dlr_change',
+                'engine', 'a.engine',
+                'full_life_mkt_value', 'a.full_life_mkt_value',
+                'current_half_life_mkt_value', 'a.current_half_life_mkt_value',
+                'mkt_lease_rate', 'a.mkt_lease_rate',
                 'date', 'a.date',
 
             );
@@ -66,11 +62,11 @@ class List_prices_and_lease_ratesModelListprices extends JModelList {
         
 
         // Load the parameters.
-        $params = JComponentHelper::getParams('com_list_prices_and_lease_rates');
+        $params = JComponentHelper::getParams('com_engine_data');
         $this->setState('params', $params);
 
         // List state information.
-        parent::populateState('a.manufacturer', 'asc');
+        parent::populateState('a.type', 'asc');
     }
 
     /**
@@ -109,7 +105,7 @@ class List_prices_and_lease_ratesModelListprices extends JModelList {
                         'list.select', 'a.*'
                 )
         );
-        $query->from('`#__com_list_prices_and_lease_rate` AS a');
+        $query->from('`#__com_engine_data` AS a');
 
         
 		// Join over the users for the checked out user
@@ -136,7 +132,7 @@ class List_prices_and_lease_ratesModelListprices extends JModelList {
                 $query->where('a.id = ' . (int) substr($search, 3));
             } else {
                 $search = $db->Quote('%' . $db->escape($search, true) . '%');
-                $query->where('( a.manufacturer LIKE '.$search.'  OR  a.avglistprice LIKE '.$search.'  OR  a.type LIKE '.$search.'  OR  a.cmv_oldest LIKE '.$search.'  OR  a.cmv_newest LIKE '.$search.'  OR  a.cmv_change LIKE '.$search.'  OR  a.dlr_oldest LIKE '.$search.'  OR  a.dlr_newest LIKE '.$search.'  OR  a.dlr_change LIKE '.$search.'  OR  a.date '.$search.' )');
+                $query->where('( a.type LIKE '.$search.'  OR  a.engine LIKE '.$search.'  OR  a.full_life_mkt_value LIKE '.$search.'  OR  a.current_half_life_mkt_value LIKE '.$search.'  OR  a.mkt_lease_rate LIKE '.$search.'  OR  a.date LIKE '.$search.' )');
             }
         }
 

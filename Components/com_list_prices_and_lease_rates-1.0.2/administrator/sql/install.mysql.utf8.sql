@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS `#__com_list_prices_and_lease_rate` (
 `dlr_oldest` VARCHAR(255)  NOT NULL ,
 `dlr_newest` VARCHAR(255)  NOT NULL ,
 `dlr_change` VARCHAR(255)  NOT NULL ,
+
+`date` VARCHAR(255)  NOT NULL ,
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8_general_ci;
-

@@ -38,17 +38,23 @@ defined('_JEXEC') or die;
 <form id="adminForm" method="post" name="adminForm">
 <table class="table table-striped" style="-webkit-user-select: none;-khtml-user-select: none; -moz-user-select: -moz-none; -ms-user-select: none; user-select: none;" oncontextmenu='alert("Unauthorised use and/or duplication of this material without express and written permission from www.afm.aero is strictly prohibited.");return false;'>
       <thead>
+      	<tr>
+      	<th colspan="3"></th>
+      	<th colspan="3" style="border-left: 1px solid #fff;border-right: 1px solid #fff;">Current Market Value</th>
+      	<th colspan="3" >Dry Lease Rate</th>
+        <th style="border-left: 1px solid #fff;"></th>
         <tr>
           <th><?php echo JHTML::_( 'grid.sort', 'MANUFACTURER <i class="fa fa-sort"></i>', 'manufacturer', $this->sortDirection, $this->sortColumn); ?></th>
           <th><?php echo JHTML::_( 'grid.sort', 'AVG LIST PRICE <i class="fa fa-sort"></i>', 'avglistprice', $this->sortDirection, $this->sortColumn); ?></th>
           <th><?php echo JHTML::_( 'grid.sort', 'TYPE <i class="fa fa-sort"></i>', 'type', $this->sortDirection, $this->sortColumn); ?></th>
-          <th><?php echo JHTML::_( 'grid.sort', 'OLDEST <i class="icon-resize-vertical fa fa-sort"></i>', 'cmv_oldest', $this->sortDirection, $this->sortColumn); ?></th>
+          <th style="border-left: 1px solid #fff;"><?php echo JHTML::_( 'grid.sort', 'OLDEST <i class="icon-resize-vertical fa fa-sort"></i>', 'cmv_oldest', $this->sortDirection, $this->sortColumn); ?></th>
 
           <th><?php echo JHTML::_( 'grid.sort', 'NEWEST <i class="icon-resize-vertical fa fa-sort"></i>', 'cmv_newest', $this->sortDirection, $this->sortColumn); ?></th>
           <th><?php echo JHTML::_( 'grid.sort', '% CHANGE <i class="icon-resize-vertical fa fa-sort"></i>', 'cmv_change', $this->sortDirection, $this->sortColumn); ?></th>
-          <th><?php echo JHTML::_( 'grid.sort', 'OLDEST <i class="icon-resize-vertical fa fa-sort"></i>', 'dlr_oldest', $this->sortDirection, $this->sortColumn); ?></th>
+          <th style="border-left: 1px solid #fff;"><?php echo JHTML::_( 'grid.sort', 'OLDEST <i class="icon-resize-vertical fa fa-sort"></i>', 'dlr_oldest', $this->sortDirection, $this->sortColumn); ?></th>
            <th><?php echo JHTML::_( 'grid.sort', 'NEWEST <i class="icon-resize-vertical fa fa-sort"></i>', 'dlr_newest', $this->sortDirection, $this->sortColumn); ?></th>
           <th><?php echo JHTML::_( 'grid.sort', '% CHANGE <i class="icon-resize-vertical fa fa-sort"></i>', 'dlr_change', $this->sortDirection, $this->sortColumn); ?></th>
+          <th style="border-left: 1px solid #fff;"><?php echo JHTML::_( 'grid.sort', 'AS OF DATE <i class="icon-resize-vertical fa fa-sort"></i>', 'date', $this->sortDirection, $this->sortColumn); ?></th>
         </tr>
        </thead>
        <tbody>
@@ -94,6 +100,7 @@ defined('_JEXEC') or die;
 	  <td><?php echo $item->dlr_oldest; ?></td>
 	  <td><?php echo $item->dlr_newest; ?></td>
 	  <td><?php echo $item->dlr_change; ?></td>
+	  <td><?php echo $item->date; ?></td>
 	 </tr>
 <?php endforeach; ?>
   </tbody>

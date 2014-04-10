@@ -1,7 +1,7 @@
 <?php
 /**
  * @version     1.0.2
- * @package     com_list_prices_and_lease_rates
+ * @package     com_engine_data
  * @copyright   Copyright Aviation Media (TM) 2014. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @author      Jose Cuenca <jose@aviationmedia.aero> - http://www.aviationmedia.aero
@@ -17,17 +17,17 @@ JHtml::_('formbehavior.chosen', 'select');
 
 // Import CSS
 $document = JFactory::getDocument();
-$document->addStyleSheet('components/com_list_prices_and_lease_rates/assets/css/list_prices_and_lease_rates.css');
+$document->addStyleSheet('components/com_engine_data/assets/css/engine_data.css');
 
 $user	= JFactory::getUser();
 $userId	= $user->get('id');
 $listOrder	= $this->state->get('list.ordering');
 $listDirn	= $this->state->get('list.direction');
-$canOrder	= $user->authorise('core.edit.state', 'com_list_prices_and_lease_rates');
+$canOrder	= $user->authorise('core.edit.state', 'com_engine_data');
 $saveOrder	= $listOrder == 'a.ordering';
 if ($saveOrder)
 {
-	$saveOrderingUrl = 'index.php?option=com_list_prices_and_lease_rates&task=listprices.saveOrderAjax&tmpl=component';
+	$saveOrderingUrl = 'index.php?option=com_engine_data&task=enginedata.saveOrderAjax&tmpl=component';
 	JHtml::_('sortablelist.sortable', 'List', 'adminForm', strtolower($listDirn), $saveOrderingUrl);
 }
 $sortFields = $this->getSortFields();
@@ -53,7 +53,7 @@ if (!empty($this->extra_sidebar)) {
 }
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_list_prices_and_lease_rates&view=listprices'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_engine_data&view=enginedata'); ?>" method="post" name="adminForm" id="adminForm">
 <?php if(!empty($this->sidebar)): ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -111,35 +111,24 @@ if (!empty($this->extra_sidebar)) {
                 <?php endif; ?>
                     
 				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_LIST_PRICES_AND_LEASE_RATES_LISTPRICES_MANUFACTURER', 'a.manufacturer', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'COM_ENGINE_DATA_ENGINEDATA_TYPE', 'a.type', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_LIST_PRICES_AND_LEASE_RATES_LISTPRICES_AVGLISTPRICE', 'a.avglistprice', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'COM_ENGINE_DATA_ENGINEDATA_ENGINE', 'a.engine', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_LIST_PRICES_AND_LEASE_RATES_LISTPRICES_TYPE', 'a.type', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'COM_ENGINE_DATA_ENGINEDATA_FULL_LIFE_MKT_VALUE', 'a.full_life_mkt_value', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_LIST_PRICES_AND_LEASE_RATES_LISTPRICES_CMV_OLDEST', 'a.cmv_oldest', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'COM_ENGINE_DATA_ENGINEDATA_CURRENT_HALF_LIFE_MKT_VALUE', 'a.current_half_life_mkt_value', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_LIST_PRICES_AND_LEASE_RATES_LISTPRICES_CMV_NEWEST', 'a.cmv_newest', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'COM_ENGINE_DATA_ENGINEDATA_MKT_LEASE_RATE', 'a.mkt_lease_rate', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_LIST_PRICES_AND_LEASE_RATES_LISTPRICES_CMV_CHANGE', 'a.cmv_change', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort',  'COM_ENGINE_DATA_ENGINEDATA_DATE', 'a.date', $listDirn, $listOrder); ?>
 				</th>
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_LIST_PRICES_AND_LEASE_RATES_LISTPRICES_DLR_OLDEST', 'a.dlr_oldest', $listDirn, $listOrder); ?>
-				</th>
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_LIST_PRICES_AND_LEASE_RATES_LISTPRICES_DLR_NEWEST', 'a.dlr_newest', $listDirn, $listOrder); ?>
-				</th>
-				<th class='left'>
-				<?php echo JHtml::_('grid.sort',  'COM_LIST_PRICES_AND_LEASE_RATES_LISTPRICES_DLR_CHANGE', 'a.dlr_change', $listDirn, $listOrder); ?>
-				</th>
-                 <th class='left'>
-                 <?php echo JHtml::_('grid.sort',  'COM_LIST_PRICES_AND_LEASE_RATES_LISTPRICES_DATE', 'a.date', $listDirn, $listOrder); ?>
-                 </th>   
+                    
                     
                 <?php if (isset($this->items[0]->id)): ?>
 					<th width="1%" class="nowrap center hidden-phone">
@@ -166,10 +155,10 @@ if (!empty($this->extra_sidebar)) {
 			<tbody>
 			<?php foreach ($this->items as $i => $item) :
 				$ordering   = ($listOrder == 'a.ordering');
-                $canCreate	= $user->authorise('core.create',		'com_list_prices_and_lease_rates');
-                $canEdit	= $user->authorise('core.edit',			'com_list_prices_and_lease_rates');
-                $canCheckin	= $user->authorise('core.manage',		'com_list_prices_and_lease_rates');
-                $canChange	= $user->authorise('core.edit.state',	'com_list_prices_and_lease_rates');
+                $canCreate	= $user->authorise('core.create',		'com_engine_data');
+                $canEdit	= $user->authorise('core.edit',			'com_engine_data');
+                $canCheckin	= $user->authorise('core.manage',		'com_engine_data');
+                $canChange	= $user->authorise('core.edit.state',	'com_engine_data');
 				?>
 				<tr class="row<?php echo $i % 2; ?>">
                     
@@ -198,57 +187,42 @@ if (!empty($this->extra_sidebar)) {
 					</td>
                 <?php if (isset($this->items[0]->state)): ?>
 					<td class="center">
-						<?php echo JHtml::_('jgrid.published', $item->state, $i, 'listprices.', $canChange, 'cb'); ?>
+						<?php echo JHtml::_('jgrid.published', $item->state, $i, 'enginedata.', $canChange, 'cb'); ?>
 					</td>
                 <?php endif; ?>
                     
 				<td>
 				<?php if (isset($item->checked_out) && $item->checked_out) : ?>
-					<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'listprices.', $canCheckin); ?>
+					<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'enginedata.', $canCheckin); ?>
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
-					<a href="<?php echo JRoute::_('index.php?option=com_list_prices_and_lease_rates&task=.edit&id='.(int) $item->id); ?>">
-					<?php echo $this->escape($item->manufacturer); ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_engine_data&task=.edit&id='.(int) $item->id); ?>">
+					<?php echo $this->escape($item->type); ?></a>
 				<?php else : ?>
-					<?php echo $this->escape($item->manufacturer); ?>
+					<?php echo $this->escape($item->type); ?>
 				<?php endif; ?>
 				</td>
 				<td>
 
-					<?php echo $item->avglistprice; ?>
+					<?php echo $item->engine; ?>
 				</td>
 				<td>
 
-					<?php echo $item->type; ?>
+					<?php echo $item->full_life_mkt_value; ?>
 				</td>
 				<td>
 
-					<?php echo $item->cmv_oldest; ?>
+					<?php echo $item->current_half_life_mkt_value; ?>
 				</td>
 				<td>
 
-					<?php echo $item->cmv_newest; ?>
-				</td>
-				<td>
-
-					<?php echo $item->cmv_change; ?>
-				</td>
-				<td>
-
-					<?php echo $item->dlr_oldest; ?>
-				</td>
-				<td>
-
-					<?php echo $item->dlr_newest; ?>
-				</td>
-				<td>
-
-					<?php echo $item->dlr_change; ?>
+					<?php echo $item->mkt_lease_rate; ?>
 				</td>
 				<td>
 
 					<?php echo $item->date; ?>
 				</td>
+
 
                 <?php if (isset($this->items[0]->id)): ?>
 					<td class="center hidden-phone">

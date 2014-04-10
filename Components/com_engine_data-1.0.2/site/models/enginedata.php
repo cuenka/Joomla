@@ -2,7 +2,7 @@
 
 /**
  * @version     1.0.2
- * @package     com_list_prices_and_lease_rates
+ * @package     com_engine_data
  * @copyright   Copyright Aviation Media (TM) 2014. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @author      Jose Cuenca <jose@aviationmedia.aero> - http://www.aviationmedia.aero
@@ -12,9 +12,9 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.modellist');
 
 /**
- * Methods supporting a list of List_prices_and_lease_rates records.
+ * Methods supporting a list of Engine_data records.
  */
-class List_prices_and_lease_ratesModelListprices extends JModelList {
+class Engine_dataModelEnginedata extends JModelList {
 
     /**
      * Constructor.
@@ -24,7 +24,6 @@ class List_prices_and_lease_ratesModelListprices extends JModelList {
      * @since    1.6
      */
     public function __construct($config = array()) {
-      $config['filter_fields'] = array('manufacturer', 'avglistprice', 'type', 'cmv_oldest', 'cmv_newest', 'cmv_change', 'dlr_oldest', 'dlr_newest', 'dlr_change', 'date');
         parent::__construct($config);
     }
 
@@ -39,7 +38,7 @@ class List_prices_and_lease_ratesModelListprices extends JModelList {
 
         // Initialise variables.
         $app = JFactory::getApplication();
-		parent::populateState('default_column_name', 'ASC');
+
         // List state information
         $limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->getCfg('list_limit'));
         $this->setState('list.limit', $limit);
@@ -63,9 +62,6 @@ class List_prices_and_lease_ratesModelListprices extends JModelList {
      * @since	1.6
      */
     protected function getListQuery() {
-    	//searchBOX
-    	$search = JRequest::getString( 'search', '','GET' );
-    	
         // Create a new query object.
         $db = $this->getDbo();
         $query = $db->getQuery(true);
@@ -77,43 +73,36 @@ class List_prices_and_lease_ratesModelListprices extends JModelList {
                 )
         );
 
-        $query->from('`#__com_list_prices_and_lease_rate` AS a');
+        $query->from('`#__com_engine_data` AS a');
 
         
-
     // Join over the users for the checked out user.
-
     $query->select('uc.name AS editor');
-
     $query->join('LEFT', '#__users AS uc ON uc.id=a.checked_out');
-
     
 		// Join over the created by field 'created_by'
 		$query->select('created_by.name AS created_by');
 		$query->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
-        $query->order($db->escape($this->getState('list.ordering', 'date')).' '.
-                       $db->escape($this->getState('list.direction', 'DESC')));
+        
 
         // Filter by search in title
-        //$search = $this->getState('filter.search');
+        $search = $this->getState('filter.search');
         if (!empty($search)) {
             if (stripos($search, 'id:') === 0) {
                 $query->where('a.id = ' . (int) substr($search, 3));
             } else {
                 $search = $db->Quote('%' . $db->escape($search, true) . '%');
-                $query->where('( a.manufacturer LIKE '.$search.'  OR  a.avglistprice LIKE '.$search.'  OR  a.type LIKE '.$search.'  OR  a.cmv_oldest LIKE '.$search.'  OR  a.cmv_newest LIKE '.$search.'  OR  a.cmv_change LIKE '.$search.'  OR  a.dlr_oldest LIKE '.$search.'  OR  a.dlr_newest LIKE '.$search.'  OR  a.dlr_change LIKE '.$search.'  OR  a.date LIKE '.$search.' )');
+                $query->where('( a.type LIKE '.$search.'  OR  a.engine LIKE '.$search.'  OR  a.full_life_mkt_value LIKE '.$search.'  OR  a.current_half_life_mkt_value LIKE '.$search.'  OR  a.mkt_lease_rate LIKE '.$search.'  OR  a.date LIKE '.$search.' )');
             }
         }
 
         
-      $query->searchterm =  $search;
+
         return $query;
     }
 
     public function getItems() {
         return parent::getItems();
     }
-	public function getSearch() {
-	return JRequest::getString( 'search', '','GET' );
-}
+
 }
