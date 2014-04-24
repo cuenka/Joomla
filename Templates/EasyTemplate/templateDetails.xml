@@ -33,7 +33,7 @@
 	</files>
 	
 	<languages folder="language"><!-- no need to change -->
-		<language tag="en-GB">en-GB.TPL_EASYTEMPLATE.ini</language>
+		<language tag="en-GB">en-GB.tpl_easytemplate.ini</language>
 	</languages>
 	
 	<positions><!-- define the positions for modules here -->
