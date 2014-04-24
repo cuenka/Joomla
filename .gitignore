@@ -208,7 +208,6 @@ administrator/templates/bluestork/*
 administrator/templates/hathor/*
 administrator/templates/system/*
 administrator/templates/index.html
-administrator/index.php
 cache/*
 components/com_banners/*
 components/com_contact/*
@@ -391,6 +390,5 @@ templates/system/*
 templates/index.html
 tmp/*
 configuration.php
-index.php
 joomla.xml
 *.txt
