@@ -10,5 +10,5 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 	</a>
 </div>
 <?php endforeach; ?>
-
+<div class="sponsors-home"><a href="/China/sponsorship-opportunities" target="_self" title="Click" here="" to="" become="" a="" sponsor="" rel="follow"><img alt="CLICK-TO-SPONSOR" src="/China/images/logos/CLICK-TO-SPONSOR.gif" width="110" height="80" 110px="" height:="" 80px=""></a></div>
 

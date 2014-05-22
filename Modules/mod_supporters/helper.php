@@ -21,7 +21,7 @@ class modsupportersHelper
 	        // Select the required fields from the table.
 	       $query->select('website,logo,company');
 	       $query->from('#__supporters_list');
-	       //$query->order($order);        
+	       $query->where('state = 1' );	       
 	  	   $db->setQuery((string)$query);
 	  	   $result = $db->loadObjectList();
 	
