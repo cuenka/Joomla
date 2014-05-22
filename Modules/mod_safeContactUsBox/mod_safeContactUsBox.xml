@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0.0" client="site" method="upgrade">
+    <name>Contact us box</name>
+    <author>Jose Cuenca</author>
+    <version>1.2.2</version>
+    <description>Display a list of contacts where the email is cloak.</description>
+    <files>
+        <filename>mod_safeContactUsBox.xml</filename>
+        <filename module="mod_safeContactUsBox" label="PageSuite Mini Flip">mod_safeContactUsBox.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <languages>
+		<language tag="en-GB">en-GB.mod_safeContactUsBox.ini</language>
+	</languages>
+    <config>
+		<fields name="params">
+		    <fieldset name="Basic">
+ 	       		<field name="Name" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
+        		<field name="Position" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
+        		<field name="Email" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+          		<field name="Phone" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+        	</fieldset> 
+ 		   <fieldset name="First Contact">
+ 	       		<field name="Name1" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
+        		<field name="Position1" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
+        		<field name="Email1" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+          		<field name="Phone1" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+        	</fieldset>
+ 		   <fieldset name="Second Contact">
+ 	       		<field name="Name2" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
+        		<field name="Position2" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
+        		<field name="Email2" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+          		<field name="Phone2" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+        	</fieldset>
+ 		   <fieldset name="Third Contact">
+ 	       		<field name="Name3" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
+        		<field name="Position3" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
+        		<field name="Email3" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+          		<field name="Phone3" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+        	</fieldset>
+ 		   <fieldset name="Fourth Contact">
+ 	       		<field name="Name4" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
+        		<field name="Position4" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
+        		<field name="Email4" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+          		<field name="Phone4" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+        	</fieldset>     
+   	        	        	
+        </fields>
+    </config>
+</extension>
