@@ -90,6 +90,7 @@ class SupportersModelLists extends JModelList {
 		// Join over the category 'category'
 		$query->select('category.title AS category_title');
 		$query->join('LEFT', '#__categories AS category ON category.id = a.category');
+        $query->where('a.state = 1' );
         $query->order('ordering ASC');  
 
         // Filter by search in title
