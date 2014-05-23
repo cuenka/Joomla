@@ -86,6 +86,7 @@ class DownloadModelDownloads extends JModelList {
 		// Join over the category 'category'
 		$query->select('category.title AS category_title');
 		$query->join('LEFT', '#__categories AS category ON category.id = a.category');
+        $query->where('state=1');
         $query->order('ordering ASC');        
 
         // Filter by search in title
@@ -104,11 +105,13 @@ class DownloadModelDownloads extends JModelList {
         return $query;
     }
 	public function preper_banners($Arr) {
+
 		foreach ($Arr as $key => $value) {
 			if ($value->banner=="YES") {
 				$value->pathBanner = DownloadModelDownloads::get_string_between($value->whatbanner, "banners\/","\",\"width");
 				$matches = explode("}",$value->whatbanner); 
 				$value->ClickBanner = $matches[1];
+				echo $value->pathBanner;
 			}
 		}
 		
@@ -118,6 +121,7 @@ class DownloadModelDownloads extends JModelList {
 	//ADD ClickBanner and pathBanner for Banner Option
     public function getItems() {
     	$this->items = DownloadModelDownloads::preper_banners(parent::getItems());   
+        
         return parent::getItems();
     }
     

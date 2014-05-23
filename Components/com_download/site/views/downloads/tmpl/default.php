@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
         }
     }
 </script>
-
+<h1 style="font-size: 34px;margin-top: 10px;">Download Presentation</h1>
 <?php $show = false; 
 $currentcategory = "Unknown";
 //Path Linkable
@@ -26,7 +26,7 @@ $currentcategory = "Unknown";
        foreach ($this->items as $item) : ?>
               	
 			<?php if ($item->banner=="NO") : ?>
-				<?php if ($item->category_title != $currentcategory) echo "<h1>".$item->category_title."</h1>"; ?>
+				<?php if ($item->category_title != $currentcategory) echo "<h2 style='font-size: 24px;color:#a5cc32'>".$item->category_title."</h2>"; ?>
 				 
 		        <?php if($item->state == 1 || ($item->state == 0 && JFactory::getUser()->authorise('core.edit.own',' com_download'))):
 						$show = true;
@@ -36,7 +36,7 @@ $currentcategory = "Unknown";
 							<h3><?php echo $item->name; ?></h3>
 						</div>			
 						<div style="width: 50%;float: left;">
-							<h3><a href="<?php echo $item->file;?>" target="_blank">DOWNLOAD</a></h3>				
+							<h3><a href="<?php echo JURI::base()."images/Downloads/".$item->file;?>" target="_blank">DOWNLOAD</a></h3>				
 						</div>
 					</div>				
 				<?php endif; ?>

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version     1.1.0
+ * @version     1.2.0
  * @package     com_download
  * @copyright   Aviation Media (TM) Copyright (C) 2014. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -55,7 +55,7 @@ class DownloadControllerFiles extends DownloadController {
      * @return	void
      * @since	1.6
      */
-    public function save() {
+    public function publish() {
         // Check for request forgeries.
         JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
@@ -66,81 +66,33 @@ class DownloadControllerFiles extends DownloadController {
         // Get the user data.
         $data = JFactory::getApplication()->input->get('jform', array(), 'array');
 
-        // Validate the posted data.
-        $form = $model->getForm();
-        if (!$form) {
-            JError::raiseError(500, $model->getError());
-            return false;
-        }
-
-        // Validate the posted data.
-        $data = $model->validate($form, $data);
-
-        // Check for errors.
-        if ($data === false) {
-            // Get the validation messages.
-            $errors = $model->getErrors();
-
-            // Push up to three validation messages out to the user.
-            for ($i = 0, $n = count($errors); $i < $n && $i < 3; $i++) {
-                if ($errors[$i] instanceof Exception) {
-                    $app->enqueueMessage($errors[$i]->getMessage(), 'warning');
-                } else {
-                    $app->enqueueMessage($errors[$i], 'warning');
-                }
-            }
-
-            // Save the data in the session.
-            $app->setUserState('com_download.edit.files.data', JRequest::getVar('jform'), array());
-
-            // Redirect back to the edit screen.
-            $id = (int) $app->getUserState('com_download.edit.files.id');
-            $this->setRedirect(JRoute::_('index.php?option=com_download&view=files&layout=edit&id=' . $id, false));
-            return false;
-        }
-
         // Attempt to save the data.
-        $return = $model->save($data);
+        $return = $model->publish($data['id'], $data['state']);
 
         // Check for errors.
         if ($return === false) {
-            // Save the data in the session.
-            $app->setUserState('com_download.edit.files.data', $data);
-
-            // Redirect back to the edit screen.
-            $id = (int) $app->getUserState('com_download.edit.files.id');
             $this->setMessage(JText::sprintf('Save failed', $model->getError()), 'warning');
-            $this->setRedirect(JRoute::_('index.php?option=com_download&view=files&layout=edit&id=' . $id, false));
-            return false;
-        }
+        } else {
+            // Check in the profile.
+            if ($return) {
+                $model->checkin($return);
+            }
 
+            // Clear the profile id from the session.
+            $app->setUserState('com_entrusters.edit.bid.id', null);
 
-        // Check in the profile.
-        if ($return) {
-            $model->checkin($return);
+            // Redirect to the list screen.
+            $this->setMessage(JText::_('COM_ENTRUSTERS_ITEM_SAVED_SUCCESSFULLY'));
         }
 
         // Clear the profile id from the session.
         $app->setUserState('com_download.edit.files.id', null);
 
-        // Redirect to the list screen.
-        $this->setMessage(JText::_('COM_DOWNLOAD_ITEM_SAVED_SUCCESSFULLY'));
-        $menu = & JSite::getMenu();
-        $item = $menu->getActive();
-        $this->setRedirect(JRoute::_($item->link, false));
-
         // Flush the data from the session.
         $app->setUserState('com_download.edit.files.data', null);
-    }
 
-    function cancel() {
-        $app = JFactory::getApplication();
-        $previousId = (int) $app->getUserState('com_raector_crm.edit.project.id');
-        if ($previousId) {
-            // Get the model.
-            $model = $this->getModel('Project', 'Raector_crmModel');
-            $model->checkin($previousId);
-        }
+        // Redirect to the list screen.
+        $this->setMessage(JText::_('COM_DOWNLOAD_ITEM_SAVED_SUCCESSFULLY'));
         $menu = & JSite::getMenu();
         $item = $menu->getActive();
         $this->setRedirect(JRoute::_($item->link, false));
@@ -157,71 +109,31 @@ class DownloadControllerFiles extends DownloadController {
         // Get the user data.
         $data = JFactory::getApplication()->input->get('jform', array(), 'array');
 
-        // Validate the posted data.
-        $form = $model->getForm();
-        if (!$form) {
-            JError::raiseError(500, $model->getError());
-            return false;
-        }
-
-        // Validate the posted data.
-        $data = $model->validate($form, $data);
-
-        // Check for errors.
-        if ($data === false) {
-            // Get the validation messages.
-            $errors = $model->getErrors();
-
-            // Push up to three validation messages out to the user.
-            for ($i = 0, $n = count($errors); $i < $n && $i < 3; $i++) {
-                if ($errors[$i] instanceof Exception) {
-                    $app->enqueueMessage($errors[$i]->getMessage(), 'warning');
-                } else {
-                    $app->enqueueMessage($errors[$i], 'warning');
-                }
-            }
-
-            // Save the data in the session.
-            $app->setUserState('com_download.edit.files.data', $data);
-
-            // Redirect back to the edit screen.
-            $id = (int) $app->getUserState('com_download.edit.files.id');
-            $this->setRedirect(JRoute::_('index.php?option=com_download&view=files&layout=edit&id=' . $id, false));
-            return false;
-        }
-
         // Attempt to save the data.
-        $return = $model->delete($data);
+        $return = $model->delete($data['id']);
 
         // Check for errors.
         if ($return === false) {
-            // Save the data in the session.
-            $app->setUserState('com_download.edit.files.data', $data);
+            $this->setMessage(JText::sprintf('Delete failed', $model->getError()), 'warning');   
+        } else {
+            // Check in the profile.
+            if ($return) {
+                $model->checkin($return);
+            }
 
-            // Redirect back to the edit screen.
-            $id = (int) $app->getUserState('com_download.edit.files.id');
-            $this->setMessage(JText::sprintf('Delete failed', $model->getError()), 'warning');
-            $this->setRedirect(JRoute::_('index.php?option=com_download&view=files&layout=edit&id=' . $id, false));
-            return false;
+            // Clear the profile id from the session.
+            $app->setUserState('com_download.edit.files.id', null);
+
+            // Flush the data from the session.
+            $app->setUserState('com_download.edit.files.data', null);
+            
+            $this->setMessage(JText::_('COM_DOWNLOAD_ITEM_DELETED_SUCCESSFULLY'));
         }
-
-
-        // Check in the profile.
-        if ($return) {
-            $model->checkin($return);
-        }
-
-        // Clear the profile id from the session.
-        $app->setUserState('com_download.edit.files.id', null);
 
         // Redirect to the list screen.
-        $this->setMessage(JText::_('COM_DOWNLOAD_ITEM_DELETED_SUCCESSFULLY'));
         $menu = & JSite::getMenu();
         $item = $menu->getActive();
         $this->setRedirect(JRoute::_($item->link, false));
-
-        // Flush the data from the session.
-        $app->setUserState('com_download.edit.files.data', null);
     }
 
 }

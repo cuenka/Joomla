@@ -1,6 +1,6 @@
 <?php
 /**
- * @version     1.1.0
+ * @version     1.2.0
  * @package     com_download
  * @copyright   Aviation Media (TM) Copyright (C) 2014. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -23,8 +23,6 @@ class DownloadControllerDownloads extends DownloadController
 	 */
 	public function &getModel($name = 'Downloads', $prefix = 'DownloadModel')
 	{
-		$result = 'Something';
-		echo $result;
 		$model = parent::getModel($name, $prefix, array('ignore_request' => true));
 		return $model;
 	}

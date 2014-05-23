@@ -43,16 +43,12 @@
          <option value="YES">JYES</option>
  </field> 
 
-       <field name="file" type="media"
+       <field name="file" type="filelist"
                 
             label="COM_DOWNLOAD_FORM_LBL_FILES_FILE"
-            description="COM_DOWNLOAD_FORM_DESC_FILES_FILE" 
-                
-                
-                
-            menu_published="0"
-            filter="raw"
-            directory="/images/Downloads" /> 
+            description="COM_DOWNLOAD_FORM_DESC_FILES_FILE"
+            exclude="\.html"             
+            directory="images/Downloads" /> 
 
        <field name="whatbanner" type="sql"
                 

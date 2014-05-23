@@ -1,6 +1,14 @@
 <?php // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
-
+<style>
+.sponsors-home {
+-moz-box-shadow: 0 0 3px 3px #888;
+-webkit-box-shadow: 0 0 3px 3px#888;
+box-shadow: 0 0 3px 3px #888;
+float: left;
+margin: 5px;
+}
+</style>
 
 
 <?php foreach ($supporters as $supporter) : ?>
