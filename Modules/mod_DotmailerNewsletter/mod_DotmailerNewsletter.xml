@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>Dotmailer Newsletter</name>
+    <author>Jose Cuenca</author>
+    <version>1.2.3</version>
+    <description>Connect your Dotmailer address books with your Joomla! site.</description>
+    <files>
+        <filename>mod_DotmailerNewsletter.xml</filename>
+        <filename module="mod_DotmailerNewsletter" label="Dotmailer Newsletter">mod_DotmailerNewsletter.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <folder>language</folder>
+    </files>
+    <languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_DotmailerNewsletter.ini</language>
+	</languages>
+    <config>
+		<fields name="params">
+ 		   <fieldset name="basic">
+ 		   		<field name="header" type="text" default="" label="MOD_DOTMAILERNEWSLETTER_HEADER_LABEL" description="MOD_DOTMAILERNEWSLETTER_HEADER_DESC"/>
+ 	       		<field name="addressbookid" type="text" default="" label="MOD_DOTMAILERNEWSLETTER_ADDRESSBOOKID_LABEL" description="MOD_DOTMAILERNEWSLETTER_ADDRESSBOOKID_DESC"/>
+        		<field name="userid" type="text" default="" label="MOD_DOTMAILERNEWSLETTER_USERID_LABEL" description="MOD_DOTMAILERNEWSLETTER_USERID_DESC"/>
+				<field name="thankyoupage" type="text" default="" label="MOD_DOTMAILERNEWSLETTER_THANKYOU_LABEL" description="MOD_DOTMAILERNEWSLETTER_THANKYOU_DESC"/>
+        		<field name="backgroundcolour" type="color" default=""
+        		        label="MOD_DOTMAILERNEWSLETTER_BGC_LABEL"
+        		        description="MOD_DOTMAILERNEWSLETTER_BGC_LABEL" />
+        		 <field name="fontcolour" type="color" default=""
+        		         label="MOD_DOTMAILERNEWSLETTER_FONT_LABEL"
+        		         description="MOD_DOTMAILERNEWSLETTER_FONT_LABEL" />       
+        	</fieldset>
+			<fieldset name="Form_Options" label="MOD_DOTMAILERNEWSLETTER_FORM_LABEL">
+				<field name="date" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_DOTMAILERNEWSLETTER_DATE_LABEL" description="MOD_DOTMAILERNEWSLETTER_DATE_DESC">
+				  <option value="0">JNO</option>
+				  <option value="1">JYES</option>
+				</field>
+				<field name="firstname" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_DOTMAILERNEWSLETTER_FIRSTNAME_LABEL" description="MOD_DOTMAILERNEWSLETTER_FIRSTNAME_DESC">
+				  <option value="0">JNO</option>
+				  <option value="1">JYES</option>
+				</field>
+				<field name="lastname" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_DOTMAILERNEWSLETTER_LASTNAME_LABEL" description="MOD_DOTMAILERNEWSLETTER_LASTNAME_DESC">
+				  <option value="0">JNO</option>
+				  <option value="1">JYES</option>
+				</field>
+				<field name="fullname" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_DOTMAILERNEWSLETTER_FULLNAME_LABEL" description="MOD_DOTMAILERNEWSLETTER_FULLNAME_DESC">
+				  <option value="0">JNO</option>
+				  <option value="1">JYES</option>
+				</field>
+				<field name="gender" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_DOTMAILERNEWSLETTER_GENDER_LABEL" description="MOD_DOTMAILERNEWSLETTER_GENDER_DESC">
+				  <option value="0">JNO</option>
+				  <option value="1">JYES</option>
+				</field>
+				<field name="postcode" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_DOTMAILERNEWSLETTER_POSTCODE_LABEL" description="MOD_DOTMAILERNEWSLETTER_POSTCODE_DESC">
+				  <option value="0">JNO</option>
+				  <option value="1">JYES</option>
+				</field>				
+			</fieldset>
+        </fields>
+    </config>
+</extension>

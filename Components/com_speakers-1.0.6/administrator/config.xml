@@ -9,7 +9,8 @@
              type="radio"
              default="0"
              label="COM_SPEAKERS_BOOTSTRAP_LABEL"
-             description="COM_SPEAKERS__BOOTSTRAP_DESC">
+             description="COM_SPEAKERS_BOOTSTRAP_DESC"
+             class="radio btn-group btn-group-yesno" >
                  <option value="1">JYES</option>
                  <option value="0">JNO</option>
          </field>
@@ -37,7 +38,8 @@
 	     type="radio"
 	     default="0"
 	     label="COM_SPEAKERS_TITLEABOVE_LABEL"
-	     description="COM_SPEAKERS_TITLEABOVE_DESC">
+	     description="COM_SPEAKERS_TITLEABOVE_DESC"
+	     class="radio btn-group btn-group-yesno">
 	         <option value="1">JYES</option>
 	         <option value="0">JNO</option>
 	 </field>
@@ -45,7 +47,7 @@
 	      type="list"
 	      default="medium"
 	      label="COM_SPEAKERS_PHOTOSIZE_LABEL"
-	      description="COM_SPEAKERS__PHOTOSIZE_DESC">
+	      description="COM_SPEAKERS_PHOTOSIZE_DESC">
 	          <option value="small">Small</option>
 	          <option value="medium">Medium</option>
 	          <option value="large">Large</option>
@@ -55,7 +57,7 @@
 	     type="list"
 	     default="Above"
 	     label="COM_SPEAKERS_POSITIONPHOTO_LABEL"
-	     description="COM_SPEAKERS__POSITIONPHOTO_DESC">
+	     description="COM_SPEAKERS_POSITIONPHOTO_DESC">
 	         <option value="Above">Above Intro Text</option>
 	         <option value="Left">Force left</option>
 	         <option value="Right">Force Right</option>
@@ -65,22 +67,65 @@
 	     type="radio"
 	     default="1"
 	     label="COM_SPEAKERS_BIOGRAPHY_LABEL"
-	     description="COM_SPEAKERS__BIOGRAPHY_DESC">
+	     description="COM_SPEAKERS_BIOGRAPHY_DESC"
+	     class="radio btn-group btn-group-yesno" >
 	         <option value="1">JYES</option>
 	         <option value="0">JNO</option>
 	 </field>
 	<field name="linktitle" type="color" default="#eee"
 	        label="COM_SPEAKERS_LINKTITLE_LABEL"
-	        description="COM_SPEAKERS_LINKTITLE__DESC" />
+	        description="COM_SPEAKERS_LINKTITLE_DESC" />
 	<field name="linkcolour" type="color" default="#eee"
 	        label="COM_SPEAKERS_LINKCOLOUR_LABEL"
-	        description="COM_SPEAKERS_LINKCOLOUR__DESC" />	        
+	        description="COM_SPEAKERS_LINKCOLOUR_DESC" />	        
+	<field name="SpeakersBackgroundColor" type="color" default=""
+	        label="COM_SPEAKERS_SBGCOLOUR_LABEL"
+	        description="COM_SPEAKERS_SBGCOLOUR_LABEL_DESC" />	
+	        
 	</fieldset>
 
+
+<fieldset name="component_speaker"
+	label="COM_SPEAKERS_COMPONENT_SPEAKER_LABEL"
+	description="COM_SPEAKERS_COMPONENT_SPEAKER_DESC"
+>
+<field name="SpeakerBackgroundColor" type="color" default=""
+        label="COM_SPEAKERS_SBGCOLOUR_LABEL"
+        description="COM_SPEAKERS_SBGCOLOUR_LABEL_DESC" />	
+<field name="ShowNavigation"
+     type="radio"
+     default="1"
+     label="COM_SPEAKERS_SNAVIGATION_LABEL"
+     description="COM_SPEAKERS_SNAVIGATION_DESC"
+     class="radio btn-group btn-group-yesno" >
+         <option value="1">JYES</option>
+         <option value="0">JNO</option>
+ </field>
+<field name="PhotoSizeSpeakerView"
+     type="list"
+     default="medium"
+     label="COM_SPEAKERS_PHOTOSIZE_LABEL"
+     description="COM_SPEAKERS_PHOTOSIZE_DESC">
+         <option value="small">Small</option>
+         <option value="medium">Medium</option>
+         <option value="large">Large</option>
+         <option value="Xlarge">XLarge</option>	 
+ </field>
+<field name="PositionPhotoSpeakerView"
+     type="list"
+     default="Above"
+     label="COM_SPEAKERS_POSITIONPHOTO_LABEL"
+     description="COM_SPEAKERS_POSITIONPHOTO_DESC">
+         <option value="Above">Above Intro Text</option>
+         <option value="Left">Force left</option>
+         <option value="Right">Force Right</option>
+
+ </field>
+  
+</fieldset>
 	<fieldset name="permissions"
 		description="JCONFIG_PERMISSIONS_DESC"
-		label="JCONFIG_PERMISSIONS_LABEL"
-	>
+		label="JCONFIG_PERMISSIONS_LABEL" >
 
 		<field 
             name="rules" 
@@ -152,7 +197,7 @@ http://docs.joomla.org/Spacer_parameter_type
 <field type="spacer" default="&lt;b&gt;Advanced parameters&lt;/b&gt;" />
 
 http://docs.joomla.org/Sql_parameter_type
-<field name="myfield" type="sql" default="10" label="Select an article" query="SELECT id, title FROM #__content" key_field=”id” value_field=”title” />
+<field name="myfield" type="sql" default="10" label="Select an article" query="SELECT id, title FROM #_content" key_field=”id” value_field=”title” />
 
 http://docs.joomla.org/Text_parameter_type
 <field name="mytextvalue" type="text" default="Some text" label="Enter some text" description="" size="10" />

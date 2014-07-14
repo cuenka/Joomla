@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_flickr_gallery</name>
+    <creationDate>2014-06-09</creationDate>
+    <copyright>Copyright (C) 2014. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Jose Cuenca</author>
+    <authorEmail>jose@aviationmedia.aero</authorEmail>
+    <authorUrl>http://aviationmedia.aero</authorUrl>
+    <version>1.0.0</version>
+    <description>Show Gallery from Flickr</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>flickr_gallery.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <languages folder="site">
+        
+			<language tag="en-GB">language/en-GB/en-GB.com_flickr_gallery.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_flickr_gallery/assets/images/s_com_flickr_gallery.png" >COM_FLICKR_GALLERY</menu>
+        <submenu>
+            
+			<menu link="option=com_flickr_gallery&amp;view=displaygalleries" view="displaygalleries" img="components/com_flickr_gallery/assets/images/s_displaygalleries.png" alt="Flickr_gallery/Displaygalleries">COM_FLICKR_GALLERY_TITLE_DISPLAYGALLERIES</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>flickr_gallery.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <folder>language</folder>
+        </files>
+        <languages folder="administrator">
+            
+			<language tag="en-GB">language/en-GB/en-GB.com_flickr_gallery.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_flickr_gallery.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="flickr_gallery"/>
+    </plugins>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

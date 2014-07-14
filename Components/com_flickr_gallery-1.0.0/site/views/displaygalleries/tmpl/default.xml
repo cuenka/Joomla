@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_FLICKR_GALLERY_TITLE_LIST_VIEW_DISPLAYGALLERIES" option="View">
+        <message>
+                        <![CDATA[COM_FLICKR_GALLERY_TITLE_LIST_VIEW_DISPLAYGALLERIES_DESC]]>
+        </message>
+	</layout>
+</metadata>

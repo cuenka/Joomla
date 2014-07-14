@@ -58,8 +58,7 @@ class SpeakersViewSpeaker extends JViewLegacy {
     }
 
 protected function _prepareNavigation($total, $id){
-	$template ="";
-	echo $total." == ".$id; 
+	$template =""; 
 	if ($total == 0 ){
 	
 	 $template ="";

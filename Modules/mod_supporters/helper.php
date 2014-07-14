@@ -17,7 +17,6 @@ class modsupportersHelper
 	        // Create a new query object.
 			$db = JFactory::getDbo();
 	        $query = $db->getQuery(true);
-	
 	        // Select the required fields from the table.
 	       $query->select('website,logo,company');
 	       $query->from('#__supporters_list');
@@ -27,5 +26,19 @@ class modsupportersHelper
 	
 	       return $result;
 	    }
+	        public function getMenuURL($ID) {
+	        	//$params = JComponentHelper::getParams('com_supporters');      
+	            // Create a new query object.
+	    		$db = JFactory::getDbo();
+	            $query = $db->getQuery(true);
+	            // Select the required fields from the table.
+	           $query->select('link');
+	           $query->from('#__menu');
+	           $query->where('id = '.$ID );	       
+	      	   $db->setQuery((string)$query);
+	      	   $result =  $db->loadRow();
+	    
+	           return $result;
+	        }
 
 }

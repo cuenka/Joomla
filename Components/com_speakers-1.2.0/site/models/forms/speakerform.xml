@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_SPEAKERS_FORM_LBL_SPEAKER_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_SPEAKERS_FORM_LBL_SPEAKER_CREATED_BY"
+            description="COM_SPEAKERS_FORM_DESC_SPEAKER_CREATED_BY"  /> 
+
+       <field name="salutation" type="list"
+                
+            label="COM_SPEAKERS_FORM_LBL_SPEAKER_SALUTATION"
+            description="COM_SPEAKERS_FORM_DESC_SPEAKER_SALUTATION" 
+                
+                
+                
+            menu_published="0"
+            filter="raw">
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Ms">Ms</option>
+                <option value="Dr">Dr</option>
+                <option value="Miss">Miss</option>
+                <option value="Prof">Prof</option>
+                <option value="Capt">Capt</option>
+        </field> 
+
+ 
+		<field name="filter_salutation" type="list" onchange="this.form.submit();">
+			<option value="">COM_SPEAKERS_SPEAKERS_SALUTATION_FILTER</option>
+			<option value="Mr">Mr</option>
+			<option value="Mrs">Mrs</option>
+			<option value="Ms">Ms</option>
+			<option value="Dr">Dr</option>
+			<option value="Miss">Miss</option>
+			<option value="Prof">Prof</option>
+			<option value="Capt">Capt</option>
+		</field> 
+
+       <field name="name" type="text"
+                
+            label="COM_SPEAKERS_FORM_LBL_SPEAKER_NAME"
+            description="COM_SPEAKERS_FORM_DESC_SPEAKER_NAME" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            class="speaker_name"
+            filter="string"
+            size="200"
+            maxlength="200" /> 
+
+       <field name="surname" type="text"
+                
+            label="COM_SPEAKERS_FORM_LBL_SPEAKER_SURNAME"
+            description="COM_SPEAKERS_FORM_DESC_SPEAKER_SURNAME" 
+                
+                
+                 required="true" 
+            class="speaker_surname"
+            filter="string" /> 
+
+       <field name="intro_biography" type="editor"
+                
+            label="COM_SPEAKERS_FORM_LBL_SPEAKER_INTRO_BIOGRAPHY"
+            description="COM_SPEAKERS_FORM_DESC_SPEAKER_INTRO_BIOGRAPHY" 
+                
+                
+                
+            menu_published="0"
+            height="200"
+            filter="string" /> 
+
+       <field name="full_biography" type="editor"
+                
+            label="COM_SPEAKERS_FORM_LBL_SPEAKER_FULL_BIOGRAPHY"
+            description="COM_SPEAKERS_FORM_DESC_SPEAKER_FULL_BIOGRAPHY" 
+                
+                
+                
+            menu_published="0"
+            height="200"
+            filter="string" /> 
+
+       <field name="company" type="text"
+                
+            label="COM_SPEAKERS_FORM_LBL_SPEAKER_COMPANY"
+            description="COM_SPEAKERS_FORM_DESC_SPEAKER_COMPANY" 
+                
+                
+                
+            filter="string" /> 
+
+       <field name="job_title" type="text"
+                
+            label="COM_SPEAKERS_FORM_LBL_SPEAKER_JOB_TITLE"
+            description="COM_SPEAKERS_FORM_DESC_SPEAKER_JOB_TITLE" 
+                
+                
+                
+            filter="string"
+            size="200"
+            maxlength="200" /> 
+
+       <field name="photo" type="media"
+                
+            label="COM_SPEAKERS_FORM_LBL_SPEAKER_PHOTO"
+            description="COM_SPEAKERS_FORM_DESC_SPEAKER_PHOTO" 
+                
+                
+                
+            directory="speakers" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" /> 
+
+ </fieldset> 
+
+ <fieldset 
+                        name="accesscontrol">
+                       <field name="asset_id" type="hidden" filter="unset" />
+                       <field name="rules"
+                            type="rules"
+                            label="JFIELD_RULES_LABEL"
+                            translate_label="false"
+                            filter="rules"
+                            validate="rules"
+                            class="inputbox"
+                            component="com_speakers"
+                            section="speaker"
+                        />
+
+	</fieldset>
+
+</form>

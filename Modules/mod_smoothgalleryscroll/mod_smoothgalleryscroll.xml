@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+    <name>Smooth Gallery Scroll</name>
+    <author>Jose Cuenca</author>
+    <version>1.0.0</version>
+    <description>Smooth Gallery Scroll box module, responsive and finger friendly</description>
+    <files>
+        <filename>mod_smoothgalleryscroll.xml</filename>
+        <filename module="mod_smoothgalleryscroll" label="Slider with parallax effect">mod_smoothgalleryscroll.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <media folder="media" destination="mod_smoothgalleryscroll">
+        	<folder>css</folder>
+            <folder>js</folder>
+            <folder>img</folder>
+        </media>
+    <languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_smoothgalleryscroll.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_smoothgalleryscroll.sys.ini</language>		
+	</languages>
+    <config>
+		<fields name="params">
+ 		   <fieldset name="basic">
+ 		   <field name="Slide0" label="mod_smoothgalleryscroll_SLIDE0" type="media" directory="slideshow" />
+ 		   <field name="Slide1" label="mod_smoothgalleryscroll_SLIDE1" type="media" directory="slideshow" />
+		   <field name="Slide2" label="mod_smoothgalleryscroll_SLIDE2" type="media" directory="slideshow" />
+		   <field name="Slide3" label="mod_smoothgalleryscroll_SLIDE3" type="media" directory="slideshow" />
+		   <field name="Slide4" label="mod_smoothgalleryscroll_SLIDE4" type="media" directory="slideshow" />
+		   <field name="Slide5" label="mod_smoothgalleryscroll_SLIDE5" type="media" directory="slideshow" />
+		</fieldset>   
+     
+       <fieldset name="advanced">
+        <field name="moduleclass_sfx" type="text" default="" label="CLASS_SUFFIX" description="CLASS_SUFFIX_DESCRIPTION"/>
+        </fieldset>
+        </fields>
+    </config>
+</extension>
