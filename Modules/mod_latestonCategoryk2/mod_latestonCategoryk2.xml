@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="administrator" version="3.0" method="upgrade">
+    <name>Latest K2 Items by category</name>
+    <author>Jose Cuenca</author>
+    <creationDate>14 July 2014</creationDate>
+    <copyright>Copyright (c) GPL</copyright>
+    <authorEmail>jose@aviationmedia.aero</authorEmail>
+    <authorUrl>www.aviationmedia.aero</authorUrl>
+    <version>1.0.0</version>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <description>Latest K2 Items by category</description>
+    <files>
+    	<filename>mod_latestonCategoryk2.xml</filename>
+        <filename module="mod_latestonCategoryk2">mod_latestonCategoryk2.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>    
+    </files>
+        <languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_latestonCategoryk2.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_latestonCategoryk2.sys.ini</language>		
+	</languages>
+    <config>
+       <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_k2/elements/">
+                <field name="category_id" type="categoriesmultiple" default="" label="K2_SELECT_ONE_OR_MORE_CATEGORIES" description="K2_SELECT_ONE_ORE_MORE_CATEGORIES_FOR_WHICH_YOU_WANT_TO_FILTER_AN_ITEMS_LIST_SELECT_NONE_TO_FETCH_ITEMS_FROM_ALL_CATEGORIES"/>
+                <field name="number_items" type="text" default="" label="mod_latestonCategoryk2_CLASS_SUFFIX" description="mod_latestonCategoryk2_CLASS_SUFFIX_DESCRIPTION"/>
+        	</fieldset>
+        </fields>
+    </config>
+</extension>
