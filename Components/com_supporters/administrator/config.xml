@@ -5,15 +5,18 @@
 		description="COM_SUPPORTERS_COMPONENT_DESC"
 	>
 
-        <field name="test"
-             type="radio"
-             default="1"
-             label="COM_SUPPORTERS_TEST_LABEL"
-             description="COM_SUPPORTERS_TEST_DESC">
-                 <option value="0">JHIDE</option>
-                 <option value="1">JSHOW</option>
-         </field>
-
+	<field name="mibackgroundcolour" type="color" default="#eee"
+        label="COM_SUPPORTERS_MIBC_LABEL"
+        description="COM_SUPPORTERS_MIBC_DESC" />
+    <field name="mifontcolour" type="color" default="#eee"
+        label="COM_SUPPORTERS_MIFC_LABEL"
+        description="COM_SUPPORTERS_MIFC_DESC" />
+    <field name="vwbackgroundcolour" type="color" default="#eee"
+    	label="COM_SUPPORTERS_VWBC_LABEL"
+        description="COM_SUPPORTERS_VWBC_DESC" />
+<field name="vwfontcolour" type="color" default="#eee"
+    label="COM_SUPPORTERS_VWFC_LABEL"
+    description="COM_SUPPORTERS_VWFC_DESC" />
 	</fieldset>
 
 	<fieldset name="permissions"
@@ -40,34 +43,34 @@ They are here for copy pasting - neat eh?
 ########################################################################################
 
 http://docs.joomla.org/Calendar_parameter_type
-<field name="mycalendar" type="calendar" default="5-10-2008" label="Select a date" description="" format="%d-%m-%Y" />
+<field name="mycalendar" type="calendar" default="5-10-2008" label="Select a date" description="COM_SUPPORTERS_" format="%d-%m-%Y" />
 
 http://docs.joomla.org/Category_parameter_type
-<field name="mycategory" type="category" label="Select a category" description="" section="3" />
+<field name="mycategory" type="category" label="Select a category" description="COM_SUPPORTERS_" section="3" />
 
 http://docs.joomla.org/Editors_parameter_type
 <field name="myeditor" type="editors" default="none" label="Select an editor" />
 
 http://docs.joomla.org/Filelist_parameter_type
-<field name="myfile" type="filelist" default="" label="Select a file" description="" directory="administrator" filter="" exclude="" stripext="" />
+<field name="myfile" type="filelist" default="" label="Select a file" description="COM_SUPPORTERS_" directory="administrator" filter="" exclude="" stripext="" />
 
 http://docs.joomla.org/Folderlist_parameter_type
 <field name="myfolder" type="folderlist" default="" label="Select a folder" directory="administrator" filter="" exclude="" stripext="" />
 
 http://docs.joomla.org/Helpsites_parameter_type
-<field name="myhelpsite" type="helpsites" default="" label="Select a help site" description="" />
+<field name="myhelpsite" type="helpsites" default="" label="Select a help site" description="COM_SUPPORTERS_" />
 
 http://docs.joomla.org/Hidden_parameter_type
 <field name="mysecretvariable" type="hidden" default="" />
 
 http://docs.joomla.org/Imagelist_parameter_type
-<field name="myimage" type="imagelist" default="" label="Select an image" description="" directory="" exclude="" stripext="" />
+<field name="myimage" type="imagelist" default="" label="Select an image" description="COM_SUPPORTERS_" directory="" exclude="" stripext="" />
 
 http://docs.joomla.org/Languages_parameter_type
-<field name="mylanguage" type="languages" client="site" default="en-GB" label="Select a language" description="" />
+<field name="mylanguage" type="languages" client="site" default="en-GB" label="Select a language" description="COM_SUPPORTERS_" />
 
 http://docs.joomla.org/List_parameter_type
-<field name="mylistvalue" type="list" default="" label="Select an option" description="">
+<field name="mylistvalue" type="list" default="" label="Select an option" description="COM_SUPPORTERS_">
   <option value="0">Option 1</option>
   <option value="1">Option 2</option>
 </field>
@@ -79,10 +82,10 @@ http://docs.joomla.org/Menuitem_parameter_type
 <field name="mymenuitem" type="menuitem" default="45" label="Select a menu item" description="Select a menu item" />
 
 http://docs.joomla.org/Password_parameter_type
-<field name="mypassword" type="password" default="secret" label="Enter a password" description="" size="5" />
+<field name="mypassword" type="password" default="secret" label="Enter a password" description="COM_SUPPORTERS_" size="5" />
 
 http://docs.joomla.org/Radio_parameter_type
-<field name="myradiovalue" type="radio" default="0" label="Select an option" description="">
+<field name="myradiovalue" type="radio" default="0" label="Select an option" description="COM_SUPPORTERS_">
   <option value="0">1</option>
   <option value="1">2</option>
 </field>
@@ -94,16 +97,16 @@ http://docs.joomla.org/Sql_parameter_type
 <field name="myfield" type="sql" default="10" label="Select an article" query="SELECT id, title FROM #__content" key_field=”id” value_field=”title” />
 
 http://docs.joomla.org/Text_parameter_type
-<field name="mytextvalue" type="text" default="Some text" label="Enter some text" description="" size="10" />
+<field name="mytextvalue" type="text" default="Some text" label="Enter some text" description="COM_SUPPORTERS_" size="10" />
 
 http://docs.joomla.org/Textarea_parameter_type
-<field name="mytextarea" type="textarea" default="default" label="Enter some text" description="" rows="10" cols="5" />
+<field name="mytextarea" type="textarea" default="default" label="Enter some text" description="COM_SUPPORTERS_" rows="10" cols="5" />
 
 http://docs.joomla.org/Timezones_parameter_type
-<field name="mytimezone" type="timezones" default="-10" label="Select a timezone" description="" />
+<field name="mytimezone" type="timezones" default="-10" label="Select a timezone" description="COM_SUPPORTERS_" />
 
 http://docs.joomla.org/Usergroup_parameter_type
-<field name="myusergroups" type="usergroup" default="" label="Select a user group" description="" />
+<field name="myusergroups" type="usergroup" default="" label="Select a user group" description="COM_SUPPORTERS_" />
 
 
  -->
