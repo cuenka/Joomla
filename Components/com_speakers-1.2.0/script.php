@@ -5,7 +5,7 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * Script file of HelloWorld component
  */
-class com_speakersInstallerScript
+class COM_SPEAKERSInstallerScript
 {
         /**
          * method to install the component
@@ -15,7 +15,7 @@ class com_speakersInstallerScript
         function install($parent) 
         {
                 // $parent is the class calling this method
-                $parent->getParent()->setRedirectURL('index.php?option=com_speakers');
+                $parent->getParent()->setRedirectURL('index.php?option=COM_SPEAKERS');
                 $path=JPATH_SITE."/images/speakers";
                 echo $path;
                /* if(!(JFolder::exists($path)){
@@ -33,7 +33,7 @@ class com_speakersInstallerScript
         function uninstall($parent) 
         {
                 // $parent is the class calling this method
-                echo '<p>' . JText::_('com_speakers_UNINSTALL_TEXT') . '</p>';
+                echo '<p>' . JText::_('COM_SPEAKERS_UNINSTALL_TEXT') . '</p>';
         }
  
         /**
@@ -44,7 +44,7 @@ class com_speakersInstallerScript
         function update($parent) 
         {
                 // $parent is the class calling this method
-                echo '<p>' . JText::sprintf('com_speakers_UPDATE_TEXT', $parent->get('manifest')->version) . '</p>';
+                echo '<p>' . JText::sprintf('COM_SPEAKERS_UPDATE_TEXT', $parent->get('manifest')->version) . '</p>';
         }
  
         /**
@@ -65,7 +65,7 @@ class com_speakersInstallerScript
                 
                 // $parent is the class calling this method
                 // $type is the type of change (install, update or discover_install)
-                echo '<p>' . JText::_('com_speakers_PREFLIGHT_' . $type . '_TEXT') . '</p>';
+                echo '<p>' . JText::_('COM_SPEAKERS_PREFLIGHT_' . $type . '_TEXT') . '</p>';
         }
  
         /**
@@ -77,6 +77,6 @@ class com_speakersInstallerScript
         {
                 // $parent is the class calling this method
                 // $type is the type of change (install, update or discover_install)
-                echo '<p>' . JText::_('com_speakers_POSTFLIGHT_' . $type . '_TEXT') . '</p>';
+                echo '<p>' . JText::_('COM_SPEAKERS_POSTFLIGHT_' . $type . '_TEXT') . '</p>';
         }
 }
