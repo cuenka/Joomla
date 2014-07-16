@@ -33,10 +33,6 @@
         <folder>controllers</folder>
         <folder>helpers</folder>
     </files>
-    <languages folder="site">
-        
-			<language tag="en-GB">language/en-GB/en-GB.com_speakers.ini</language>
-    </languages>
     <administration>
         <menu img="components/com_speakers/assets/images/s_com_speakers.png" >COM_SPEAKERS</menu>
         <submenu>
