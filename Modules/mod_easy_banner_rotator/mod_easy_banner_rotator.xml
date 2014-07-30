@@ -18,6 +18,11 @@
     <config>
 		<fields name="params">
 			<fieldset name="basic">
+				<field	name="bycategory" type="radio"	class="btn-group btn-group-yesno" default="1"
+				label="MOD_EASY_BANNER_ROTATOR_BYCATEGORY_LABEL" description="MOD_EASY_BANNER_ROTATOR_BYCATEGORY_DESC">
+								<option value="1">JYES</option>
+								<option value="0">JNO</option>
+							</field>
  	       		<field name="delay" type="integer" default="10" label="MOD_EASY_BANNER_ROTATOR_DELAY_LABEL" description="MOD_EASY_BANNER_ROTATOR_DELAY_DESC" first="5" last="12" step="1" />
 				<field name="transition" type="list" default="1" label="MOD_EASY_BANNER_ROTATOR_TRANSITION_LABEL" description="MOD_EASY_BANNER_ROTATOR_TRANSITION_DESC">
 						<option value="250">0.25</option>
@@ -52,6 +57,98 @@
 								
 			</fieldset>
 			<fieldset name="advanced">
+			<field type="spacer" name="spacer1" label="&lt;h3&gt;Banner 1&lt;/h3&gt;" />
+			
+			<field name="mybanner1" type="sql" default="0" label="Select a banner" query="SELECT id, name FROM #__banners where state=1" key_field="id" value_field="name" required="true">
+			<option value="0">Please select your banner</option>
+			</field>
+			<field	name="paid1" type="radio"	class="btn-group btn-group-yesno" default="0"
+label="MOD_EASY_BANNER_ROTATOR_PAID_LABEL" description="MOD_EASY_BANNER_ROTATOR_PAID_DESC">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>			
+			
+			<field type="spacer" name="spacer1hr" hr="true"/>
+						<field type="spacer" name="spacer1" label="&lt;h3&gt;Banner 1&lt;/h3&gt;" />
+						
+						<field name="mybanner1" type="sql" default="0" label="Select a banner" query="SELECT id, name FROM #__banners where state=1" key_field="id" value_field="name" required="true">
+						<option value="0">Please select your banner</option>
+						</field>
+						<field	name="paid1" type="radio"	class="btn-group btn-group-yesno" default="0"
+			label="MOD_EASY_BANNER_ROTATOR_PAID_LABEL" description="MOD_EASY_BANNER_ROTATOR_PAID_DESC">
+							<option value="1">JYES</option>
+							<option value="0">JNO</option>
+						</field>			
+						<field type="spacer" name="spacer1hr" hr="true"/>
+						
+						
+						<field type="spacer" name="spacer2" label="&lt;h3&gt;Banner 2&lt;/h3&gt;" />
+						
+						<field name="mybanner2" type="sql" default="0" label="Select a banner" query="SELECT id, name FROM #__banners where state=1" key_field="id" value_field="name" required="true">
+						<option value="0">Please select your banner</option>
+						</field>
+						<field	name="paid2" type="radio"	class="btn-group btn-group-yesno" default="0"
+			label="MOD_EASY_BANNER_ROTATOR_PAID_LABEL" description="MOD_EASY_BANNER_ROTATOR_PAID_DESC">
+							<option value="1">JYES</option>
+							<option value="0">JNO</option>
+						</field>			
+						<field type="spacer" name="spacer2hr" hr="true"/>		
+						
+						
+						
+						<field type="spacer" name="spacer3" label="&lt;h3&gt;Banner 3&lt;/h3&gt;" />
+						
+						<field name="mybanner3" type="sql" default="0" label="Select a banner" query="SELECT id, name FROM #__banners where state=1" key_field="id" value_field="name" required="true">
+							<option value="0">Please select your banner</option>
+						</field>
+						<field	name="paid3" type="radio"	class="btn-group btn-group-yesno" default="0"
+			label="MOD_EASY_BANNER_ROTATOR_PAID_LABEL" description="MOD_EASY_BANNER_ROTATOR_PAID_DESC">
+							<option value="1">JYES</option>
+							<option value="0">JNO</option>
+						</field>			
+						<field type="spacer" name="spacer3hr" hr="true"/>							
+						
+						<field type="spacer" name="spacer4" label="&lt;h3&gt;Banner 4&lt;/h3&gt;" />
+								
+						<field name="mybanner4" type="sql" default="0" label="Select a banner" query="SELECT id, name FROM #__banners where state=1" key_field="id" value_field="name" required="true">
+									<option value="0">Please select your banner</option>
+									</field>
+						<field	name="paid4" type="radio"	class="btn-group btn-group-yesno" default="0"
+						label="MOD_EASY_BANNER_ROTATOR_PAID_LABEL" description="MOD_EASY_BANNER_ROTATOR_PAID_DESC">
+							<option value="1">JYES</option>
+							<option value="0">JNO</option>
+						</field>			
+						<field type="spacer" name="spacer4hr" hr="true"/>	
+									
+									
+									
+									
+						<field type="spacer" name="spacer5" label="&lt;h3&gt;Banner 5&lt;/h3&gt;" />
+									
+						<field name="mybanner5" type="sql" default="0" label="Select a banner" query="SELECT id, name FROM #__banners where state=1" key_field="id" value_field="name" required="true">
+							<option value="0">Please select your banner</option>
+						</field>
+						<field	name="paid5" type="radio"	class="btn-group btn-group-yesno" default="0" label="MOD_EASY_BANNER_ROTATOR_PAID_LABEL" description="MOD_EASY_BANNER_ROTATOR_PAID_DESC">
+							<option value="1">JYES</option>
+							<option value="0">JNO</option>
+						</field>			
+						<field type="spacer" name="spacer5hr" hr="true"/>	
+												
+												
+												
+												
+												
+						<field type="spacer" name="spacer6" label="&lt;h3&gt;Banner 6&lt;/h3&gt;" />
+						<field name="mybanner6" type="sql" default="0" label="Select a banner" query="SELECT id, name FROM #__banners where state=1" key_field="id" value_field="name" required="true">
+							<option value="0">Please select your banner</option>
+						</field>
+						<field	name="paid6" type="radio"	class="btn-group btn-group-yesno" default="0" label="MOD_EASY_BANNER_ROTATOR_PAID_LABEL" description="MOD_EASY_BANNER_ROTATOR_PAID_DESC">
+							<option value="1">JYES</option>
+							<option value="0">JNO</option>
+						</field>			
+						<field type="spacer" name="spacer6hr" hr="true"/>	
+						
+							
  	       	</fieldset>    	 	       	 	       	 	       	
  	   </fields>
     </config>
