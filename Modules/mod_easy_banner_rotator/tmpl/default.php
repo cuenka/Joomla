@@ -37,9 +37,25 @@ $category = (int) $params->get('gaevent', 0);
     setTimeout(cycle, delay); 
 
     function cycle() {
-        $(banners[i%len]).fadeOut(fade, function() {
-            $(banners[++i%len]).fadeIn(fade, function() { 
+		<?php if ((int) $params->get('effect', 0)==0): ?>
+		$(banners[i%len]).fadeOut(fade, function() {
+		    $(banners[++i%len]).fadeIn(fade, function() { 
+		<?php endif; ?>
+		<?php if ((int) $params->get('effect', 0)==1): ?>
+		$(banners[i%len]).hide(function() {
+		    $(banners[++i%len]).slideDown("slow", function() { 
+		        setTimeout(cycle, delay);
+		<?php endif; ?>       
+        <?php if ((int) $params->get('effect', 0)==2): ?>
+        $(banners[i%len]).slideUp("slow", function() {
+            $(banners[++i%len]).slideDown("slow", function() { 
                 setTimeout(cycle, delay);
+        <?php endif; ?>
+        <?php if ((int) $params->get('effect', 0)==3): ?>
+        $(banners[i%len]).fadeToggle("slow", function() {
+            $(banners[++i%len]).fadeToggle("slow", function() { 
+                setTimeout(cycle, delay);
+        <?php endif; ?>   
             });
         });
     }

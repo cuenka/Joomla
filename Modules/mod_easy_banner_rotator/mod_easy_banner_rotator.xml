@@ -40,11 +40,11 @@
   					<option value="2">Random</option>
   					<option value="3">Random, Paid First</option>
 				</field>
-				<field name="effect" type="list" default="Fade" label="MOD_EASY_BANNER_ROTATOR_EFFECT_LABEL" description="MOD_EASY_BANNER_ROTATOR_EFFECT_DESC">
+				<field name="effect" type="list" default="0" label="MOD_EASY_BANNER_ROTATOR_EFFECT_LABEL" description="MOD_EASY_BANNER_ROTATOR_EFFECT_DESC">
   					<option value="0">Fade</option>
-  					<option value="1">Slide Down</option>
-  					<option value="2">Slide Up</option>
-  					<option value="3">Slide Toggle</option>
+  					<option value="1">Gone and slide Down</option>
+  					<option value="2">Slide Up and Down</option>
+  					<option value="3">Slide Toggle/Fast Fade</option>
 				</field>
 				<field name="width" type="text" default="468" label="MOD_EASY_BANNER_ROTATOR_WIDTH_LABEL" description="MOD_EASY_BANNER_ROTATOR_WIDTH_DESC" filter="integer" />
 				<field name="height" type="text" default="60" label="MOD_EASY_BANNER_ROTATOR_HEIGHT_LABEL" description="MOD_EASY_BANNER_ROTATOR_HEIGHT_DESC" filter="integer" />
