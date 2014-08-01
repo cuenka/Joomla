@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_TIMELINE_PORTFOLIO_FORM_LBL_EDITARPORTFOLIO_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_TIMELINE_PORTFOLIO_FORM_LBL_EDITARPORTFOLIO_CREATED_BY"
+            description="COM_TIMELINE_PORTFOLIO_FORM_DESC_EDITARPORTFOLIO_CREATED_BY"  /> 
+
+       <field name="project" type="text"
+                
+            label="COM_TIMELINE_PORTFOLIO_FORM_LBL_EDITARPORTFOLIO_PROJECT"
+            description="COM_TIMELINE_PORTFOLIO_FORM_DESC_EDITARPORTFOLIO_PROJECT" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            class="timeline_portfolio_project"
+            filter="string" /> 
+
+       <field name="type" type="list"
+                
+            label="COM_TIMELINE_PORTFOLIO_FORM_LBL_EDITARPORTFOLIO_TYPE"
+            description="COM_TIMELINE_PORTFOLIO_FORM_DESC_EDITARPORTFOLIO_TYPE" 
+                
+                
+                
+            menu_published="0"
+            class="timeline_portfolio_type"
+            filter="raw"
+            multiple="true">
+                <option value="fa-drupal">fa-drupal</option>
+                <option value="fa-file-code-o">fa-file-code-o</option>
+                <option value="fa-joomla">fa-joomla</option>
+                <option value="fa-html5">fa-html5</option>
+                <option value="fa-css3">fa-css3</option>
+                <option value="fa-joomla">fa-joomla</option>
+                <option value="fa-share-alt-square">fa-share-alt-square</option>
+                <option value="fa-desktop">fa-desktop</option>
+                <option value="fa-wordpress">fa-wordpress</option>
+                <option value="fa-apple">IOS</option>
+                <option value="fa-android">Android</option>
+                <option value="fa-university">Studies</option>
+                <option value="fa-check">Accomplish</option>
+                <option value="fa-database">Database</option>
+                <option value="fa-info">Information</option>
+        </field> 
+
+       <field name="information" type="editor"
+                
+            label="COM_TIMELINE_PORTFOLIO_FORM_LBL_EDITARPORTFOLIO_INFORMATION"
+            description="COM_TIMELINE_PORTFOLIO_FORM_DESC_EDITARPORTFOLIO_INFORMATION" 
+                
+                
+                
+            menu_published="0"
+            editor="desired"
+            filter="raw" /> 
+
+       <field name="date" type="calendar" class="inputbox"
+        
+        
+         default="2014-01-01" 
+        
+            label="COM_TIMELINE_PORTFOLIO_FORM_LBL_EDITARPORTFOLIO_DATE"
+            description="COM_TIMELINE_PORTFOLIO_FORM_DESC_EDITARPORTFOLIO_DATE" 
+        filter="safehtml" /> 
+
+       <field name="website" type="text"
+                
+            label="COM_TIMELINE_PORTFOLIO_FORM_LBL_EDITARPORTFOLIO_WEBSITE"
+            description="COM_TIMELINE_PORTFOLIO_FORM_DESC_EDITARPORTFOLIO_WEBSITE" 
+                
+                
+                
+            filter="url" /> 
+
+       <field name="image" type="media"
+                
+            label="COM_TIMELINE_PORTFOLIO_FORM_LBL_EDITARPORTFOLIO_IMAGE"
+            description="COM_TIMELINE_PORTFOLIO_FORM_DESC_EDITARPORTFOLIO_IMAGE" 
+                
+                
+                
+            directory="portfolio" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_timeline_portfolio</name>
+    <creationDate>2014-08-01</creationDate>
+    <copyright>Copyright (C) 2014. Todos los derechos reservados.</copyright>
+    <license>Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt</license>
+    <author>Jose Cuenca</author>
+    <authorEmail>jose@josecuenca.info</authorEmail>
+    <authorUrl>http://www.josecuenca.info/</authorUrl>
+    <version>1.0.0</version>
+    <description>Display portfolio in timeline format.
+
+</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>timeline_portfolio.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="site">
+        
+			<language tag="en-GB">language/en-GB/en-GB.com_timeline_portfolio.ini</language>
+			<language tag="es-ES">language/es-ES/es-ES.com_timeline_portfolio.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_timeline_portfolio/assets/images/s_com_timeline_portfolio.png" >COM_TIMELINE_PORTFOLIO</menu>
+        <submenu>
+            
+			<menu link="option=com_timeline_portfolio&amp;view=portfolio" view="portfolio" img="components/com_timeline_portfolio/assets/images/s_portfolio.png" alt="Timeline_portfolio/Portfolio">COM_TIMELINE_PORTFOLIO_TITLE_PORTFOLIO</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>timeline_portfolio.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <folder>language</folder>
+        </files>
+       <media destination="com_timeline_portfolio" folder="media">
+                <filename>index.html</filename>
+                <folder>css</folder>
+        </media>
+        <languages folder="administrator">
+            
+			<language tag="en-GB">language/en-GB/en-GB.com_timeline_portfolio.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_timeline_portfolio.sys.ini</language>
+			<language tag="es-ES">language/es-ES/es-ES.com_timeline_portfolio.ini</language>
+			<language tag="es-ES">language/es-ES/es-ES.com_timeline_portfolio.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="timeline_portfolio"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->
