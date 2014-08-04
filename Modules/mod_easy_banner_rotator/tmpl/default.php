@@ -13,6 +13,10 @@ $category = (int) $params->get('gaevent', 0);
 ?>
 
 <div class="fadeBanner" <?php if (!$IsFirst) echo 'style="display:none;"'; ?>>
+	
+	<?php if ($banner->custombannercode!=""): ?>
+		<?php echo $banner->custombannercode; ?>
+	<?php else: ?>
 	<a href="<?php echo $banner->clickurl; ?>" target="_blank"
 	<?php echo $GAClick; ?>
 	>
@@ -21,6 +25,7 @@ $category = (int) $params->get('gaevent', 0);
 	<?php echo $GALoad; ?>
 	/>
 	</a>
+	<?php endif; ?>
 </div>
 <?php $IsFirst=0; ?>
 <?php endforeach; ?>

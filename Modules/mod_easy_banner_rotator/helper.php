@@ -93,43 +93,76 @@ class ModeasybannerrotatorHelper
 		
 		        return true;
 	}
-	public static function shufflepaidbanners(&$array)
+	public static function shufflepaidbanners(&$banners)
 	{
-		 
-		 $keys = array_keys($array);
-			
-		        shuffle($keys);
+		$myObj = new Mybanners();
+		 foreach ($banners as $banner) {
+		 	if ($banner->paid==1) {
+		 		$myObj->pushSomethingToArray($banner); 
+		 	}
+		}
+		foreach ($banners as $banner) {
+		 	if ($banner->paid==0) {
+		 		$myObj->pushSomethingToArray($banner); 
+		 	}
+		}
 		
-		        foreach($keys as $key) {
-		            $new[$key] = $array[$key];
-		        }
-		
-		        $array = $new;
-		
-		        return true;
+		return $myObj->Banners;
 	}
 	
 	public static function addpaidstatus($banners,$params)
 	{
-/*	var_dump($banners);
+	/* var_dump($banners);
 	echo "<br />---------<br />";
-	var_dump($params);
+	var_dump($params); */
 	
 	for ($i = 1; $i <= 6; $i++) {
 		$getparamid = "mybanner".$i;
 		$getparampaid = "paid".$i;
 		
 		if (((int) $params->get($getparampaid, 0)!=0) AND ((int) $params->get($getparamid, 0)!=0)){
-			
-			echo "<br />",$getparampaid." - PAID!<br />";
+			//PAID
+			foreach ($banners as $banner) {
+				
+				if ($banner->id==$params->get($getparamid, 0)) {
+				$banner->paid=1;	
+				}
+				
+			}
 		
 		}else {
-		
-			echo "<br />",$getparampaid." -NOT PAID!<br />";
+			//NO PAID
+			foreach ($banners as $banner) {
+				if ($banner->id==$params->get($getparamid, 0)) {
+				$banner->paid=0;	
+				}
+				
+			}
+			
 		}
-	} */
+	
+		foreach ($banners as $banner) {
+			if ($banner->id==$params->get($getparamid, 0)) {
+				
+			}
+			
+		}
+	} 
+	
 	return $banners;
 	}	
+}
+
+class Mybanners {
+
+    public $Banners = array();
+    function pushSomethingToArray($var) {
+        array_push($this->Banners, $var);
+    }
+    function getArray() {
+        return $this->Banners;
+    }
+
 }
 /*
 class Banner {
