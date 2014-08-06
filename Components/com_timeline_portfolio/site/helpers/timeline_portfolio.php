@@ -13,6 +13,6 @@ class Timeline_portfolioFrontendHelper {
     
     public function SetScripts() {
     	$doc = JFactory::getDocument();
-    	$doc->addStyleSheet(JURI::base( true ).'/media/com_timeline_portfolio/css/portfolio.css');
+    	$doc->addStyleSheet(JURI::base( true ).'/media/com_timeline_portfolio/css/timeline_portfolio.css');
     }
 }

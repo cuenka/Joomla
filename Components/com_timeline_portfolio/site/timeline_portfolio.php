@@ -15,4 +15,6 @@ jimport('joomla.application.component.controller');
 // Execute the task.
 $controller	= JControllerLegacy::getInstance('Timeline_portfolio');
 $controller->execute(JFactory::getApplication()->input->get('task'));
+
+Timeline_portfolioFrontendHelper::SetScripts();
 $controller->redirect();
