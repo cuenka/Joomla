@@ -23,7 +23,7 @@
     <config>
        <fields name="params">
             <fieldset name="basic" addfieldpath="/administrator/components/com_k2/elements/">
-                <field name="category_id" type="categoriesmultiple" default="" label="K2_SELECT_ONE_OR_MORE_CATEGORIES" description="K2_SELECT_ONE_ORE_MORE_CATEGORIES_FOR_WHICH_YOU_WANT_TO_FILTER_AN_ITEMS_LIST_SELECT_NONE_TO_FETCH_ITEMS_FROM_ALL_CATEGORIES"/>
+                <field name="category_id" type="categoriesmultiple" default="1" label="K2_SELECT_ONE_OR_MORE_CATEGORIES" description="K2_SELECT_ONE_ORE_MORE_CATEGORIES_FOR_WHICH_YOU_WANT_TO_FILTER_AN_ITEMS_LIST_SELECT_NONE_TO_FETCH_ITEMS_FROM_ALL_CATEGORIES"/>
                 <field name="number_items" type="text" default="" label="mod_latestonCategoryk2_CLASS_SUFFIX" description="mod_latestonCategoryk2_CLASS_SUFFIX_DESCRIPTION"/>
         	</fieldset>
         </fields>

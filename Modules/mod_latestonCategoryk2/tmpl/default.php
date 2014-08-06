@@ -1,43 +1,30 @@
 <?php // no direct access
-defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
-<?php $i=0;?>
-<?php foreach ($speakers as $speaker) : ?>
-<?php $display = (($i==0) ? "display: block;" : "display: none;"); ?>
-<div class="fadeS" style='<?php echo $display; ?>' >
-<h4>
-<a href="<?php echo JRoute::_('index.php?option=com_speakers&view=speaker&id=' .$speaker->id); ?>" style="color:<?php echo $params->get('linktitle');?>;text-decoration: none;"><?php echo $speaker->name; ?> <?php echo $speaker->surname; ?>, <?php echo $speaker->job_title; ?></a>
-</h4>
-<img src="<?php echo $speaker->photo; ?>" alt="photo <?php echo $speaker->name; ?>" style="width: 100%;" align="center"/>
+defined('_JEXEC') or die;
+
+JHtml::_('bootstrap.tooltip');
+?>
+<div class="row-striped">
+	<?php if (count($items)) : ?>
+		<?php foreach ($items as $item) : ?>
+			
+			<div class="row-fluid">
+				<div class="span2">
+				<span class="big"><?php echo $item->id; ?></span>
+				</div>
+				<div class="span7">
+				<span class="big"><?php echo $item->title; ?></span>
+				</div>
+				<div class="span3">
+					<span class="small"><i
+							class="icon-calendar"></i> <?php echo JHtml::_('date', $item->publish_up, 'Y-m-d'); ?></span>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	<?php else : ?>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="alert"><?php echo JText::_('MOD_LATEST_NO_MATCHING_RESULTS');?></div>
+			</div>
+		</div>
+	<?php endif; ?>
 </div>
-<?php // echo $speaker->name; ?>
-<?php //echo $speaker->surname; ?>
-<?php //echo $speaker->intro_biography; ?>
-<?php //echo $speaker->full_biography; ?>
-<?php $i++;//echo $speaker->job_title; ?>
-
-<?php endforeach; ?>
-
-
-<script type="text/javascript">
-  jQuery.noConflict();
-  jQuery( document ).ready(function( $ ) {
-	var delay = 3000, fade = 1000; 
-    var banners = $('.fadeS');
-    var len = banners.length;
-    var i = 0;
-
-    setTimeout(cycle, delay); 
-
-    function cycle() {
-        $(banners[i%len]).fadeOut(fade, function() {
-            $(banners[++i%len]).fadeIn(fade, function() { 
-                setTimeout(cycle, delay);
-            });
-        });
-    }
-
-});
-
-
-
-  </script>
