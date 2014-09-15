@@ -12,7 +12,7 @@ $GAClick = "onclick=\"ga('send','event', 'Banner','Click', '".$banner->name."',{
 $category = (int) $params->get('gaevent', 0);
 ?>
 
-<div class="fadeBanner" <?php if (!$IsFirst) echo 'style="display:none;"'; ?>>
+<div class="fadeBanner<?php echo $module->id; ?>" <?php if (!$IsFirst) echo 'style="display:none;"'; ?>>
 	
 	<?php if ($banner->custombannercode!=""): ?>
 		<?php echo $banner->custombannercode; ?>
@@ -30,18 +30,18 @@ $category = (int) $params->get('gaevent', 0);
 <?php $IsFirst=0; ?>
 <?php endforeach; ?>
 
-
+<?php if (count($banners)!= '1'): ?>
 <script type="text/javascript">
   jQuery.noConflict();
   jQuery( document ).ready(function( $ ) {
 	var delay = <?php echo (int) $params->get('delay', 0); ?>000, fade = <?php echo (int) $params->get('transition', 0); ?>; 
-    var banners = $('.fadeBanner');
+    var banners = $('.fadeBanner<?php echo $module->id; ?>');
     var len = banners.length;
     var i = 0;
 
-    setTimeout(cycle, delay); 
+    setTimeout(cycle<?php echo $module->id; ?>, delay); 
 
-    function cycle() {
+    function cycle<?php echo $module->id; ?>() {
 		<?php if ((int) $params->get('effect', 0)==0): ?>
 		$(banners[i%len]).fadeOut(fade, function() {
 		    $(banners[++i%len]).fadeIn(fade, function() { 
@@ -49,17 +49,17 @@ $category = (int) $params->get('gaevent', 0);
 		<?php if ((int) $params->get('effect', 0)==1): ?>
 		$(banners[i%len]).hide(function() {
 		    $(banners[++i%len]).slideDown("slow", function() { 
-		        setTimeout(cycle, delay);
+		        setTimeout(cycle<?php echo $module->id; ?>, delay);
 		<?php endif; ?>       
         <?php if ((int) $params->get('effect', 0)==2): ?>
         $(banners[i%len]).slideUp("slow", function() {
             $(banners[++i%len]).slideDown("slow", function() { 
-                setTimeout(cycle, delay);
+                setTimeout(cycle<?php echo $module->id; ?>, delay);
         <?php endif; ?>
         <?php if ((int) $params->get('effect', 0)==3): ?>
         $(banners[i%len]).fadeToggle("slow", function() {
             $(banners[++i%len]).fadeToggle("slow", function() { 
-                setTimeout(cycle, delay);
+                setTimeout(cycle<?php echo $module->id; ?>, delay);
         <?php endif; ?>   
             });
         });
@@ -67,3 +67,4 @@ $category = (int) $params->get('gaevent', 0);
 
 });
 </script>
+<?php endif; ?>

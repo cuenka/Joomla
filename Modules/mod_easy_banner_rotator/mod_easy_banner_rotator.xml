@@ -2,7 +2,7 @@
 <extension type="module" version="3.0.0" client="site" method="upgrade">
     <name>Easy Banner Rotator</name>
     <author>Jose Cuenca</author>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <description>MOD_EASY_BANNER_ROTATOR_DESC</description>
     <files>
         <filename>mod_easy_banner_rotator.xml</filename>
