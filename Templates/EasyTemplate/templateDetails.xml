@@ -37,6 +37,7 @@
 	</languages>
 	
 	<positions><!-- define the positions for modules here -->
+		<position>slider</position>
 		<position>debug</position>
 	</positions>
 	
@@ -160,6 +161,23 @@
 					description="TPL_EASYTEMPLATE_PARAMETER_FNCSS_DESC" 
 					cols="30" rows="4" />
 
+			</fieldset>
+			<fieldset name="TPL_EASYTEMPLATE_ADVANCED_JS_LIBRARIES_LABEL">
+				<field name="metrojs" type="radio" default="0" 
+					label="TPL_EASYTEMPLATE_PARAMETER_METROJS_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_METROJS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field> 
+			</fieldset>
+			<fieldset name="TPL_EASYTEMPLATE_JS_CONFLICTS_LABEL">
+				<field name="removecaptionjs" type="radio" default="0" 
+					label="TPL_EASYTEMPLATE_PARAMETER_RCAPTIONJS_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_RCAPTIONJS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field> 
+			
 			</fieldset>
 		</fields>
 	</config>

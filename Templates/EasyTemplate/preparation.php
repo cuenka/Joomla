@@ -185,11 +185,43 @@ if ($enabledMootoolsString != '')
 	$enabledItemids = explode(',', $enabledMootoolsString);
 }
 
-if ($editingMootools && ($option != 'com_content' || $view != 'form' || $layout != 'edit'))
+if ($editingMootools && ($option != 'com_content'))
 {
 	$editingMootools = 0;
 }
 
+if ($this->params->get('metrojs',0)==1) {
+	$doc->addStyleSheet($tpath.'/css/MetroJs.min.css');
+	$loadBootstrap.= '<script src="'.$tpath.'/js/MetroJs.min.js"></script>';
+	
+}
+
+/**
+ * ==================================================
+ * Load Google font
+ * ==================================================
+ */
+ 
+if ($googlefont!="") {
+
+			$doc->addStyleSheet('//fonts.googleapis.com/css?family='.$googlefont);
+}
+
+
+/**
+ * ==================================================
+ * Remove JS Conflicts
+ * ==================================================
+ */
+
+
+//UNSET newJCAPTION
+if ($this->params->get('removecaptionjs',0)==1) {
+	if (isset($this->_script['text/javascript']))
+	{ $this->_script['text/javascript'] = preg_replace('%window\.addEvent\    (\'load\',\s*function\(\)\s*{\s*new\s*JCaption\(\'img.caption\'\);\s*}\);\s*%',     '', $this->_script['text/javascript']);
+	if (empty($this->_script['text/javascript']))
+	unset($this->_script['text/javascript']);}
+}
 
 
 // force latest IE & chrome frame
