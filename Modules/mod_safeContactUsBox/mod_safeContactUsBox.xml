@@ -12,8 +12,8 @@
         <filename>tmpl/default.php</filename>
         <filename>tmpl/index.html</filename>
     </files>
-    <languages>
-		<language tag="en-GB">en-GB.mod_safeContactUsBox.ini</language>
+    <languages folder="admin">
+    <language tag="en-GB">language/en-GB/en-GB.mod_safeContactUsBox.ini</language>
 	</languages>
     <config>
 		<fields name="params">
