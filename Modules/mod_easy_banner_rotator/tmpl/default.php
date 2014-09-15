@@ -20,7 +20,7 @@ $category = (int) $params->get('gaevent', 0);
 	<a href="<?php echo $banner->clickurl; ?>" target="_blank"
 	<?php echo $GAClick; ?>
 	>
-	<img src="<?php echo $banner->imgpath; ?>" alt="<?php echo $banner->description; ?>" 
+	<img style="max-width:100%;" src="<?php echo $banner->imgpath; ?>" alt="<?php echo $banner->description; ?>" 
 	width="<?php echo $banner->clickurl; ?>" height="<?php echo $banner->clickurl; ?>"
 	<?php echo $GALoad; ?>
 	/>
