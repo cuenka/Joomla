@@ -38,7 +38,7 @@ class Timeline_portfolioViewPortfolio extends JViewLegacy
         if (count($errors = $this->get('Errors'))) {;
             throw new Exception(implode("\n", $errors));
         }
-        
+        $this->title = $this->_getTitle();
         $this->_prepareDocument();
         parent::display($tpl);
 	}
@@ -47,6 +47,19 @@ class Timeline_portfolioViewPortfolio extends JViewLegacy
 	/**
 	 * Prepares the document
 	 */
+	protected function _getTitle()
+		{
+			$app	= JFactory::getApplication();
+			$menus	= $app->getMenu();
+			$title	= null;
+	
+			// Because the application sets a default page title,
+			// we need to get it from the menu item itself
+			$menu = $menus->getActive();
+			
+			return $this->params->get('page_title', $menu->title);
+			
+		} 
 	protected function _prepareDocument()
 	{
 		$app	= JFactory::getApplication();
