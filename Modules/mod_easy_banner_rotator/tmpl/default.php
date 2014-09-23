@@ -44,7 +44,8 @@ $category = (int) $params->get('gaevent', 0);
     function cycle<?php echo $module->id; ?>() {
 		<?php if ((int) $params->get('effect', 0)==0): ?>
 		$(banners[i%len]).fadeOut(fade, function() {
-		    $(banners[++i%len]).fadeIn(fade, function() { 
+		    $(banners[++i%len]).fadeIn(fade, function() {
+		    setTimeout(cycle<?php echo $module->id; ?>, delay); 
 		<?php endif; ?>
 		<?php if ((int) $params->get('effect', 0)==1): ?>
 		$(banners[i%len]).hide(function() {

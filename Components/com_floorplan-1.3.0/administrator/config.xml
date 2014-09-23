@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="component"
+		label="COM_FLOORPLAN_COMPONENT_LABEL"
+		description="COM_FLOORPLAN_COMPONENT_DESC"
+	>
+
+
+ 		<field
+		 	name="FloorplanBackground"
+		 	type="media"
+		 	label="COM_FLOORPLAN_FLOORPLANBACKGROUND_LABEL"
+		 	description="COM_FLOORPLAN_FLOORPLANBACKGROUND_DESC" />
+ 	
+ 	 	<field
+	 	 	name="TotalBooths"
+	 	 	type="text"
+	 	 	label="COM_FLOORPLAN_TOTAL_BOOTHS_LABEL"
+	 	 	description="COM_FLOORPLAN_TOTAL_BOOTHS_DESC" />
+ 	 	
+ 	 	<field name="Shape" type="list" default="Square" label="COM_FLOORPLAN_SHAPE_LABEL" description="COM_FLOORPLAN_SHAPE_DESC">
+ 	 	  <option value="Square">Square</option>
+ 	 	  <option value="Rectangle">Rectangle</option>
+ 	 	  <option value="LShape">L shape</option>
+ 	 	  <option value="leadership">Leadership shape</option>
+ 	 	  <option value="rac">Rac shape</option>
+ 	 	</field>
+ 	 	
+ 	 	 <field
+ 	 	 	name="ReservedColour"
+ 	 	 	type="color"
+ 	 	 	label="COM_FLOORPLAN_RESERVEDCOLOUR_LABEL"
+ 	 	 	description="COM_FLOORPLAN_RESERVEDCOLOUR_LABEL" />
+		
+		 <field
+		 	name="EmptyColour"
+		 	type="color"
+		 	label="COM_FLOORPLAN_EMPTYCOLOUR_LABEL"
+		 	description="COM_FLOORPLAN_EMPTYCOLOUR_DESC" />
+		<field
+			name="RefreshmentColour"
+			type="color"
+			label="COM_FLOORPLAN_REFRESMENTCOLOUR_LABEL"
+			description="COM_FLOORPLAN_REFRESMENTCOLOUR_DESC" />
+		<field
+			name="SpecialColour"
+			type="color"
+			label="COM_FLOORPLAN_SPECIALCOLOUR_LABEL"
+			description="COM_FLOORPLAN_SPECIALCOLOUR_DESC" />
+		<field
+			name="Mailto"
+			type="text"
+			label="COM_FLOORPLAN_MAILTO_LABEL"
+			description="COM_FLOORPLAN_MAILTO_DESC" />
+	
+	</fieldset>
+<fieldset name="Advance"
+	label="COM_FLOORPLAN_ADVANCE_LABEL"
+	description="COM_FLOORPLAN_ADVANCE_DESC">
+	<field
+		name="BoothBColour"
+		type="color"
+		label="COM_FLOORPLAN_BOOTHBCOLOUR_LABEL"
+		description="COM_FLOORPLAN_BOOTHBCOLOUR_DESC" />
+	<field
+		name="FontColour"
+		type="color"
+		label="COM_FLOORPLAN_EMPTYCOLOUR_LABEL"
+		description="COM_FLOORPLAN_FONTCOLOUR_DESC" />
+	<field
+		name="WidthB"
+		type="text"
+		label="COM_FLOORPLAN_TOTAL_WIDTHBOOTH_LABEL"
+		description="COM_FLOORPLAN_TOTAL_WIDTHBOOTH_DESC" />
+	<field
+		name="HeightB"
+		type="text"
+		label="COM_FLOORPLAN_TOTAL_HEIGHTBOOTH_LABEL"
+		description="COM_FLOORPLAN_TOTAL_HEIGHTBOOTH_DESC" />	
+	<field name="Fontsizenumber" type="integer" default="14" label="COM_FLOORPLAN_FONTSIZENUMBER_LABEL" description="COM_FLOORPLAN_FONTSIZENUMBER_DESC" first="7" last="50" step="1" />	
+</fieldset>
+	<fieldset name="permissions"
+		description="JCONFIG_PERMISSIONS_DESC"
+		label="JCONFIG_PERMISSIONS_LABEL"
+	>
+
+		<field 
+            name="rules" 
+            type="rules"
+			component="com_floorplan"
+            class="inputbox"
+			filter="rules"
+			validate="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			section="component" />
+	</fieldset>
+
+</config>

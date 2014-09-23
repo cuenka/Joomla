@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" hint="JSEARCH_FILTER"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        
+		<field name="type" type="list" onchange="this.form.submit();">
+		<option value="">COM_FLOORPLAN_BOOTHS_TYPE_FILTER</option>
+		<option value="Available">COM_FLOORPLAN_BOOTHS_TYPE_OPTION_AVAILABLE</option>
+		<option value="Reserved">COM_FLOORPLAN_BOOTHS_TYPE_OPTION_RESERVED</option>
+		<option value="Refreshment">COM_FLOORPLAN_BOOTHS_TYPE_OPTION_REFRESHMENT</option>
+		<option value="Special">COM_FLOORPLAN_BOOTHS_TYPE_OPTION_SPECIAL</option>
+		</field>
+
+    </fields>
+</form>
