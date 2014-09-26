@@ -1,0 +1,101 @@
+/**
+ * @version     1.0.6
+ * @package     com_supporters
+ * @copyright   Aviation Media (TM) Copyright (C) 2014. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @author      Jose Cuenca <jose@aviationmedia.aero> - http://www.aviationmedia.aero
+ */
+
+table.front-end-list{
+    width: 100%;
+    border-spacing: 1px;
+    background-color: #f3f3f3;
+    color: #666;
+}
+
+table.front-end-list thead th{
+    text-align: center;
+    background: #f7f7f7;
+    color: #666;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #fff;
+}
+
+table.front-end-list td, table.front-end-list th{
+    padding: 4px;
+}
+
+table.front-end-list thead th.align-left{
+    text-align: left;
+}
+
+table.front-end-list thead th.align-center, table.front-end-list tbody td.align-center {
+    text-align: center;
+}
+
+table.front-end-list tbody tr td{
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+table.front-end-list td{
+    padding-left: 8px;
+}
+
+div.list-footer{
+    clear:both;
+    text-decoration: none;
+    text-align: center;
+}
+
+div.list-footer ul{
+    list-style: none;
+    display: inline-block;
+}
+
+div.list-footer ul li{
+    display: inline-block;
+}
+
+div.list-footer div.limit{
+    display: inline-block;
+}
+
+div.list-footer div.counter{
+    display: inline-block;
+}
+
+div.filter-select.hide{
+    display: none;
+}
+
+div.filter-select.show{
+    display: block;
+}
+
+div.filter-search , div.filter-select {
+    float: left;
+    clear: both;
+}
+
+div.filter-select .fltlft{
+    float: left;
+    clear: both;
+}
+
+div.field-filter{
+    float: left;
+    margin: 10px;
+}
+
+#filter-bar div.fltrt div.button2-left .blank a {
+    margin-top: 0 !important;
+}
+
+button.open{
+    font-weight: bold;
+}
+
+div.field-filter:first-of-type{
+    margin-left: 0;
+}

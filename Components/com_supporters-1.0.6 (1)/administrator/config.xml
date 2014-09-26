@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="component"
+		label="COM_SUPPORTERS_COMPONENT_LABEL"
+		description="COM_SUPPORTERS_COMPONENT_DESC"
+	>
+	<field name="blockbackgroundcolour" type="color" default="#eee"
+	    label="COM_SUPPORTERS_BBC_LABEL"
+	    description="COM_SUPPORTERS_MIBC_DESC" />
+	<field name="blockfontcolour" type="color" default="#eee"
+	    label="COM_SUPPORTERS_BFC_LABEL"
+	    description="COM_SUPPORTERS_MIBC_DESC" />    
+	<field name="mibackgroundcolour" type="color" default="#eee"
+        label="COM_SUPPORTERS_MIBC_LABEL"
+        description="COM_SUPPORTERS_MIBC_DESC" />
+    <field name="mifontcolour" type="color" default="#eee"
+        label="COM_SUPPORTERS_MIFC_LABEL"
+        description="COM_SUPPORTERS_MIFC_DESC" />
+    <field name="vwbackgroundcolour" type="color" default="#eee"
+    	label="COM_SUPPORTERS_VWBC_LABEL"
+        description="COM_SUPPORTERS_VWBC_DESC" />
+<field name="vwfontcolour" type="color" default="#eee"
+    label="COM_SUPPORTERS_VWFC_LABEL"
+    description="COM_SUPPORTERS_VWFC_DESC" />
+	</fieldset>
+
+	<fieldset name="permissions"
+		description="JCONFIG_PERMISSIONS_DESC"
+		label="JCONFIG_PERMISSIONS_LABEL"
+	>
+
+		<field 
+            name="rules" 
+            type="rules"
+			component="com_supporters"
+            class="inputbox"
+			filter="rules"
+			validate="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			section="component" />
+	</fieldset>
+
+</config>

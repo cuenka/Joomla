@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_SUPPORTERS_TITLE_LIST_VIEW_LISTS" option="View">
+        <message>
+                        <![CDATA[COM_SUPPORTERS_TITLE_LIST_VIEW_LISTS_DESC]]>
+        </message>
+	</layout>
+</metadata>

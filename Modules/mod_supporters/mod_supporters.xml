@@ -25,14 +25,24 @@
             <fieldset name="basic">
                 <field name="moduleclass_sfx" type="text" default="" label="MOD_supporters_CLASS_SUFFIX" description="MOD_supporters_CLASS_SUFFIX_DESCRIPTION"/>
                              <field name="moduleclass_sfx" type="text" default="" label="MOD_supporters_CLASS_SUFFIX" description="MOD_supporters_CLASS_SUFFIX_DESCRIPTION"/>
+                <field name="showcategory" type="radio" default="0" label="MOD_SUPPORTERS_CLASS_SHOW_CATEGORY" description="MOD_SUPPORTERS_CLASS_SHOW_CATEGORY_DESCRIPTION" class="btn-group btn-group-yesno">
+                  <option value="0">JNO</option>
+                  <option value="1">JYES</option>
+                </field> 
+                <field name="style" type="list" default="0" label="MOD_SUPPORTERS_CLASS_STYLE" description="MOD_SUPPORTERS_CLASS_SHOW_STYLE_DESCRIPTION" class="btn-group btn-group-yesno">
+                  <option value="0">No style</option>
+                  <option value="1">shadow</option>
+					<option value="2">Responsive</option>
+					<option value="3">Center</option>
+                </field> 
                 <field name="SupporterImage" type="radio" default="0" label="MOD_SUPPORTERS_CLASS_BE_SUPPORTER" description="MOD_SUPPORTERS_CLASS_BE_SUPPORTER_DESCRIPTION" class="btn-group btn-group-yesno">
                   <option value="0">JNO</option>
                   <option value="1">JYES</option>
                 </field>      
                 <field name="ImgSupporter" type="media" directory="Sponsors" />
                 <field name="LinkSupportPage" type="menuitem" default="45" label="MOD_SUPPORTERS_CLASS_CONTACT_US_LINK" description="MOD_SUPPORTERS_CLASS_CONTACT_US_LINK_DESCRIPTION"/>
-                <field name="Width" type="text" default="110" label="MOD_SUPPORTERS_CLASS_BOX_WIDTH" description="MOD_SUPPORTERS_CLASS_BOX_WIDTH_DESC" filter="number"/>
-                <field name="Height" type="text" default="80" label="MOD_SUPPORTERS_CLASS_BOX_HEIGHT" description="MOD_SUPPORTERS_CLASS_BOX_HEIGHT_DESC" filter="number"/>    
+                <field name="Width" type="text" default="auto" label="MOD_SUPPORTERS_CLASS_BOX_WIDTH" description="MOD_SUPPORTERS_CLASS_BOX_WIDTH_DESC" filter="number"/>
+                <field name="Height" type="text" default="auto" label="MOD_SUPPORTERS_CLASS_BOX_HEIGHT" description="MOD_SUPPORTERS_CLASS_BOX_HEIGHT_DESC" filter="number"/>    
         	</fieldset>
         </fields>
     </config>

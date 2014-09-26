@@ -18,7 +18,7 @@ class modsupportersHelper
 			$db = JFactory::getDbo();
 	        $query = $db->getQuery(true);
 	        // Select the required fields from the table.
-	       $query->select('website,logo,company');
+	       $query->select('website,logo,company,category');
 	       $query->from('#__supporters_list');
 	       $query->where('state = 1' );	       
 	  	   $db->setQuery((string)$query);
