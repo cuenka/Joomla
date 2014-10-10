@@ -21,7 +21,7 @@ $category = (int) $params->get('gaevent', 0);
 	<?php echo $GAClick; ?>
 	>
 	<img style="max-width:100%;" src="<?php echo $banner->imgpath; ?>" alt="<?php echo $banner->description; ?>" 
-	width="<?php echo $banner->clickurl; ?>" height="<?php echo $banner->clickurl; ?>"
+	width="<?php echo $banner->width; ?>" height="<?php echo $banner->height; ?>"
 	<?php echo $GALoad; ?>
 	/>
 	</a>
