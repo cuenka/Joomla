@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_CREATED_BY"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_CREATED_BY"  /> 
+
+       <field name="dblink" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_DBLINK"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_DBLINK" 
+                
+                
+                
+            filter="html" /> 
+
+       <field name="series" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_SERIES"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_SERIES" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="model" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_MODEL"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_MODEL" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="yom" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_YOM"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_YOM" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="msn" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_MSN"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_MSN" 
+                
+                
+                 required="true" 
+            filter="raw" /> 
+
+       <field name="tfhs_tfcs" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_TFHS_TFCS"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_TFHS_TFCS" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="engines" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_ENGINES"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_ENGINES" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="cabin" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_CABIN"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_CABIN" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="ol_a_s" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_OL_A_S"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_OL_A_S" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="lu" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_LU"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_LU" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="ad" type="text"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_AD"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_AD" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="company_logo" type="media"
+                
+            label="COM_AVAILABLE_ASSETS_FORM_LBL_AIRCRAFTFORM_COMPANY_LOGO"
+            description="COM_AVAILABLE_ASSETS_FORM_DESC_AIRCRAFTFORM_COMPANY_LOGO" 
+                
+                
+                
+            directory="available_assets" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

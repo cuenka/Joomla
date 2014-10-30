@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_available_assets</name>
+    <creationDate>2014-10-17</creationDate>
+    <copyright>Copyright (C) 2014. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Jose Cuenca</author>
+    <authorEmail>jose@aviationmedia.aero</authorEmail>
+    <authorUrl>http://www.afm.aero</authorUrl>
+    <version>1.0.0</version>
+    <description>available assets</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>available_assets.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="site">
+        
+			<language tag="en-GB">language/en-GB/en-GB.com_available_assets.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_available_assets/assets/images/s_com_available_assets.png" >COM_AVAILABLE_ASSETS</menu>
+        <submenu>
+            
+			<menu link="option=com_available_assets&amp;view=aircraftlist" view="aircraftlist" img="components/com_available_assets/assets/images/s_aircraftlist.png" alt="Available_assets/Aircraftlist">COM_AVAILABLE_ASSETS_TITLE_AIRCRAFTLIST</menu>
+
+			<menu link="option=com_available_assets&amp;view=additions" view="additions" img="components/com_available_assets/assets/images/s_additions.png" alt="Available_assets/Additions">COM_AVAILABLE_ASSETS_TITLE_ADDITIONS</menu>
+
+			<menu link="option=com_available_assets&amp;view=removals" view="removals" img="components/com_available_assets/assets/images/s_removals.png" alt="Available_assets/Removals">COM_AVAILABLE_ASSETS_TITLE_REMOVALS</menu>
+
+			<menu link="option=com_available_assets&amp;view=updates" view="updates" img="components/com_available_assets/assets/images/s_updates.png" alt="Available_assets/Updates">COM_AVAILABLE_ASSETS_TITLE_UPDATES</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>available_assets.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <folder>language</folder>
+        </files>
+        <languages folder="administrator">
+            
+			<language tag="en-GB">language/en-GB/en-GB.com_available_assets.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_available_assets.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="available_assets"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

@@ -1,0 +1,45 @@
+CREATE TABLE IF NOT EXISTS `#__available_assets_msns` (
+`id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+
+`ordering` INT(11)  NOT NULL ,
+`state` TINYINT(1)  NOT NULL ,
+`checked_out` INT(11)  NOT NULL ,
+`checked_out_time` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+`created_by` INT(11)  NOT NULL ,
+`dblink` VARCHAR(255)  NOT NULL ,
+`series` VARCHAR(255)  NOT NULL ,
+`model` VARCHAR(255)  NOT NULL ,
+`yom` VARCHAR(255)  NOT NULL ,
+`msn` VARCHAR(255)  NOT NULL ,
+`tfhs_tfcs` VARCHAR(255)  NOT NULL ,
+`engines` VARCHAR(255)  NOT NULL ,
+`cabin` VARCHAR(255)  NOT NULL ,
+`ol_a_s` VARCHAR(255)  NOT NULL ,
+`lu` VARCHAR(255)  NOT NULL ,
+`ad` VARCHAR(255)  NOT NULL ,
+`company_logo` VARCHAR(255)  NOT NULL ,
+PRIMARY KEY (`id`)
+) DEFAULT COLLATE=utf8_general_ci;
+
+INSERT INTO `#__available_assets_msns` (`id`, `ordering`, `state`, `checked_out`, `checked_out_time`, `created_by`, `dblink`, `series`, `model`, `yom`, `msn`, `tfhs_tfcs`, `engines`, `cabin`, `ol_a_s`, `lu`, `ad`, `company_logo`) VALUES
+(1, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_747', '747-200SF', '747', '1982', '22304', '97615/OR', 'RB211-524D', 'Freighter', 'A/S', '1309', 'IMM', 'images/available_assets/myairlease.jpg'),
+(2, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_747', '747-200SF', '747', '1982', '22442', '94427/OR', 'RB211-524D', 'Freighter', 'A/S', '1309', 'IMM', 'images/available_assets/myairlease.jpg'),
+(3, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_747', '747-400F', '747', '2001', '30762', '47979/8029', 'CF6-80C2B1F', 'Freighter', 'OL/S', '1401', 'IMM', 'images/available_assets/myairlease.jpg'),
+(4, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_A320', 'A319-100', 'A320F', '2006', '2849', '21659/12634', 'CFM56-5B6/P', '0/0/138', 'OL', '1401', 'IMM', 'images/available_assets/myairlease.jpg'),
+(5, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_A320', 'A319-100', 'A320F', '2006', '2891', 'OR', 'CFM56-5B6/P', '0/0/138', 'OL', '1408', '1409', 'images/available_assets/myairlease.jpg'),
+(6, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_A320', 'A319-133', 'A320F', '2008', '3705', 'OR', 'V2527M-A5', '0/0/144', 'OL', '1402', '1411', 'images/available_assets/myairlease.jpg'),
+(7, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_A320', 'A320-200', 'A320F', '1998', '888', '41500/18700', 'CFM56-5B4/P', '0/0/180', 'OL', '1408', '1411', 'images/available_assets/myairlease.jpg'),
+(8, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_A330', 'A330-200', 'A330', '2008', '970', 'OR', 'PW4168A', '0/24/259', 'OL', '1312', '1501', 'images/available_assets/myairlease.jpg'),
+(9, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_A330', 'A330-223', 'A330', '2000', '353', 'OR', 'PW4168A', 'OR', 'S', '1407', '1412', 'images/available_assets/myairlease.jpg'),
+(10, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_A330', 'A330-223', 'A330', '2000', '362', 'OR', 'PW4168A', 'OR', 'S', '1407', '1412', 'images/available_assets/myairlease.jpg'),
+(11, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_A340', 'A340-600', 'A340', '2002', '391', 'OR', 'Trent 556-61', '45/38/225', 'OL/S', '1310', 'IMM', 'images/available_assets/myairlease.jpg'),
+(12, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_A340', 'A340-600', 'A340', '2002', '416', 'OR', 'Trent 556-61', '45/38/225', 'OL/S', '1310', 'IMM', 'images/available_assets/myairlease.jpg'),
+(13, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_BOMBARDIER', 'DHC8-300', 'DHC8', '1995', '405', 'OR', 'PW123', '0/0/56', 'OL/S', '1405', '1502', 'images/available_assets/myairlease.jpg'),
+(14, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_BOMBARDIER', 'DHC8-300', 'DHC8', '1997', '443', 'OR', 'PW123', '0/0/56', 'OL/S', '1406', '1502', 'images/available_assets/myairlease.jpg'),
+(15, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_BOMBARDIER', 'DHC8-300', 'DHC8', '2001', '571', 'OR', 'PW123', '0/0/56', 'OL/S', '1407', '1502', 'images/available_assets/myairlease.jpg'),
+(16, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_EMBRAER', 'ERJ-145EU', 'ERJ-135/145', '2001', '145482', 'OR', 'AE3007A1', 'OR', 'OL/S', '1407', 'IMM', 'images/available_assets/myairlease.jpg'),
+(17, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_EMBRAER', 'ERJ-145LR', 'ERJ-135/145', '1998', '145098', 'OR', 'AE3007A1', 'OR', 'S', '1307', 'IMM', 'images/available_assets/myairlease.jpg'),
+(18, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_SAAB', 'SAAB 340B', 'SAAB', '1992', '324', '26287/30946', 'CT7-9B', '0/0/34', 'S', '1402', 'IMM', 'images/available_assets/myairlease.jpg'),
+(19, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_SAAB', 'SAAB 340B', 'SAAB', '1993', '329', '25382/30324', 'CT7-9B', '0/0/34', 'S', '1402', 'IMM', 'images/available_assets/myairlease.jpg'),
+(20, 0, 1, 0, '0000-00-00 00:00:00', 0, 'http://www.myairlease.com/available/available_for_lease_SAAB', 'SAAB 340B', 'SAAB', '1993', '340', '26001/30003', 'CT7-9B', '0/0/34', 'S', '1402', 'IMM', 'images/available_assets/myairlease.jpg');
+

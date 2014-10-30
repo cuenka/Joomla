@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0.0" client="site" method="upgrade">
+    <name>JC Multiple Backgrounds Module</name>
+    <author>Jose Cuenca</author>
+    <version>1.0.0</version>
+    <description>Display random background each day, each refresh or just one..</description>
+    <scriptfile>script.php</scriptfile>
+    <files>
+        <filename>mod_jcmultiplebackgrounds.xml</filename>
+        <filename module="mod_jcmultiplebackgrounds" label="Multiple Backgrounds Module">mod_jcmultiplebackgrounds.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <languages folder="admin">
+    <language tag="en-GB">language/en-GB/en-GB.mod_jcmultiplebackgrounds.ini</language>
+	</languages>
+    <config>
+		<fields name="params">
+		    <fieldset name="basic">
+		    <field name="bgcolour" type="color" default="#fff"
+		            label="MOD_JCMULTIPLEBACKGROUNDS_BGCOLOUR_LABEL"
+		            description="MOD_JCMULTIPLEBACKGROUNDS_BGCOLOUR_DESC" />
+		            
+		    	<field	name="randombg" type="radio" class="btn-group btn-group-yesno" default="0"
+				label="MOD_JCMULTIPLEBACKGROUNDS_RANDOM_LABEL" description="MOD_JCMULTIPLEBACKGROUNDS_RANDOM_DESC">
+								<option value="1">JYES</option>
+								<option value="0">JNO</option>
+							</field>
+ 	       	<field name="singlebg" type="media" directory="background" label="MOD_JCMULTIPLEBACKGROUNDS_SINGLEBG_LABEL" description="MOD_JCMULTIPLEBACKGROUNDS_SINGLEBG_DESC" default="" />
+ 	       	
+ 	       	
+ 	       	</fieldset>     
+   	        	        	
+        </fields>
+    </config>
+</extension>

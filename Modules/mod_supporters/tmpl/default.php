@@ -54,20 +54,20 @@ switch ($params->get("style")){
 echo $style;
 ?>
 
-
+<?php  $currentcategory = ""; ?>
 <?php foreach ($supporters as $supporter) : ?>
 <div class="sponsors-home ">
 	<a href="<?php echo $supporter->website; ?>" target="_blank" title="<?php echo $supporter->company; ?>" rel="follow" style="text-decoration:none;">
 		<?php 
 		if ($params->get("showcategory")) {
-			$title = SupportersFrontendHelper::getCategoryNameByCategoryId($supporter->category);
-			echo '<p>'.$title.'</p>';	
+			if ($supporter->title != $currentcategory) echo '<p>'. $supporter->title.'</p>';	
 		}
 		?>
 		
-		<img alt="<?php echo $supporter->company; ?>" src="<?php echo JURI::root() .$supporter->logo; ?>" width="<?php echo $params->get("Width");?>" height="<?php echo $params->get("Height");?>">
+		<img alt="<?php echo $supporter->company; ?>" src="<?php echo JURI::root() .$supporter->logo; ?>" width="<?php echo $params->get("Width");?>" height="<?php echo $params->get("Height");?>" class="img-responsive">
 	</a>
 </div>
+<?php $currentcategory = $supporter->title; ?>	
 <?php endforeach; ?>
 
 <?php if($params->get("SupporterImage")) :?>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_CREATED_BY"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_CREATED_BY"  /> 
+
+       <field name="title" type="text"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_TITLE"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_TITLE" 
+                
+                
+                 required="true" 
+            filter="raw" /> 
+
+       <field name="style" type="radio" class="btn-group btn-group-yesno"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_STYLE"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_STYLE" 
+                 default="title" 
+                
+                
+            menu_published="0"
+            filter="raw">
+                <option value="title">Title</option>
+                <option value="break">Break</option>
+                <option value="session">Session</option>
+                <option value="daymodified">Day Modified</option>
+        </field> 
+
+       <field name="day" type="category"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_DAY"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_DAY" 
+                
+                
+                
+            extension="com_metro_programme" /> 
+
+       <field name="sessiontime" type="calendar"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_SESSIONTIME"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_SESSIONTIME" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="subtitle" type="editor"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_SUBTITLE"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_SUBTITLE" 
+                
+                
+                 /> 
+
+       <field name="information" type="editor"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_INFORMATION"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_INFORMATION" 
+                
+                
+                 /> 
+
+       <field name="refreshmentlogo" type="media"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_REFRESHMENTLOGO"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_REFRESHMENTLOGO" 
+                
+                
+                
+            directory="programme" /> 
+
+       <field name="refreshmentlink" type="text"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_REFRESHMENTLINK"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_REFRESHMENTLINK" 
+                
+                
+                
+            filter="url" /> 
+
+       <field name="refreshmentname" type="text"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_REFRESHMENTNAME"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_REFRESHMENTNAME" 
+                
+                
+                
+            filter="safehtml" /> 
+
+ 
+		<field name="chairman" type="sql" label="Chairman from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+
+       <field name="chairmanisairportspeaker" type="radio" class="btn-group btn-group-yesno"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_CHAIRMANISAIRPORTSPEAKER"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_CHAIRMANISAIRPORTSPEAKER" 
+                
+                
+                default="0"
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+        </field> 
+
+ 
+		<field name="moderator" type="sql" label="Moderator from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+
+       <field name="moderatorisairportspeaker" default="0" type="radio" class="btn-group btn-group-yesno"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_MODERATORISAIRPORTSPEAKER"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_MODERATORISAIRPORTSPEAKER" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+        </field> 
+
+ 
+		<field name="speaker1" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+
+       <field default="0" name="isairportspeaker1" type="radio" class="btn-group btn-group-yesno"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_ISAIRPORTSPEAKER1"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_ISAIRPORTSPEAKER1" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+        </field> 
+
+ 
+		<field name="speaker2" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+
+       <field default="0" name="isairportspeaker2" type="radio" class="btn-group btn-group-yesno"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_ISAIRPORTSPEAKER2"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_ISAIRPORTSPEAKER2" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+        </field> 
+
+ 
+		<field name="speaker3" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+
+       <field default="0" name="isairportspeaker3" type="radio" class="btn-group btn-group-yesno"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_ISAIRPORTSPEAKER3"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_ISAIRPORTSPEAKER3" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+        </field> 
+
+ 
+		<field name="speaker4" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+
+       <field default="0" name="isairportspeaker4" type="radio" class="btn-group btn-group-yesno"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_ISAIRPORTSPEAKER4"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_ISAIRPORTSPEAKER4" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+        </field> 
+
+ 
+		<field name="speaker5" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+
+       <field default="0" name="isairportspeaker5" type="radio" class="btn-group btn-group-yesno"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_ISAIRPORTSPEAKER5"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_ISAIRPORTSPEAKER5" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+        </field> 
+
+ 
+		<field name="speaker6" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+
+       <field default="0" name="isairportspeaker6" type="radio" class="btn-group btn-group-yesno"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_ISAIRPORTSPEAKER6"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_ISAIRPORTSPEAKER6" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+        </field> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

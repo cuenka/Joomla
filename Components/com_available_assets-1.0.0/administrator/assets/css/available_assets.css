@@ -1,0 +1,15 @@
+.icon-48-aircraftlist {
+      background-image: url(../images/l_aircraftlist.png);
+      padding-left:60px!important;
+}
+
+.icon-48-aircraftform {
+      background-image: url(../images/l_aircraftlist.png);
+      padding-left:60px!important;
+}
+#toolbar-s_additions > button{
+	
+}
+.icon-s_additions{
+background: url(../images/excel_Icon.gif) no-repeat 0px 0px;
+}
