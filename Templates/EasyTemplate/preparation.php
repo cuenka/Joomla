@@ -1,5 +1,5 @@
 <?php defined('_JEXEC') or die;
-
+require "pre-processor/lessc.inc.php";
 // variables
 $app = JFactory::getApplication();
 $doc = JFactory::getDocument(); 
@@ -28,7 +28,7 @@ $nojs = $this->params->get('nojs');
 $disablejs = $this->params->get('disablejs');
 $disablecss = $this->params->get('disablecss');
 $mootools = $this->params->get('mootools',0);
-
+$less =  $this->params->get('less',0);
 //First Unset unnecesary options
 
 if ($mootools==0) {
@@ -56,65 +56,30 @@ if (!$editingMootools && (empty($enabledItemids) || empty($itemId) || !in_array(
 		unset($doc->_styleSheets[$this->baseurl . '/media/system/css/modal.css']);
 }
 
-/* Remove custom scripts
-if ($app->isSite()) {
-  // disable js
-  if ( $this->params->get('disablejs') ) {
-     if (trim($nojs) != '') {
-      $filesjs=explode(',', $nojs);
-      $head = (array) $headdata['scripts'];
-      $newhead = array();         
-      foreach($head as $key => $elm) {
-        $add = true;
-        foreach ($filesjs as $dis) {
-          if (strpos($key,$dis) !== false) {
-            $add=false;
-            break;
-          } 
-        }
-        if ($add) $newhead[$key] = $elm;
-      }
-      $headdata['scripts'] = $newhead;
-    } 
-  } 
-  // disable css
-  if ( $this->params->get('disablecss') ) {
-    if (trim($nocss) != '') {
-      $filescss=explode(',', $nocss);
-      $head = (array) $headdata['styleSheets'];
-      $newhead = array();         
-      foreach($head as $key => $elm) {
-        $add = true;
-        foreach ($filescss as $dis) {
-          if (strpos($key,$dis) !== false) {
-            $add=false;
-            break;
-          } 
-        }
-        if ($add) $newhead[$key] = $elm;
-      }
-      $headdata['styleSheets'] = $newhead;
-    } 
-  }
-  $doc->setHeadData($headdata); 
-}
-*/
-
 //Modernizr
 if ($modernizr==1) $doc->addScript($tpath.'/js/modernizr-2.7.1.js');
 
 //bootstrap
 
 switch ($css) {
-	case "CDN":
-		$doc->addStyleSheet('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css');
+	case "CDNBOOTSTRAP":
+		$doc->addStyleSheet('//netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.css');
 		$doc->addStyleSheet($tpath.'/css/custom.css');
 
 		break;
-	case "SERVER":
+	case "SERVERBOOTSTRAP":
 		$doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
 		$doc->addStyleSheet($tpath.'/css/custom.css');
 		break;
+	case "CDNFOUNDATION":
+		$doc->addStyleSheet('//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/foundation.min.css');
+		$doc->addStyleSheet($tpath.'/css/custom.css');
+
+		break;
+	case "SERVERBOOTSTRAP":
+		$doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
+		$doc->addStyleSheet($tpath.'/css/custom.css');
+		break;		
 	case "JOOMLA":
 		//JHtml::_('jquery.framework');
 		//JHtml::_('bootstrap.framework');
@@ -124,24 +89,32 @@ switch ($css) {
 }
 
 //JS bootstrap
-$loadBootstrap="";
+$loadResponsive="";
 
 switch ($bootstrap) {
-	case "CDN":
-		$loadBootstrap='<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>';
+	case "CDNBOOTSTRAP":
+		$loadResponsive='<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>';
 		unset($doc->_scripts[$this->baseurl . '/media/jui/js/bootstrap.min.js']);
 		break;
-	case "SERVER":
-		$loadBootstrap= '<script src="'.$tpath.'/js/bootstrap.min.js"></script>';
+	case "SERVERBOOTSTRAP":
+		$loadResponsive= '<script src="'.$tpath.'/js/bootstrap.min.js"></script>';
 		unset($doc->_scripts[$this->baseurl . '/media/jui/js/bootstrap.min.js']);
 		break;
+	case "CDNFOUNDATION":
+		$loadResponsive='<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation.min.js"></script>';
+		unset($doc->_scripts[$this->baseurl . '/media/jui/js/bootstrap.min.js']);
+		break;
+	case "SERVERFOUNDATION":
+		$loadResponsive= '<script src="'.$tpath.'/js/foundation.min.js"></script>';
+		unset($doc->_scripts[$this->baseurl . '/media/jui/js/bootstrap.min.js']);
+		break;			
 	case "JOOMLA":
-		$loadBootstrap="";
+		$loadResponsive="";
 		JHtml::_('jquery.framework');
 		JHtml::_('bootstrap.framework');
 		break;
 	case "NO":
-		$loadBootstrap="";
+		$loadResponsive="";
 		break;
 }
   
@@ -192,7 +165,7 @@ if ($editingMootools && ($option != 'com_content'))
 
 if ($this->params->get('metrojs',0)==1) {
 	$doc->addStyleSheet($tpath.'/css/MetroJs.min.css');
-	$loadBootstrap.= '<script src="'.$tpath.'/js/MetroJs.min.js"></script>';
+	$loadResponsive.= '<script src="'.$tpath.'/js/MetroJs.min.js"></script>';
 	
 }
 
@@ -201,12 +174,13 @@ if ($this->params->get('metrojs',0)==1) {
  * Load Google font
  * ==================================================
  */
- 
+$font=""; 
 if ($googlefont!="") {
-
+		
 			$doc->addStyleSheet('//fonts.googleapis.com/css?family='.$googlefont);
+			$fsize = array(":300", ",300", ":400", ",400",":700", ",700",":100", ",100");
+			$font = str_replace( $fsize, '' , $googlefont);
 }
-
 
 /**
  * ==================================================
@@ -218,11 +192,20 @@ if ($googlefont!="") {
 //UNSET newJCAPTION
 if ($this->params->get('removecaptionjs',0)==1) {
 	if (isset($this->_script['text/javascript']))
-	{ $this->_script['text/javascript'] = preg_replace('%window\.addEvent\    (\'load\',\s*function\(\)\s*{\s*new\s*JCaption\(\'img.caption\'\);\s*}\);\s*%',     '', $this->_script['text/javascript']);
-	if (empty($this->_script['text/javascript']))
-	unset($this->_script['text/javascript']);}
+	{ 
+	$codejcaption ="jQuery(window).on('load',  function() {
+					new JCaption('img.caption');
+				});";
+	// This @ is in order to hide the warning, working in a better solution
+	@$this->_script['text/javascript'] = preg_replace($codejcaption, '', $this->_script['text/javascript']);
+	
+	if (empty($this->_script['text/javascript'])) unset($this->_script['text/javascript']);}
 }
-
+if ($less == 1) {
+		$less = new lessc;
+		$less->checkedCompile( $_SERVER['DOCUMENT_ROOT'].$tpath."/css/custom.less", 
+								 $_SERVER['DOCUMENT_ROOT'].$tpath."/css/custom.css");
+}
 
 // force latest IE & chrome frame
 $doc->setMetadata('x-ua-compatible', 'IE=edge,chrome=1');

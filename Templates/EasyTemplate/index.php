@@ -21,12 +21,12 @@
 
 </head>
 
-<body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('page')).' '.$active->alias.' '.$pageclass; ?>">
+<body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('page')).' '.$active->alias.' '.$pageclass; ?>" style="font-family: '<?php echo $font; ?>';">
 
-
+<h1>Hello</h1>
 <jdoc:include type="modules" name="debug" />
 
-<?php echo $loadBootstrap;?>
+<?php echo $loadResponsive;?>
 </body>
 
 </html>
