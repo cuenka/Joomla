@@ -18,36 +18,184 @@
     <config>
 		<fields name="params">
 		    <fieldset name="Basic">
- 	       		<field name="Name" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
-        		<field name="Position" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
-        		<field name="Email" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-          		<field name="Phone" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-        	</fieldset> 
- 		   <fieldset name="First Contact">
- 	       		<field name="Name1" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
-        		<field name="Position1" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
-        		<field name="Email1" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-          		<field name="Phone1" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-        	</fieldset>
- 		   <fieldset name="Second Contact">
- 	       		<field name="Name2" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
-        		<field name="Position2" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
-        		<field name="Email2" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-          		<field name="Phone2" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-        	</fieldset>
- 		   <fieldset name="Third Contact">
- 	       		<field name="Name3" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
-        		<field name="Position3" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
-        		<field name="Email3" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-          		<field name="Phone3" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-        	</fieldset>
- 		   <fieldset name="Fourth Contact">
- 	       		<field name="Name4" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
-        		<field name="Position4" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
-        		<field name="Email4" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-          		<field name="Phone4" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-        	</fieldset>     
-   	        	        	
+ 	       	
+ 	       	</fieldset>     
+   	        <fieldset name="MOD_OPTION_PLAIN">
+   	        <field
+   	        	name="activateplaintile"
+   	        	type="radio"
+   	        	class="btn-group btn-group-yesno"
+   	        	default="0"
+   	        	label="MOD_METROBOX_ACTIVATE_LABEL"
+   	        	description="MOD_METROBOX_ACTIVATE_DESC">
+   	        	<option value="1">JYES</option>
+   	        	<option value="0">JNO</option>
+   	        </field>	
+			 <field name="plaintitlecategory" type="list" default="" label="MOD_METROBOX_PLAINTILECATEGORY_LABEL" description="MOD_METROBOX_PLAINTILECATEGORY_DESC">
+				<option value="about">About</option>
+				<option value="atlanta">Atlanta</option>
+				<option value="programme">Programme</option>
+				<option value="speakers">Speakers</option>
+				<option value="networking">Networking</option>
+				<option value="brochure">Brochure</option>
+				<option value="gallery">Gallery</option>
+				<option value="location">location</option>
+				<option value="supporters">Supporters</option>
+				<option value="sponsor">Sponsor</option>
+				<option value="exhibition">Exhibition</option>
+				<option value="contact">Contact Us</option>
+				<option value="register">Register</option>
+			 </field>
+			 <field name="plaintitledirection" type="list" default="1" label="MOD_METROBOX_PLAINTILEDIRECTION_LABEL" description="MOD_METROBOX_PLAINTILEDIRECTION_DESC">
+			 	<option value="1">Static</option>
+			 	<option value="2">Horizontal</option>
+			 	<option value="3">Vertical</option>
+			 </field>
+			 <field name="plaintitleeffect" type="list" default="slide" label="MOD_METROBOX_PLAINTILEEFFECT_LABEL" description="MOD_METROBOX_PLAINTILEEFFECT_DESC">
+			 	<option value="slide">slide two tile faces at an arbitrary number of stopping points</option>
+			 	<option value="flip">flip two tile faces in a vertical or horizontal direction</option>
+			 </field>
+			 <field name="plaintitleimage" label="MOD_METROBOX_PLAINTILEIMAGE_LABEL" type="media" directory="icons" />
+			 <field name="plaintitletext" type="text" default="Some text" label="MOD_METROBOX_PLAINTILETEXT_LABEL" description="MOD_METROBOX_ACTIVATEHOVER1TITLE_DESC" size="10" />
+   	        </fieldset> 	
+
+   	             <fieldset name="MOD_OPTION_4TILES">
+   	             <field
+   	             	name="activate4tiles"
+   	             	type="radio"
+   	             	class="btn-group btn-group-yesno"
+   	             	default="0"
+   	             	label="MOD_METROBOX_ACTIVATE_LABEL"
+   	             	description="MOD_METROBOX_ACTIVATE_DESC">
+   	             	<option value="1">JYES</option>
+   	             	<option value="0">JNO</option>
+   	             </field>	
+   	           <field name="4titlescategories" type="list" multiple="true" default="" label="MOD_METROBOX_4TILESCATEGORIES_LABEL" description="MOD_METROBOX_4TILESCATEGORIES_DESC">
+   	           	<option value="about">About</option>
+   	           	<option value="atlanta">Atlanta</option>
+   	           	<option value="programme">Programme</option>
+   	           	<option value="speakers">Speakers</option>
+   	           	<option value="networking">Networking</option>
+   	           	<option value="brochure">Brochure</option>
+   	           	<option value="gallery">Gallery</option>
+   	           	<option value="location">location</option>
+   	           	<option value="supporters">Supporters</option>
+   	           	<option value="sponsor">Sponsor</option>
+   	           	<option value="exhibition">Exhibition</option>
+   	           	<option value="contact">Contact Us</option>
+   	           	<option value="register">Register</option>
+   	           </field>
+   	             </fieldset>
+   	             	  <fieldset name="MOD_OPTION_CAROUSEL">
+   	             	  <field
+   	             	  	name="activatecarousel"
+   	             	  	type="radio"
+   	             	  	class="btn-group btn-group-yesno"
+   	             	  	default="0"
+   	             	  	label="MOD_METROBOX_ACTIVATE_LABEL"
+   	             	  	description="MOD_METROBOX_ACTIVATE_DESC">
+   	             	  	<option value="1">JYES</option>
+   	             	  	<option value="0">JNO</option>
+   	             	  </field>	
+   	             	<field name="carouselcategories" type="list" multiple="true" default="" label="MOD_METROBOX_CAROUSEL_LABEL" description="MOD_METROBOX_CAROUSEL_DESC">
+   	             		<option value="about">About</option>
+   	             		<option value="atlanta">Atlanta</option>
+   	             		<option value="programme">Programme</option>
+   	             		<option value="speakers">Speakers</option>
+   	             		<option value="networking">Networking</option>
+   	             		<option value="brochure">Brochure</option>
+   	             		<option value="gallery">Gallery</option>
+   	             		<option value="location">location</option>
+   	             		<option value="supporters">Supporters</option>
+   	             		<option value="sponsor">Sponsor</option>
+   	             		<option value="exhibition">Exhibition</option>
+   	             		<option value="contact">Contact Us</option>
+   	             		<option value="register">Register</option>
+   	             	</field>
+   	             	  </fieldset>
+   	             	  
+   	             	  
+   	             	  <fieldset name="MOD_OPTION_CAROUSEL_IMAGES">
+   	             	    <field
+   	             	    	name="activatecarouselimages"
+   	             	    	type="radio"
+   	             	    	class="btn-group btn-group-yesno"
+   	             	    	default="0"
+   	             	    	label="MOD_METROBOX_ACTIVATE_LABEL"
+   	             	    	description="MOD_METROBOX_ACTIVATE_DESC">
+   	             	    	<option value="1">JYES</option>
+   	             	    	<option value="0">JNO</option>
+   	             	    </field>	
+   	             	  	 <field name="carouselimage1" label="MOD_METROBOX_CAROUSELIMAGE_LABEL" type="media" directory="icons" />
+   	             	  	 <field name="carouselimagelink1" type="text" default="" label="MOD_METROBOX_CAROUSELIMAGELLINK_LABEL" description="MOD_METROBOX_ACTIVATEHOVER1TEXT_DESC" size="50" />
+   	             	  	<field name="carouselimage2" label="MOD_METROBOX_CAROUSELIMAGE_LABEL" type="media" directory="icons" />
+   	             	  	<field name="carouselimagelink2" type="text" default="" label="MOD_METROBOX_CAROUSELIMAGELLINK_LABEL" description="MOD_METROBOX_ACTIVATEHOVER1TEXT_DESC" size="50" />
+   	             	  	
+   	             	  	<field name="carouselimage3" label="MOD_METROBOX_CAROUSELIMAGE_LABEL" type="media" directory="icons" />
+   	             	  	
+   	             	  	<field name="carouselimagelink3" type="text" default="horizontal" label="MOD_METROBOX_CAROUSELIMAGELLINK_LABEL" description="MOD_METROBOX_ACTIVATEHOVER1TEXT_DESC" size="50" />
+   	             	  	
+   	             	  	<field name="carouselimage4" label="MOD_METROBOX_CAROUSELIMAGE_LABEL" type="media" directory="icons" />
+   	             	  	 <field name="carouselimagelink4" type="text" default="" label="MOD_METROBOX_CAROUSELIMAGELLINK_LABEL" description="MOD_METROBOX_ACTIVATEHOVER1TEXT_DESC" size="50" />
+   	             	   	             	  	   
+   	             	  <field name="carouselimagedelay" type="text" default="3000" filter="integer" label="MOD_METROBOX_CAROUSELIMAGEDELAY_LABEL" description="MOD_METROBOX_ACTIVATEHOVER1TITLE_DESC" size="10" />
+   	             	  <field name="carouselimagedirection" type="text" default="horizontal" label="MOD_METROBOX_CAROUSELIMAGEDIRECTION_LABEL" description="MOD_METROBOX_ACTIVATEHOVER1TEXT_DESC" size="10" />
+   	             	  </fieldset>
+   	             	  
+   	             	  
+   	             	  
+   	             	  
+   	               	  <fieldset name="MOD_OPTION_CUSTOM">
+   	             	  <field
+   	             	  	name="activatecustom"
+   	             	  	type="radio"
+   	             	  	class="btn-group btn-group-yesno"
+   	             	  	default="0"
+   	             	  	label="MOD_METROBOX_ACTIVATE_LABEL"
+   	             	  	description="MOD_METROBOX_ACTIVATE_DESC">
+   	             	  	<option value="1">JYES</option>
+   	             	  	<option value="0">JNO</option>
+   	             	  </field>	
+   	             		<field name="backgroundcustomcolour" type="color" default="#eee"
+   	             		        label="MOD_METROBOX_BACKGROUNDCUSTOMCOLOUR_LABEL"
+   	             		        description="MOD_METROBOX_BACKGROUNDCUSTOMCOLOUR_DESC" />
+   	             		<field name="customlink" type="url" default="http://www.example.com" label="MOD_METROBOX_CUSTOMLINK_LABEL" description="MOD_METROBOX_CUSTOMLINK_DESC" size="10" />        
+   	             	  <field name="customimage" type="media" directory="icons" />
+   	             	  <field name="customtitle" type="text" default="TITLE" label="MOD_METROBOX_CUSTOMTITLE_LABEL" description="MOD_METROBOX_CUSTOMTITLE_DESC" size="10" />
+   	             	  </fieldset>
+					  <fieldset name="MOD_OPTION_HOVERPEEK">
+					<field
+						name="activatehoverpeek"
+						type="radio"
+						class="btn-group btn-group-yesno"
+						default="0"
+						label="MOD_METROBOX_ACTIVATE_LABEL"
+						description="MOD_METROBOX_ACTIVATE_DESC">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+						</field>
+						<field name="activatehovercategories" type="list" multiple="true" default="" label="MOD_METROBOX_ACTIVATEHOVER_LABEL" description="MOD_ACTIVATEHOVER_DESC">
+							<option value="about">About</option>
+							<option value="atlanta">Atlanta</option>
+							<option value="programme">Programme</option>
+							<option value="speakers">Speakers</option>
+							<option value="networking">Networking</option>
+							<option value="brochure">Brochure</option>
+							<option value="gallery">Gallery</option>
+							<option value="location">location</option>
+							<option value="supporters">Supporters</option>
+							<option value="sponsor">Sponsor</option>
+							<option value="exhibition">Exhibition</option>
+							<option value="contact">Contact Us</option>
+							<option value="register">Register</option>
+						</field>
+						<field name="activatehovertile1title" type="text" default="Some text" label="MOD_METROBOX_ACTIVATEHOVER1TITLE_LABEL" description="MOD_METROBOX_ACTIVATEHOVER1TITLE_DESC" size="10" />
+						<field name="activatehovertile1text" type="text" default="Some text" label="MOD_METROBOX_ACTIVATEHOVER1TEXT_LABEL" description="MOD_METROBOX_ACTIVATEHOVER1TEXT_DESC" size="10" />
+						<field name="activatehovertile2title" type="text" default="Some text" label="MOD_METROBOX_ACTIVATEHOVER2TITLE_LABEL" description="MOD_METROBOX_ACTIVATEHOVER2TITLE_DESC" size="10" />
+						<field name="activatehovertile2text" type="text" default="Some text" label="MOD_METROBOX_ACTIVATEHOVER2TEXT_LABEL" description="MOD_METROBOX_ACTIVATEHOVER2TEXT_DESC" size="10" />
+						<field name="activatehovertile3title" type="text" default="Some text" label="MOD_METROBOX_ACTIVATEHOVER3TITLE_LABEL" description="MOD_METROBOX_ACTIVATEHOVER3TITLE_DESC" size="10" />
+						<field name="activatehovertile3text" type="text" default="Some text" label="MOD_METROBOX_ACTIVATEHOVER3TEXT_LABEL" description="MOD_METROBOX_ACTIVATEHOVER3TEXT_DESC" size="10" />
+					</fieldset>   	             	  
         </fields>
     </config>
 </extension>

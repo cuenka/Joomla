@@ -7,21 +7,109 @@ class metrobox
      * @param array $params An object containing the module parameters
      * @access public
      */    
-    public static function getcode( $params, $detect_module )
+
+    public static function getcode( $params )
     {
    
-    $PageID = $params->get('PageID', '');
-    $Width = $params->get('Width', 0);
-    $w = round((($params->get('Width', 0)* 155) / 330) - ((($params->get('Width', 0)* 155) / 330) % 5));
-    $Height = $params->get('Height', 'auto');
-    $Image = $params->get('Image');
-    if ( $detect_module->isMobile()){
-    	return '<div style="text-align:left;"><a style="width:'.$Width.'px;" href="http://html5.pagesuite-professional.co.uk/default.aspx?&edid='.$PageID.'"><img src="'.$Image.'" target="_blank" style="height:'.$Height.'px;padding: 5px;"></a>
-    	<p style="width:'.$Width.'px;"><a href="http://html5.pagesuite-professional.co.uk/default.aspx?&edid='.$PageID.'" target="_blank">Click in the cover for the digital edition!</a></p></div>';
-    	}else{
-
-	   	return '<div style="text-align:left;width:'.$Width.'px;height:'.$Height.'px"><object type="application/x-shockwave-flash" data="http://edition.pagesuite-professional.co.uk/MiniFlip2008.swf?edid='.$PageID.'&urlTarget=blank&spincolor=FFFFFF&pages=6&amp;w='.$w.'&speed=4" width="'.$Width.'px" height="'.$Height.'px" id="MiniFlip2008" align="left"><param name="allowScriptAccess" value="always" ><param name="allowFullScreen" value="false" ><param name="quality" value="high" ><param name="scale" value="noscale" ><param name="salign" value="lt" ><param name="bgcolor" value="#FFFFFF" ><param name="movie" value="http://edition.pagesuite-professional.co.uk/MiniFlip2008.swf?edid='.$PageID.'&urlTarget=blank&spincolor=FFFFFF&amp;pages=6&amp;w='.$w.'&amp;speed=4"></object></div>';
-    	}
+   
+    }
+     public static function gettiles( $params,$size )
+     {
+     	/*if ($params->get("activateplaintile")){
+      		$tile = metrobox::getstyle($params->get("plaintitlecategory"),$size);
+      		return $tile;
+   		}elseif ($params->get("activateplaintile")) {
+   			
+   			$tile = metrobox::getstyle($params->get("plaintitlecategory"),'L');
+   			$tile["class"]="live-tile ".$params->get("plaintitlecategory");
+   			return $tile;
+   		}*/
+   		
+   	}	
+    
+    public function getstyle($category,$size) {
+    	$path='/images/icons';
+    	switch ($category) {
+    		case 'about':
+    			$name='ABOUT';
+    			$colour='#82dc6f';
+    			$link="http://www.saandr.com/about.html";
+    			if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+    			break;
+			case 'atlanta':
+				$name='ATLANTA';
+				$colour='#f1592a';
+				$link="http://www.saandr.com/atlanta.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;    		
+			case 'programme':
+				$name='PROGRAMME';
+				$colour='#1978A4';
+				$link="http://www.saandr.com/programme.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;
+			case 'speakers':
+				$name='SPEAKERS';
+				$colour='#3589b2';
+				$link="http://www.saandr.com/speakers.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;  
+			case 'networking':
+				$name='NETWORKING';
+				$colour='#0028BF';
+				$link="http://www.saandr.com/networking.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;
+		    case 'brochure':
+				$name='BROCHURE';
+				$colour='#291beb';
+				$link="http://www.saandr.com/brochure.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+					break;
+			case 'gallery':
+				$name='GALLERY';
+				$colour='#8747F1';
+				$link="http://www.saandr.com/gallery.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;  
+			case 'location':
+				$name='LOCATION';
+				$colour='#5f5f5f';
+				$link="http://www.saandr.com/location.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;
+			case 'supporters':
+				$name='SUPPORTERS';
+				$colour='#b7bcb7';
+				$link="http://www.saandr.com/supporters.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;  
+			case 'sponsor':
+				$name='SPONSOR';
+				$colour='#fa810c';
+				$link="http://www.saandr.com/sponsor.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;
+			case 'exhibition':
+				$name='EXHIBITION';
+				$colour='#eb1b25';
+				$link="http://www.saandr.com/exhibition.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;  
+			case 'contact':
+				$name='CONTACT US';
+				$colour='#20750e';
+				$link="http://www.saandr.com/contact-us.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;
+			case 'register':
+				$name='REGISTER';
+				$colour='#34cc14';
+				$link="http://www.saandr.com/register.html";
+				if ($size='L') $img=$path.'/icons_210px/'.$category.'.png'; else $img=$path.'/icons_80px/'.$category.'.png';
+				break;		    	
+			}
+    		return array("Name"=>$name,"Colour"=>$colour,"Image"=>$img,"Link"=>$link,"Size"=>$size);
     }
 }
 ?>
