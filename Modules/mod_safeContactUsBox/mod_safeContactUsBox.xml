@@ -6,48 +6,59 @@
     <description>Display a list of contacts where the email is cloak.</description>
     <files>
         <filename>mod_safeContactUsBox.xml</filename>
-        <filename module="mod_safeContactUsBox" label="PageSuite Mini Flip">mod_safeContactUsBox.php</filename>
+        <filename module="mod_safeContactUsBox" label="MOD_SAFECONTACTUSBOX_LABEL">mod_safeContactUsBox.php</filename>
         <filename>index.html</filename>
         <filename>helper.php</filename>
         <filename>tmpl/default.php</filename>
         <filename>tmpl/index.html</filename>
     </files>
-    <languages folder="admin">
-    <language tag="en-GB">language/en-GB/en-GB.mod_safeContactUsBox.ini</language>
+    <languages>
+		<language tag="en-GB">en-GB.mod_safeContactUsBox.ini</language>
 	</languages>
     <config>
 		<fields name="params">
 		    <fieldset name="Basic">
- 	       		<field name="Name" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
-        		<field name="Position" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
-        		<field name="Email" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-          		<field name="Phone" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+ 	       		<field name="FontColour" type="color" default="#eee"
+ 	       		        label="MOD_SAFECONTACTUSBOX_FONT_COLOUR_LABEL"
+ 	       		        description="MOD_SAFECONTACTUSBOX_FONT_COLOUR_DESC" />
         	</fieldset> 
- 		   <fieldset name="First Contact">
- 	       		<field name="Name1" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
-        		<field name="Position1" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
-        		<field name="Email1" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-          		<field name="Phone1" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+           <fieldset name="MOD_SAFECONTACTUSBOX_FIRST_FIELDSET">
+           		<field name="Name0" type="text" default="" size="50" label="MOD_SAFECONTACTUSBOX_NAME_LABEL" description="MOD_SAFECONTACTUSBOX_NAME_DESC"/>
+           	<field name="Position0" type="text" label="MOD_SAFECONTACTUSBOX_POSITION_LABEL" description="MOD_SAFECONTACTUSBOX_POSITION_DESC"/>
+           	<field name="Email0" type="text" label="MOD_SAFECONTACTUSBOX_EMAIL_LABEL" description="MOD_SAFECONTACTUSBOX_EMAIL_DESC" class="inputbox" validate="email"/>
+           		<field name="Phone0" type="text" label="MOD_SAFECONTACTUSBOX_PHONE_LABEL" description="MOD_SAFECONTACTUSBOX_PHONE_DESC"/>
+           </fieldset>  	
+ 		   <fieldset name="MOD_SAFECONTACTUSBOX_SECOND_FIELDSET">
+ 	       		<field name="Name1" type="text" default="" size="50" label="MOD_SAFECONTACTUSBOX_NAME_LABEL" description="MOD_SAFECONTACTUSBOX_NAME_DESC"/>
+        		<field name="Position1" type="text" label="MOD_SAFECONTACTUSBOX_POSITION_LABEL" description="MOD_SAFECONTACTUSBOX_POSITION_DESC"/>
+        		<field name="Email1" type="text" label="MOD_SAFECONTACTUSBOX_EMAIL_LABEL" description="MOD_SAFECONTACTUSBOX_EMAIL_DESC" class="inputbox" validate="email"/>
+          		<field name="Phone1" type="text" label="MOD_SAFECONTACTUSBOX_PHONE_LABEL" description="MOD_SAFECONTACTUSBOX_PHONE_DESC"/>
         	</fieldset>
- 		   <fieldset name="Second Contact">
- 	       		<field name="Name2" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
-        		<field name="Position2" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
-        		<field name="Email2" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-          		<field name="Phone2" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+ 		   <fieldset name="MOD_SAFECONTACTUSBOX_THIRD_FIELDSET">
+ 	       		<field name="Name2" type="text" default="" size="50" label="MOD_SAFECONTACTUSBOX_NAME_LABEL" description="MOD_SAFECONTACTUSBOX_NAME_DESC"/>
+        		<field name="Position2" type="text" label="MOD_SAFECONTACTUSBOX_POSITION_LABEL" description="MOD_SAFECONTACTUSBOX_POSITION_DESC"/>
+        		<field name="Email2" type="text" label="MOD_SAFECONTACTUSBOX_EMAIL_LABEL" description="MOD_SAFECONTACTUSBOX_EMAIL_DESC" class="inputbox" validate="email"/>
+          		<field name="Phone2" type="text" label="MOD_SAFECONTACTUSBOX_PHONE_LABEL" description="MOD_SAFECONTACTUSBOX_PHONE_DESC"/>
         	</fieldset>
- 		   <fieldset name="Third Contact">
- 	       		<field name="Name3" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
-        		<field name="Position3" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
-        		<field name="Email3" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-          		<field name="Phone3" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
+ 		   <fieldset name="MOD_SAFECONTACTUSBOX_FOURTH_FIELDSET">
+ 	       		<field name="Name3" type="text" default="" size="50" label="MOD_SAFECONTACTUSBOX_NAME_LABEL" description="MOD_SAFECONTACTUSBOX_NAME_DESC"/>
+        		<field name="Position3" type="text" label="MOD_SAFECONTACTUSBOX_POSITION_LABEL" description="MOD_SAFECONTACTUSBOX_POSITION_DESC"/>
+        		<field name="Email3" type="text" label="MOD_SAFECONTACTUSBOX_EMAIL_LABEL" description="MOD_SAFECONTACTUSBOX_EMAIL_DESC" class="inputbox" validate="email"/>
+          		<field name="Phone3" type="text" label="MOD_SAFECONTACTUSBOX_PHONE_LABEL" description="MOD_SAFECONTACTUSBOX_PHONE_DESC"/>
         	</fieldset>
- 		   <fieldset name="Fourth Contact">
- 	       		<field name="Name4" type="text" default="" size="50" label="Page Suite ID" description="you can find in the URL of the publication"/>
-        		<field name="Position4" type="text" default="330" label="Width" description="Width of the mini flop in PIXELS, by default it is 330px"/>
-        		<field name="Email4" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-          		<field name="Phone4" type="text" default="220" label="Height" description="Height of the miniflop in PIXELS,by default it is 220px"/>
-        	</fieldset>     
-   	        	        	
+ 		  <fieldset
+   	       	name="advanced">
+   	       	<field
+   	       		name="layout"
+   	       		type="modulelayout"
+   	       		label="JFIELD_ALT_LAYOUT_LABEL"
+   	       		description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+   	       	<field
+   	       		name="moduleclass_sfx"
+   	       		type="textarea" rows="3"
+   	       		label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+   	       		description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+   	       	</fieldset> 	        	
         </fields>
     </config>
 </extension>
