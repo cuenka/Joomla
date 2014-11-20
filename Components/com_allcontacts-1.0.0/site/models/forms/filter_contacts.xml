@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" hint="JSEARCH_FILTER"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        
+		<field name="departament" type="category"
+            label="COM_ALLCONTACTS_FORM_LBL_CONTACT_PHOTO"
+            description="COM_ALLCONTACTS_FORM_DESC_CONTACT_PHOTO"  extension="com_allcontacts" show_root="1" onchange="this.form.submit();" />
+
+    </fields>
+</form>

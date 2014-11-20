@@ -82,13 +82,24 @@ class FloorplanModelBooths extends JModelList {
         $query = $db->getQuery(true);
 
         // Select the required fields from the table.
-        $query->select('*');
+        $query->select(
+                $this->getState(
+                        'list.select', 'DISTINCT a.*'
+                )
+        );
 
-        $query->from('`#__floorplan_booth`');
+        $query->from('`#__floorplan_booth` AS a');
 
-        $query->where('`state` =1');
+        
     // Join over the users for the checked out user.
-     // Filter by search in title
+    $query->select('uc.name AS editor');
+    $query->join('LEFT', '#__users AS uc ON uc.id=a.checked_out');
+    
+		// Join over the created by field 'created_by'
+		$query->join('LEFT', '#__users AS created_by ON created_by.id = a.created_by');
+        
+
+        // Filter by search in title
         $search = $this->getState('filter.search');
         if (!empty($search)) {
             if (stripos($search, 'id:') === 0) {
@@ -113,16 +124,14 @@ class FloorplanModelBooths extends JModelList {
         if ($orderCol && $orderDirn) {
             $query->order($db->escape($orderCol . ' ' . $orderDirn));
         }
-        $query->order('boothnumber ASC');
-		 return $query;
+		$query->order('a.boothnumber ASC');
+		
+        return $query;
     }
 
     public function getItems() {
         $items = parent::getItems();
-        foreach($items as $item){
-	
-					//$item->type = JText::_('COM_FLOORPLAN_BOOTHS_TYPE_OPTION_' . strtoupper($item->type));
-}
+        
         return $items;
     }
 

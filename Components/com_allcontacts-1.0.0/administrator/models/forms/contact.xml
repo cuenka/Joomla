@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_ALLCONTACTS_FORM_LBL_CONTACT_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_ALLCONTACTS_FORM_LBL_CONTACT_CREATED_BY"
+            description="COM_ALLCONTACTS_FORM_DESC_CONTACT_CREATED_BY"  /> 
+
+       <field name="departament" type="category"
+                
+            label="COM_ALLCONTACTS_FORM_LBL_CONTACT_DEPARTAMENT"
+            description="COM_ALLCONTACTS_FORM_DESC_CONTACT_DEPARTAMENT" 
+                
+                
+                
+            extension="com_allcontacts" /> 
+
+ 
+		<field name="filter_departament" type="category"
+            label="COM_ALLCONTACTS_FORM_LBL_CONTACT_DEPARTAMENT"
+            description="COM_ALLCONTACTS_FORM_DESC_CONTACT_DEPARTAMENT"  extension="com_allcontacts" show_root="1" onchange="this.form.submit();" /> 
+
+       <field name="name" type="text"
+                
+            label="COM_ALLCONTACTS_FORM_LBL_CONTACT_NAME"
+            description="COM_ALLCONTACTS_FORM_DESC_CONTACT_NAME" 
+                
+                
+                 required="true" 
+            filter="string" /> 
+
+       <field name="jobtitle" type="text"
+                
+            label="COM_ALLCONTACTS_FORM_LBL_CONTACT_JOBTITLE"
+            description="COM_ALLCONTACTS_FORM_DESC_CONTACT_JOBTITLE" 
+                
+                
+                
+            filter="string" /> 
+
+       <field name="phone" type="text"
+                
+            label="COM_ALLCONTACTS_FORM_LBL_CONTACT_PHONE"
+            description="COM_ALLCONTACTS_FORM_DESC_CONTACT_PHONE" 
+                
+                
+                
+            filter="string" /> 
+
+       <field name="email" type="text"
+                
+            label="COM_ALLCONTACTS_FORM_LBL_CONTACT_EMAIL"
+            description="COM_ALLCONTACTS_FORM_DESC_CONTACT_EMAIL" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="photo" type="media"
+                
+            label="COM_ALLCONTACTS_FORM_LBL_CONTACT_PHOTO"
+            description="COM_ALLCONTACTS_FORM_DESC_CONTACT_PHOTO" 
+                
+                
+                
+            directory="contacts" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>
