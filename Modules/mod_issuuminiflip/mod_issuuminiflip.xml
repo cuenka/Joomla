@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>Issuu oEmbed Joomla Module</name>
+    <author>Jose Cuenca</author>
+    <version>1.2.2</version>
+    <description>Display embed issuu publications by just providing a URL</description>
+    <files>
+        <filename>mod_issuuminiflip.xml</filename>
+        <filename module="mod_issuuminiflip" label="Issuu oEmbed Joomla Module">mod_issuuminiflip.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>Mobile_Detect.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <folder>language</folder>
+    </files>
+    <languages>
+    	<language tag="en-GB">language/en-GB/en-GB.mod_issuuminiflip.ini</language>
+    </languages>
+    <config>
+		<fields name="params">
+ 		   <fieldset name="basic">
+ 	       		<field name="url" type="text" default="" size="100" maxlength="100" filter="url" label="MOD_ISSUMINIFLIP_URL_LABEL" description="MOD_ISSUMINIFLIP_URL_DESC"/>
+ 	       		<field name="responsive" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_ISSUMINIFLIP_RESPONSIVE_LABEL" description="MOD_ISSUMINIFLIP_RESPONSIVE_DESC">
+ 	       		  <option value="1">JYES</option>
+ 	       		  <option value="0">JNO</option>
+ 	       		</field>
+        		<field name="width" type="text" default="525" label="MOD_ISSUMINIFLIP_WIDTH_LABEL" description="MOD_ISSUMINIFLIP_WIDTH_DESC"/>
+        		<field name="height" type="text" default="370" label="MOD_ISSUMINIFLIP_HEIGHT_LABEL" description="MOD_ISSUMINIFLIP_HEIGHT_DESC" disabled="true"/>
+        		<field type="spacer" name="myspacer" label="MOD_ISSUMINIFLIP_MYSPACER_LABEL" />
+        		<field name="image" type="media" label="MOD_ISSUMINIFLIP_IMAGE_LABEL" directory="publications" preview="false" description="
+        		MOD_ISSUMINIFLIP_IMAGE_DESC"/>
+        	</fieldset>
+        </fields>
+    </config>
+</extension>

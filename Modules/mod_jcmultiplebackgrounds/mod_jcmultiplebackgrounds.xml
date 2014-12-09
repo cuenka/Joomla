@@ -4,8 +4,7 @@
     <author>Jose Cuenca</author>
     <version>1.0.0</version>
     <description>Display random background each day, each refresh or just one..</description>
-    <scriptfile>script.php</scriptfile>
-    <files>
+     <files>
         <filename>mod_jcmultiplebackgrounds.xml</filename>
         <filename module="mod_jcmultiplebackgrounds" label="Multiple Backgrounds Module">mod_jcmultiplebackgrounds.php</filename>
         <filename>index.html</filename>
