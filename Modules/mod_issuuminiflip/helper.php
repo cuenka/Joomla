@@ -17,8 +17,8 @@ class Issuuminiflip
     $image = $params->get('image');
     if ( $detect_module->isMobile())
     {
-    	return '<img src="'.$Image.'" target="_blank" style="height:'.$Height.'px;padding: 5px;"></a>
-    	<p style="width:'.$Width.'px;"><a href="http://html5.pagesuite-professional.co.uk/default.aspx?&edid='.$PageID.'" target="_blank">Click in the cover for the digital edition!</a></p></div>';
+    	return '<a href="'.$url.'" target="_blank"><img src="'.$image.'" target="_blank"></a>
+    	<h4><a href="'.$url.'" target="_blank">Click here for the digital edition!</a></h4>';
     }else{
 	
 		$json = file_get_contents($url);
