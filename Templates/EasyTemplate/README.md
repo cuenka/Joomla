@@ -1,1 +1,1 @@
-First Version of custom template Bootstrap 3.1.1 Joomla
+en-GBFirst Version of custom template Bootstrap 3.1.1 Joomla

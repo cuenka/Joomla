@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 
-<extension version="3.0" type="template" client="site" method="upgrade">
+<extension version="2.5" type="template" client="site" method="upgrade">
 	
-	<name>JC Easy Template</name><!-- name the template -->
-	<creationDate>2014-11-01</creationDate><!-- the date your are beginn to code -->
-	<author>Your name</author><!-- your name (oops, I repeat myself) -->
+	<name>Easy Template</name><!-- name the template -->
+	<creationDate>2014-02-01</creationDate><!-- the date your are beginn to code -->
+	<author>Jose Cuenca</author><!-- your name (oops, I repeat myself) -->
 	<copyright>Copyright © xxxx example.com</copyright><!-- for who you are coding -->
 	<authorEmail>your.name@example.com</authorEmail><!-- your email address -->
 	<authorUrl>http://www.example.com</authorUrl><!-- your url -->
-	<version>1.1.0</version><!-- give your template a number -->
+	<version>1.0.0</version><!-- give your template a number -->
 	<description><![CDATA[ 
-		<p>Created by <a href="http://www.josecuenca.info" target="_blank">Jose Cuenca | josecuenca.info</a>.</p>
-		<p>If you find error or you have tips of how to improve it, let me know! :-)</p>
+		<h1>frontend</h1>
+		<p>Created by <a href="http://www.example.com" target="_blank">Jose Cuenca | example.com</a>.</p>
 	]]></description><!-- change the description as you like -->
 	
 	<files><!-- no need to change -->
@@ -21,13 +21,14 @@
 		<folder>html</folder>
 		<folder>images</folder>
 		<folder>js</folder>
+		<folder>pre-processor</folder>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
 		<filename>index.php</filename>
 		<filename>preparation.php</filename>
 		<filename>offline.php</filename>
 		<filename>template_preview.png</filename>
-		<filename>template_thumbnail.png</filename>EASYTEMPLATE
+		<filename>template_thumbnail.png</filename>
 		<filename>favicon.ico</filename>
 		<filename>templateDetails.xml</filename>
 	</files>
@@ -37,7 +38,6 @@
 	</languages>
 	
 	<positions><!-- define the positions for modules here -->
-		<position>logo</position>
 		<position>debug</position>
 	</positions>
 	
@@ -397,7 +397,12 @@
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field> 
-			
+				<field name="removesqueezeboxjs" type="radio" default="0" class="btn-group btn-group-yesno"
+					label="TPL_EASYTEMPLATE_PARAMETER_RSQUEEZEJS_LABEL" 
+					description="TPL_EASYTEMPLATE_PARAMETER_RSQUEEZEJS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field> 
 			</fieldset>
 			<fieldset name="TPL_EASYTEMPLATE_ADVANCED_ERROR_PAGES_LABEL">
 				<field type="spacer" name="errorPage" 

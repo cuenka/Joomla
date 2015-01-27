@@ -201,6 +201,25 @@ if ($this->params->get('removecaptionjs',0)==1) {
 	
 	if (empty($this->_script['text/javascript'])) unset($this->_script['text/javascript']);}
 }
+
+//UNSET SqueezeBox.initialize
+
+if ($this->params->get('removesqueezeboxjs',0)==1) {
+	if (isset($this->_script['text/javascript']))
+	{ 
+		$codejcaption ="jQuery(function($) {
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($('a.modal').get(), {
+				parse: 'rel'
+			});
+		})
+		";
+		// This @ is in order to hide the warning, working in a better solution
+		@$this->_script['text/javascript'] = preg_replace($codejcaption, '', $this->_script['text/javascript']);
+		if (empty($this->_script['text/javascript'])) unset($this->_script['text/javascript']);
+	}
+}
+
 if ($less == 1) {
 		$less = new lessc;
 		$less->checkedCompile( $_SERVER['DOCUMENT_ROOT'].$tpath."/css/custom.less", 

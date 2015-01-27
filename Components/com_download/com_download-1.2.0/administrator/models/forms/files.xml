@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_DOWNLOAD_FORM_LBL_FILES_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_DOWNLOAD_FORM_LBL_FILES_CREATED_BY"
+            description="COM_DOWNLOAD_FORM_DESC_FILES_CREATED_BY"  /> 
+
+       <field name="name" type="text"
+                
+            label="COM_DOWNLOAD_FORM_LBL_FILES_NAME"
+            description="COM_DOWNLOAD_FORM_DESC_FILES_NAME" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            class="Download_name"
+            filter="safehtml"
+            size="60"
+            maxlength="60" /> 
+
+       <field name="category" type="category"
+                
+            label="COM_DOWNLOAD_FORM_LBL_FILES_CATEGORY"
+            description="COM_DOWNLOAD_FORM_DESC_FILES_CATEGORY" 
+                
+                
+                
+            extension="com_download" /> 
+
+       <field name="banner" type="radio"
+                
+            label="COM_DOWNLOAD_FORM_LBL_FILES_BANNER"
+            description="COM_DOWNLOAD_FORM_DESC_FILES_BANNER" 
+                 default="0" 
+                
+                >
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+        </field> 
+
+       <field name="file" type="file"
+                
+            label="COM_DOWNLOAD_FORM_LBL_FILES_FILE"
+            description="COM_DOWNLOAD_FORM_DESC_FILES_FILE" 
+                
+                
+                
+            upload_directory="images/Downloads"
+            max_size="2" /> 
+
+ 
+		<field name="whatbanner" type="sql" label="Select banner" description="Select Banner that you want" query="SELECT alias 
+FROM  #__banners" key_field="alias" value_field="alias"   /> 
+
+       <field name="url" type="text"
+                
+            label="COM_DOWNLOAD_FORM_LBL_FILES_URL"
+            description="COM_DOWNLOAD_FORM_DESC_FILES_URL" 
+                
+                
+                
+            filter="url" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>
