@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS `#__metro_programme` (
 `chairmanisairportspeaker` VARCHAR(255)  NOT NULL ,
 `moderator` TEXT NOT NULL ,
 `moderatorisairportspeaker` VARCHAR(255)  NOT NULL ,
+`moderator2` TEXT NOT NULL ,
+`moderator2isairportspeaker` VARCHAR(255)  NOT NULL ,
 `speaker1` TEXT NOT NULL ,
 `isairportspeaker1` VARCHAR(255)  NOT NULL ,
 `speaker2` TEXT NOT NULL ,
@@ -31,6 +33,8 @@ CREATE TABLE IF NOT EXISTS `#__metro_programme` (
 `isairportspeaker5` VARCHAR(255)  NOT NULL ,
 `speaker6` TEXT NOT NULL ,
 `isairportspeaker6` VARCHAR(255)  NOT NULL ,
+`speaker7` TEXT NOT NULL ,
+`isairportspeaker7` VARCHAR(255)  NOT NULL ,
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8_general_ci;
 

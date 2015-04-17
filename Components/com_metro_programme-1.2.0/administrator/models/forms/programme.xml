@@ -16,7 +16,7 @@
             description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_TITLE" 
                 
                 
-                 required="true" 
+                  
             filter="raw" /> 
 
        <field name="style" type="radio" class="btn-group btn-group-yesno"
@@ -43,7 +43,7 @@
                 
             extension="com_metro_programme" /> 
 
-       <field name="sessiontime" type="calendar"
+       <field name="sessiontime" type="text"
                 
             label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_SESSIONTIME"
             description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_SESSIONTIME" 
@@ -52,7 +52,7 @@
                 
             filter="raw" /> 
 
-       <field name="subtitle" type="editor"
+       <field name="subtitle" type="editor" width="300" filter="safehtml"
                 
             label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_SUBTITLE"
             description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_SUBTITLE" 
@@ -60,7 +60,7 @@
                 
                  /> 
 
-       <field name="information" type="editor"
+       <field name="information" type="editor" width="300" filter="safehtml"
                 
             label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_INFORMATION"
             description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_INFORMATION" 
@@ -96,7 +96,9 @@
             filter="safehtml" /> 
 
  
-		<field name="chairman" type="sql" label="Chairman from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+		<field name="chairman" type="sql" default=""  label="Chairman from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"  > 
+		<option value="">Please select your option</option>
+		</field>
 
        <field name="chairmanisairportspeaker" type="radio" class="btn-group btn-group-yesno"
                 
@@ -112,7 +114,9 @@
         </field> 
 
  
-		<field name="moderator" type="sql" label="Moderator from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+		<field name="moderator" type="sql" default=""  label="Moderator from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"  > 
+		<option value="">Please select your option</option>
+		</field> 
 
        <field name="moderatorisairportspeaker" default="0" type="radio" class="btn-group btn-group-yesno"
                 
@@ -128,9 +132,28 @@
                 <option value="1">Yes</option>
                 <option value="0">No</option>
         </field> 
-
+		<field name="moderator2" type="sql" default=""  label="Moderator 2 from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"  > 
+				<option value="">Please select your option</option>
+				</field> 
+		
+		       <field name="moderator2isairportspeaker" default="0" type="radio" class="btn-group btn-group-yesno"
+		                
+		            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_MODERATORISAIRPORTSPEAKER"
+		            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_MODERATORISAIRPORTSPEAKER" 
+		                
+		                
+		                
+		            menu_published="0"
+		            filter="raw"
+		            option_on="Yes"
+		            option_off="Yes">
+		                <option value="1">Yes</option>
+		                <option value="0">No</option>
+		        </field>
  
-		<field name="speaker1" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+		<field name="speaker1" type="sql" default=""  label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   > 
+		<option value="">Please select your option</option>
+		</field> 
 
        <field default="0" name="isairportspeaker1" type="radio" class="btn-group btn-group-yesno"
                 
@@ -148,7 +171,9 @@
         </field> 
 
  
-		<field name="speaker2" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+		<field name="speaker2" type="sql" default=""  label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"  > 
+		<option value="">Please select your option</option>
+		</field> 
 
        <field default="0" name="isairportspeaker2" type="radio" class="btn-group btn-group-yesno"
                 
@@ -166,7 +191,9 @@
         </field> 
 
  
-		<field name="speaker3" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+		<field name="speaker3" type="sql" default=""  label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   > 
+		<option value="">Please select your option</option>
+		</field>
 
        <field default="0" name="isairportspeaker3" type="radio" class="btn-group btn-group-yesno"
                 
@@ -184,7 +211,9 @@
         </field> 
 
  
-		<field name="speaker4" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+		<field name="speaker4" type="sql" default=""  label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   > 
+		<option value="">Please select your option</option>
+		</field> 
 
        <field default="0" name="isairportspeaker4" type="radio" class="btn-group btn-group-yesno"
                 
@@ -202,7 +231,9 @@
         </field> 
 
  
-		<field name="speaker5" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+		<field name="speaker5" type="sql" default=""  label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   > 
+		<option value="">Please select your option</option>
+		</field> 
 
        <field default="0" name="isairportspeaker5" type="radio" class="btn-group btn-group-yesno"
                 
@@ -220,7 +251,9 @@
         </field> 
 
  
-		<field name="speaker6" type="sql" label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   /> 
+		<field name="speaker6" type="sql" default=""  label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   > 
+		<option value="">Please select your option</option>
+		</field>
 
        <field default="0" name="isairportspeaker6" type="radio" class="btn-group btn-group-yesno"
                 
@@ -236,7 +269,24 @@
                 <option value="1">Yes</option>
                 <option value="0">No</option>
         </field> 
+		<field name="speaker7" type="sql" default=""  label="Speaker from Speakers Page" description="" query="SELECT * FROM `#__speaker` where `state`=1" key_field="id" value_field="name"   > 
+		<option value="">Please select your option</option>
+		</field>
 
+       <field default="0" name="isairportspeaker7" type="radio" class="btn-group btn-group-yesno"
+                
+            label="COM_METRO_PROGRAMME_FORM_LBL_PROGRAMME_ISAIRPORTSPEAKER6"
+            description="COM_METRO_PROGRAMME_FORM_DESC_PROGRAMME_ISAIRPORTSPEAKER6" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+        </field> 
          <field
         name="state"
         type="list"

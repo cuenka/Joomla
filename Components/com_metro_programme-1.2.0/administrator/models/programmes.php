@@ -41,8 +41,10 @@ class Metro_programmeModelProgrammes extends JModelList {
                 'refreshmentname', 'a.refreshmentname',
                 'chairman', 'a.chairman',
                 'chairmanisairportspeaker', 'a.chairmanisairportspeaker',
-                'moderator', 'a.moderator',
-                'moderatorisairportspeaker', 'a.moderatorisairportspeaker',
+				'moderator', 'a.moderator',
+				'moderatorisairportspeaker', 'a.moderatorisairportspeaker',
+                'moderator2', 'a.moderator2',
+                'moderator2isairportspeaker', 'a.moderator2isairportspeaker',
                 'speaker1', 'a.speaker1',
                 'isairportspeaker1', 'a.isairportspeaker1',
                 'speaker2', 'a.speaker2',
@@ -55,7 +57,8 @@ class Metro_programmeModelProgrammes extends JModelList {
                 'isairportspeaker5', 'a.isairportspeaker5',
                 'speaker6', 'a.speaker6',
                 'isairportspeaker6', 'a.isairportspeaker6',
-
+				'speaker7', 'a.speaker7',
+				'isairportspeaker7', 'a.isairportspeaker7',
             );
         }
 

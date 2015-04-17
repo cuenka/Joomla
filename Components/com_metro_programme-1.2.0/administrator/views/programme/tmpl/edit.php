@@ -79,6 +79,13 @@ $document->addStyleSheet('components/com_metro_programme/assets/css/metro_progra
 		}
 	});
 	js("#jform_speaker6").trigger("liszt:updated");
+    js('input:hidden.speaker7').each(function(){
+    	var name = js(this).attr('name');
+    	if(name.indexOf('speaker7hidden')){
+    		js('#jform_speaker7 option[value="'+js(this).val()+'"]').attr('selected',true);
+    	}
+    });
+    js("#jform_speaker7").trigger("liszt:updated");
     });
 
     Joomla.submitbutton = function(task)
@@ -215,6 +222,21 @@ $document->addStyleSheet('components/com_metro_programme/assets/css/metro_progra
 			    	<div class="controls"><?php echo $this->form->getInput('moderatorisairportspeaker'); ?></div>
 			    </div>
 			    <div class="control-group">
+			    	<div class="control-label"><?php echo $this->form->getLabel('moderator2'); ?></div>
+			    	<div class="controls"><?php echo $this->form->getInput('moderator2'); ?></div>
+			    </div>
+			    <?php
+			    foreach((array)$this->item->moderator2 as $value): 
+			    	if(!is_array($value)):
+			    		echo '<input type="hidden" class="moderator2" name="jform[moderator2hidden]['.$value.']" value="'.$value.'" />';
+			    	endif;
+			    endforeach;
+			    ?>
+			    <div class="control-group">
+			    	<div class="control-label"><?php echo $this->form->getLabel('moderator2isairportspeaker'); ?></div>
+			    	<div class="controls"><?php echo $this->form->getInput('moderator2isairportspeaker'); ?></div>
+			    </div>
+			    <div class="control-group">
 			    	<div class="control-label"><?php echo $this->form->getLabel('speaker1'); ?></div>
 			    	<div class="controls"><?php echo $this->form->getInput('speaker1'); ?></div>
 			    </div>
@@ -305,7 +327,21 @@ $document->addStyleSheet('components/com_metro_programme/assets/css/metro_progra
 			    		<div class="control-label"><?php echo $this->form->getLabel('isairportspeaker6'); ?></div>
 			    		<div class="controls"><?php echo $this->form->getInput('isairportspeaker6'); ?></div>
 			    	</div>
-			    
+			    	<div class="control-group">
+			    		<div class="control-label"><?php echo $this->form->getLabel('speaker7'); ?></div>
+			    		<div class="controls"><?php echo $this->form->getInput('speaker7'); ?></div>
+			    	</div>
+					<?php
+					foreach((array)$this->item->speaker7 as $value): 
+						if(!is_array($value)):
+							echo '<input type="hidden" class="speaker7" name="jform[speaker7hidden]['.$value.']" value="'.$value.'" />';
+						endif;
+					endforeach;
+					?>
+					<div class="control-group">
+						<div class="control-label"><?php echo $this->form->getLabel('isairportspeaker7'); ?></div>
+						<div class="controls"><?php echo $this->form->getInput('isairportspeaker7'); ?></div>
+					</div>			    
 			    </fieldset>
             </div>
         <?php echo JHtml::_('bootstrap.endTab'); ?>
