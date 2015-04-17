@@ -199,7 +199,7 @@ class AllcontactsModelContacts extends JModelList
         if ($orderCol && $orderDirn) {
             $query->order($db->escape($orderCol . ' ' . $orderDirn));
         }
-
+        $query->order('a.ordering ASC');
         return $query;
     }
 
