@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /**
  * @version     1.3.3
@@ -133,6 +133,7 @@ class Metro_programmeModelProgrammes extends JModelList {
         if ($orderCol && $orderDirn) {
             $query->order($db->escape($orderCol . ' ' . $orderDirn));
         }
+        $query->where('`state`= 1');
 		$query->order('a.ordering ASC');
         return $query;
     }
@@ -182,7 +183,8 @@ class Metro_programmeModelProgrammes extends JModelList {
     
     	$query
     		->select($db->quoteName(array('id','salutation','name','surname','company','job_title')))
-    		->from('#__speaker');
+    		->from('#__speaker')
+    		->order('`id` ASC');
     	$db->setQuery($query);
     	$results = $db->loadAssocList();
     	return $results;
